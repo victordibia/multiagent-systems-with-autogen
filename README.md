@@ -29,7 +29,7 @@ In [Multi-Agent Systems with AutoGen](https://mng.bz/eVP9), you will learn about
 > [!NOTE]
 > If you downloaded the code bundle from the Manning website, please consider visiting the official code repository on GitHub at https://github.com/victordibia/multiagent-systems-with-autogen for the latest updates.
 
-To download a copy of this code repository, click on the DOWNLOAD ZIP button or run the following code from your terminal.
+To download a copy of this code repository, click on the [Download Zip](https://github.com/victordibia/multiagent-systems-with-autogen/archive/refs/heads/main.zip) button or run the following code from your terminal.
 
 ```bash
 git clone --depth 1 https https://github.com/victordibia/multiagent-systems-with-autogen.git
