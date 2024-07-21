@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this book or software, please cite it as below."
+authors:
+  - family-names: "Dibia"
+    given-names: "Victor"
+    orcid: "https://orcid.org/0000-0002-1839-5632"
+  - family-names: "Wang"
+    given-names: "Chi"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "Multi-Agent Systems with AutoGen"
+version: 0.0.1
+date-released: 2024-07-19
+url: "https://github.com/victordibia/multiagent-systems-with-autogen"
