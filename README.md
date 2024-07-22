@@ -4,12 +4,12 @@ This repository contains code examples for building multi-agent applications (po
 
 [![Multi-Agent Systems with AutoGen Manning Early Access Program](/docs/images/bookcover.png)](https://mng.bz/eVP9)
 
-The book is currently for pre-order in the Manning Early Access Program (only the first few chapters are available currently).
+The book is currently available for pre-order in the [Manning Early Access Program](https://mng.bz/eVP9) (only the first few chapters are available currently).
 
-You can pre-order the book now at https://mng.bz/eVP9.
+Pre-order the book now at https://mng.bz/eVP9.
 
 > [!TIP]
-> 🔥🔥 Use the code 'mldibia' for a 50% discount, valid for the next two weeks until **August 5th**.
+> 🔥🔥 Use the code **mldibia** for a 50% discount, valid until **August 5th**.
 
 In [Multi-Agent Systems with AutoGen](https://mng.bz/eVP9), you will learn about the core components of agents (Generative AI models, tools, memory, orchestration), how to implement them in python code using the AutoGen framework, how to evaluate, optimize and deploy them in your applications. Overall, the book will cover:
 
