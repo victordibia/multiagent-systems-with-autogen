@@ -66,6 +66,7 @@ If you find this book or code useful for your research, please consider citing i
   title        = {Multi-Agent Systems with AutoGen},
   publisher    = {Manning},
   year         = {2024},
+  isbn         = {9781633436145},
   url          = {https://www.manning.com/books/multi-agent-systems-with-autogen},
   github       = {https://github.com/victordibia/multiagent-systems-with-autogen}
 }
