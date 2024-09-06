@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "interfaceagent" 
+authors = [
+  { name="Your Name", email="victor.dibia@gmail.com" },
+]
+description = "Interface Agent: Addressing Tasks by Controlling Interfaces"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "pydantic",
+    "loguru",
+    "uvicorn", 
+    "typer",
+    "fastapi", 
+    "python-multipart", 
+    "playwright",
+    "openai",
+     
+]
+optional-dependencies = {web = ["fastapi", "uvicorn"]}
+
+dynamic = ["version"]
+
+[tool.setuptools]
+include-package-data = true 
+
+[tool.setuptools.dynamic]
+version = {attr = "interfaceagent.version.VERSION"}
+readme = {file = ["README.md"]}
+
+[tool.setuptools.packages.find]  
+include = ["interfaceagent*"]  
+exclude = ["*.tests*"]  
+namespaces = false  
+
+[tool.setuptools.package-data]
+"interfaceagent" = ["*.*"]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/interfaceagent"
+"Bug Tracker" = "https://github.com/yourusername/interfaceagent/issues"
+
+[project.scripts]
+interfaceagent = "interfaceagent.cli:run"
