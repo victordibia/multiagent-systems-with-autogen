@@ -36,5 +36,12 @@ pip install -e .
 
 ```python
 
+from interfaceagent import WebBrowser, Planner , OpenAIPlannerModel
+
+browser = WebBrowser(start_url="http://google.com/",headless=False)
+model = OpenAIPlannerModel(model="gpt-4o-mini-2024-07-18")
+task = "What is the website for the Manning Book - Multi-Agent Systems with AutoGen. Navigate to the book website and find the author of the book."
+planner = Planner(model=model, web_browser=browser, task=task)
+result = await planner.run(task=task)
 
 ```
