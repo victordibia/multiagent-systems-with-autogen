@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 **/screenshot.png
 .DS_Store
+.release.sh
 
 # C extensions
 *.so

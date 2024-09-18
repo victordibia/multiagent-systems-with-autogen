@@ -10,6 +10,8 @@
 
 <!-- <img src="docs/images/interfaceagentscreen.png" width="100%" /> -->
 
+Written as part of the book "Multi-Agent Systems with AutoGen" by Victor Dibia.
+
 Interface Agent package demonstrates how to build an agent that can accomplish tasks by driving interfaces (web browser). It combines the capabilities of large language models with web browsing to accomplish complex tasks autonomously.
 
 ## Installation
