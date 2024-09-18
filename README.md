@@ -42,15 +42,15 @@ The code in this repo is organized into chapters (shown in the table). Each chap
 <!-- chapter, description, code links
 1. Understanding Multi-Agent Systems.  no code
 2. Building Your First Multi-Agent Application /ch02
-3. UX Considerations for a Multi-Agent System no code
+3. THE USER EXPERIENCE (UX) OF MULTI-AGENT SYSTEMS
   -->
 
-| Chapter | Description                                 | Code                                                                                                                                            |
-| ------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1       | Understanding Multi-Agent Systems           | no code                                                                                                                                         |
-| 2       | Building Your First Multi-Agent Application | - [Your first multi-agent application](/ch02/ch2_first_application.ipynb) <br> - [Orchestrating groups of agents](/ch02/ch2_agent_groups.ipynb) |
-| 3       | UX Considerations for a Multi-Agent System  | no code                                                                                                                                         |
-| 4       | Interface Agents                            | - [Interface library (built from scratch)](/src/interface) <br> - [Implementing an interface agent notebook](/ch04/interface_agents.ipynb)      |
+| Chapter | Description                                      | Code                                                                                                                                            |
+| ------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1       | Understanding Multi-Agent Systems                | no code                                                                                                                                         |
+| 2       | Building Your First Multi-Agent Application      | - [Your first multi-agent application](/ch02/ch2_first_application.ipynb) <br> - [Orchestrating groups of agents](/ch02/ch2_agent_groups.ipynb) |
+| 3       | The User Experience (UX) for Multi-Agent Systems | no code                                                                                                                                         |
+| 4       | Interface Agents                                 | - [Interface library (built from scratch)](/src/interface) <br> - [Implementing an interface agent notebook](/ch04/interface_agents.ipynb)      |
 
 ## Questions and Feedback
 
