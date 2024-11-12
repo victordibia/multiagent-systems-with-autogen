@@ -1,0 +1,8 @@
+# jupyter lab so you can work with the notebooks from your browser
+jupyterlab
+
+# libraries used within the notebook examples:
+autogen
+openai
+yfinance
+matplotlib

@@ -35,6 +35,22 @@ To download a copy of this code repository, click on the [Download Zip](https://
 git clone --depth 1 https https://github.com/victordibia/multiagent-systems-with-autogen.git
 ```
 
+## Getting Jupyter Notebooks to work on your computer
+
+This section explains how to install the pre-requisite libraries so that you can use the notebooks within this book. So that the libraries are safely installed for the context of this book, we use the python [virtual environment](https://docs.python.org/3/library/venv.html) concept.
+
+
+
+1. [Install](https://www.python.org/downloads/) Python on your computer. Recommended versions are 3.9 through 3.12
+2. Clone the repository: `git clone https://github.com/victordibia/multiagent-systems-with-autogen.git`
+3. Go into the directory: `cd multiagent-systems-with-autogen`
+4. Create a virtual environment: `python -m venv venv`
+5. Activate the virtual environment: `. ./venv/bin/activate` 
+6. Install the required libraries into this environment: `pip install -r requirements.txt`
+7. Run Jupyter Lab: `jupyter lab`
+8. Within Jupyter Lab, change directories into the respective chapter and open the python notebooks.
+
+
 ## Table of Contents
 
 The code in this repo is organized into chapters (shown in the table). Each chapter contains code for the various concepts and tools discussed in the book.
