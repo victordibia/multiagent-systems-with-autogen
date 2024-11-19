@@ -6,3 +6,5 @@ autogen
 openai
 yfinance
 matplotlib
+flaml[automl] 
+fpdf
