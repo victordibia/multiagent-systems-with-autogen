@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "interfaceagent" 
 authors = [
-  { name="Your Name", email="victor.dibia@gmail.com" },
+  { name="Victor Dibia", email="victor.dibia@gmail.com" },
 ]
 description = "Interface Agent: Addressing Tasks by Controlling Interfaces"
 readme = "README.md"

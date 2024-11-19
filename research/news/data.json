@@ -1,0 +1,35 @@
+[
+  {
+    "title": "PaperQA2",
+    "description": "PaperQA2 is also the first agent to beat PhD and Postdoc-level biology researchers on multiple literature research tasks, as measured both by accuracy on objective benchmarks and assessments by human experts. We are publishing a paper and open-sourcing the code.This is the first example of AI agents exceeding human performance on a major portion of scientific research, and will be a game-changer for the way humans interact with the scientific literature. ",
+    "launch_date": "2024-09-11",
+    "launch_url": "https://x.com/SGRodriques/status/1833908643856818443",
+    "tags": ["research", "oss", "product"],
+    "paper_pdf_url": null,
+    "tweet_url": "https://x.com/SGRodriques/status/1833908643856818443",
+    "github_url": "https://github.com/Future-House/paper-qa",
+    "company_url": "https://www.futurehouse.org/",
+    "authors": ["Sergio G. Rodrigues", "John Doe"],
+    "image_url": "default.png"
+  },
+  {
+    "title": "SciAgents: Automating scientific discovery through multi-agent intelligent graph reasoning",
+    "description": "SciAgents is an approach that leverages large-scale ontological knowledge graphs, large language models, and multi-agent systems with in-situ learning capabilities to automate scientific discovery. Applied to biologically inspired materials, it reveals hidden interdisciplinary relationships and autonomously generates and refines research hypotheses. The framework demonstrates the potential to accelerate materials discovery by combining generative AI, ontological representations, and multi-agent modeling.",
+    "launch_date": "2024-09-09",
+    "launch_url": "https://arxiv.org/abs/2409.05556",
+    "tags": ["research"],
+    "paper_pdf_url": "https://arxiv.org/pdf/2409.05556.pdf",
+    "authors": [
+      "Michael D. Skarlinski",
+      "Sam Cox",
+      "Jon M. Laurent",
+      "James D. Braza",
+      "Michaela Hinks",
+      "Michael J. Hammerling",
+      "Manvitha Ponnapati",
+      "Samuel G. Rodriques",
+      "Andrew D. White"
+    ],
+    "image_url": "default.png"
+  }
+]

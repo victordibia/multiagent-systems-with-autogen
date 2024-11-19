@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+*/work_dir
+
 *.env
 /data*
 
