@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "component_type": "team",
+  "name": "user_team",
+  "participants": [
+    {
+      "component_type": "agent",
+      "name": "assistant_agent",
+      "agent_type": "AssistantAgent",
+      "system_message": "You are a helpful assistant. Solve tasks carefully.",
+      "model_client": {
+        "component_type": "model",
+        "model": "gpt-4o-2024-08-06",
+        "model_type": "OpenAIChatCompletionClient"
+      }
+    },
+    {
+      "component_type": "agent",
+      "name": "user_agent",
+      "agent_type": "UserProxyAgent"
+    }
+  ],
+  "team_type": "RoundRobinGroupChat",
+  "termination_condition": {
+    "component_type": "termination",
+    "termination_type": "CombinationTermination",
+    "operator": "or",
+    "conditions": [
+      {
+        "component_type": "termination",
+        "termination_type": "TextMentionTermination",
+        "text": "TERMINATE"
+      },
+      {
+        "component_type": "termination",
+        "termination_type": "MaxMessageTermination",
+        "max_messages": 10
+      }
+    ]
+  }
+}
