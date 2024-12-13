@@ -1,6 +1,7 @@
 {
   "id": "gallery_default",
   "name": "Default Component Gallery",
+  "url": "https://raw.githubusercontent.com/victordibia/multiagent-systems-with-autogen/refs/heads/main/research/components/gallery/base.json",
   "metadata": {
     "author": "Victor Dibia",
     "created_at": "2024-12-12T00:00:00Z",
