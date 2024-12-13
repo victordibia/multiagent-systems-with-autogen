@@ -1,8 +1,8 @@
 {
   "id": "gallery_default",
-  "name": "Default Component Gallery",
+  "name": "Component Gallery",
   "metadata": {
-    "author": "AutoGen Team",
+    "author": "Victor Dibia",
     "created_at": "2024-12-12T00:00:00Z",
     "updated_at": "2024-12-12T00:00:00Z",
     "version": "1.0.0",
@@ -15,7 +15,7 @@
     "teams": [
       {
         "component_type": "team",
-        "name": "huma_in_loop_team",
+        "name": "assistant_team",
         "participants": [
           {
             "component_type": "agent",
