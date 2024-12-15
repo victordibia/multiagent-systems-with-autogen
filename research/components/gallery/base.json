@@ -1,6 +1,6 @@
 {
   "id": "gallery_default_victor",
-  "name": "Agent Gallery (VD)",
+  "name": "VD Teams",
   "url": "https://raw.githubusercontent.com/victordibia/multiagent-systems-with-autogen/refs/heads/main/research/components/gallery/base.json",
   "metadata": {
     "author": "Victor Dibia",
