@@ -70,6 +70,36 @@
             }
           ]
         }
+      },
+      {
+        "version": "1.0.0",
+        "component_type": "team",
+        "name": "websurfer_team",
+        "participants": [
+          {
+            "component_type": "agent",
+            "name": "websurfer_agent",
+            "agent_type": "MultimodalWebSurfer",
+            "model_client": {
+              "component_type": "model",
+              "model": "gpt-4o-2024-08-06",
+              "model_type": "OpenAIChatCompletionClient"
+            },
+            "headless": true,
+            "logs_dir": "logs",
+            "downloads_folder": "logs",
+            "to_save_screenshots": false,
+            "use_ocr": false,
+            "animate_actions": false,
+            "tools": []
+          }
+        ],
+        "team_type": "RoundRobinGroupChat",
+        "termination_condition": {
+          "component_type": "termination",
+          "termination_type": "MaxMessageTermination",
+          "max_messages": 5
+        }
       }
     ],
     "components": {
