@@ -1,0 +1,21 @@
+## Structure of Samples
+
+- samples
+  - metadata.json
+    - items
+      - data_analysis
+        - autogen
+  - data_analysis
+    - autogen_core
+    - autogen_agentchat
+    - crewai
+    - requirements.txt
+  - book_generation
+  - research_assistant
+  -
+- memory
+  - chromadb
+  - mongodb
+  - weaviate
+  - pinecone
+-

@@ -140,6 +140,19 @@
           "description": "A GPT-4o mini model",
           "model": "gpt-4o-mini",
           "model_type": "OpenAIChatCompletionClient"
+        },
+        {
+          "model": "TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
+          "model_type": "OpenAIChatCompletionClient",
+          "description": "A local Mistral 7B model",
+          "base_url": "http://localhost:1234/v1",
+          "api_version": "1.0",
+          "component_type": "model",
+          "model_capabilities": {
+            "vision": false,
+            "function_calling": false,
+            "json_output": false
+          }
         }
       ],
       "tools": [
