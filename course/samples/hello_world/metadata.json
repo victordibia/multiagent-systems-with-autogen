@@ -1,0 +1,7 @@
+{
+  "title": "Hello World Agent",
+  "description": "A simple conversational agent that demonstrates basic interaction patterns. Users can explore how different frameworks handle basic message passing and agent communication.",
+  "domains": ["basics", "education"],
+  "tags": ["beginner", "conversation", "single-agent"],
+  "difficulty": "beginner"
+}

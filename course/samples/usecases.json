@@ -1,0 +1,58 @@
+{
+  "repository": {
+    "owner": "microsoft",
+    "name": "autogen",
+    "branch": "main",
+    "base_url": "https://raw.githubusercontent.com/victordibia/multiagent-systems-with-autogen/refs/heads/main/course/"
+  },
+  "usecases": {
+    "hello_world": {
+      "title": "Hello World Agent",
+      "description": "A simple conversational agent that demonstrates basic interaction patterns. Users can explore how different frameworks handle basic message passing and agent communication.",
+      "domains": ["basics", "education"],
+      "tags": ["beginner", "conversation", "single-agent"],
+      "implementations": [
+        {
+          "framework": "langgraph",
+          "title": "Langgraph Implementation",
+          "description": "Implementation using langgraph",
+          "code": {
+            "path": "/samples/hello_world/langgraph/app.py",
+            "language": "python"
+          },
+          "results": {
+            "path": "/samples/hello_world/langgraph/results.txt"
+          }
+        },
+        {
+          "framework": "autogen_core",
+          "title": "Autogen Core Implementation",
+          "description": "Implementation using autogen_core",
+          "code": {
+            "path": "/samples/hello_world/autogen_core/app.py",
+            "language": "python"
+          },
+          "results": {
+            "path": "/samples/hello_world/autogen_core/results.txt"
+          }
+        },
+        {
+          "framework": "autogen_agentchat",
+          "title": "Autogen Agentchat Implementation",
+          "description": "Implementation using autogen_agentchat",
+          "code": {
+            "path": "/samples/hello_world/autogen_agentchat/app.py",
+            "language": "python"
+          },
+          "results": {
+            "path": "/samples/hello_world/autogen_agentchat/results.txt"
+          }
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "domains": ["basics", "education"],
+    "frameworks": ["autogen_agentchat", "autogen_core", "langgraph"]
+  }
+}
