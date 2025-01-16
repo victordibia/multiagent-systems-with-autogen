@@ -13,15 +13,15 @@
       "tags": ["beginner", "conversation", "single-agent"],
       "implementations": [
         {
-          "framework": "langgraph",
-          "title": "Langgraph Implementation",
-          "description": "Implementation using langgraph",
+          "framework": "autogen_agentchat",
+          "title": "Autogen Agentchat Implementation",
+          "description": "Implementation using autogen_agentchat",
           "code": {
-            "path": "/samples/hello_world/langgraph/app.py",
+            "path": "/samples/hello_world/autogen_agentchat/app.py",
             "language": "python"
           },
           "results": {
-            "path": "/samples/hello_world/langgraph/results.txt"
+            "path": "/samples/hello_world/autogen_agentchat/results.txt"
           }
         },
         {
@@ -37,15 +37,15 @@
           }
         },
         {
-          "framework": "autogen_agentchat",
-          "title": "Autogen Agentchat Implementation",
-          "description": "Implementation using autogen_agentchat",
+          "framework": "langgraph",
+          "title": "Langgraph Implementation",
+          "description": "Implementation using langgraph",
           "code": {
-            "path": "/samples/hello_world/autogen_agentchat/app.py",
+            "path": "/samples/hello_world/langgraph/app.py",
             "language": "python"
           },
           "results": {
-            "path": "/samples/hello_world/autogen_agentchat/results.txt"
+            "path": "/samples/hello_world/langgraph/results.txt"
           }
         }
       ]

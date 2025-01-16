@@ -68,6 +68,9 @@ def generate_usecases_json(samples_path):
             
             implementations.append(implementation)
         
+        # sort implementations by framework
+
+        implementations = sorted(implementations, key=lambda x: x["framework"])
         # Add usecase to usecases dict
         usecases[usecase_dir] = {
             "title": metadata.get("title", usecase_dir.replace('_', ' ').title()),
