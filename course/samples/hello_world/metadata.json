@@ -1,6 +1,6 @@
 {
   "title": "Hello World Agent",
-  "description": "A simple conversational agent that demonstrates basic interaction patterns. Users can explore how different frameworks handle basic message passing and agent communication.",
+  "description": "A agent implementation that demonstrates the basic concepts of defining an agent that used a generative AI model and tools to address tasks. Users can explore how different frameworks handle basic message passing and agent communication.",
   "domains": ["basics", "education"],
   "tags": ["beginner", "conversation", "single-agent"],
   "difficulty": "beginner"
