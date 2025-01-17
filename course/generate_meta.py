@@ -12,11 +12,14 @@ def count_lines_of_code(file_path):
 def generate_usecases_json(samples_path):
     # Repository info
     repo_info = {
-        "owner": "microsoft",
-        "name": "autogen",
+        "owner": "victordibia",
+        "name": "multiagent-systems-with-autogen",
         "branch": "main",
         "base_url": "https://raw.githubusercontent.com/victordibia/multiagent-systems-with-autogen/refs/heads/main/course/"
     }
+    
+    # Construct GitHub repository URL - now includes /course prefix
+    github_base_url = f"https://github.com/{repo_info['owner']}/{repo_info['name']}/blob/{repo_info['branch']}/course"
     
     usecases = {}
     domains = set()
@@ -63,6 +66,10 @@ def generate_usecases_json(samples_path):
             # Count lines of code if file exists
             loc = count_lines_of_code(code_file) if os.path.exists(code_file) else 0
             
+            # Construct relative path for GitHub URL
+            relative_code_path = f"samples/{usecase_dir}/{impl_dir}/app.py"
+            github_url = f"{github_base_url}/{relative_code_path}"
+            
             implementation = {
                 "framework": impl_dir,
                 "title": f"{impl_dir.replace('_', ' ').title()} Implementation",
@@ -70,7 +77,8 @@ def generate_usecases_json(samples_path):
                 "code": {
                     "path": f"/samples/{usecase_dir}/{impl_dir}/app.py",
                     "language": "python",
-                    "loc": loc  # Add the LOC field here
+                    "loc": loc,
+                    "githubUrl": github_url
                 },
                 "results": {
                     "path": f"/samples/{usecase_dir}/{results_path}"

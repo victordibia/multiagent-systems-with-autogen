@@ -26,7 +26,7 @@ def calculator(a: float, b: float, operator: str) -> str:
 
 
 async def main() -> None:
-    model_client = OpenAIChatCompletionClient(model="gpt-4o")
+    model_client = OpenAIChatCompletionClient(model="gpt-4o-2024-11-20")
     termination = MaxMessageTermination(
         max_messages=10) | TextMentionTermination("TERMINATE")
     assistant = AssistantAgent(

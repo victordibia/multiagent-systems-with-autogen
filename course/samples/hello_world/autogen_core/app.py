@@ -105,7 +105,7 @@ async def main() -> None:
     tools: List[Tool] = [calculator_tool]
 
     # Create model client
-    model_client = OpenAIChatCompletionClient(model="gpt-4o")
+    model_client = OpenAIChatCompletionClient(model="gpt-4o-2024-11-20")
 
     # Register the tool agent
     await ToolAgent.register(

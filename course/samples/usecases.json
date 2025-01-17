@@ -1,7 +1,7 @@
 {
   "repository": {
-    "owner": "microsoft",
-    "name": "autogen",
+    "owner": "victordibia",
+    "name": "multiagent-systems-with-autogen",
     "branch": "main",
     "base_url": "https://raw.githubusercontent.com/victordibia/multiagent-systems-with-autogen/refs/heads/main/course/"
   },
@@ -9,8 +9,15 @@
     "hello_world": {
       "title": "Hello World Agent",
       "description": "A simple conversational agent that demonstrates basic interaction patterns. Users can explore how different frameworks handle basic message passing and agent communication.",
-      "domains": ["basics", "education"],
-      "tags": ["beginner", "conversation", "single-agent"],
+      "domains": [
+        "basics",
+        "education"
+      ],
+      "tags": [
+        "beginner",
+        "conversation",
+        "single-agent"
+      ],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -19,7 +26,8 @@
           "code": {
             "path": "/samples/hello_world/autogen_agentchat/app.py",
             "language": "python",
-            "loc": 32
+            "loc": 32,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_agentchat/app.py"
           },
           "results": {
             "path": "/samples/hello_world/autogen_agentchat/results.txt"
@@ -32,7 +40,8 @@
           "code": {
             "path": "/samples/hello_world/autogen_core/app.py",
             "language": "python",
-            "loc": 120
+            "loc": 120,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_core/app.py"
           },
           "results": {
             "path": "/samples/hello_world/autogen_core/results.txt"
@@ -45,7 +54,8 @@
           "code": {
             "path": "/samples/hello_world/langgraph/app.py",
             "language": "python",
-            "loc": 76
+            "loc": 76,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/langgraph/app.py"
           },
           "results": {
             "path": "/samples/hello_world/langgraph/results.txt"
@@ -55,7 +65,14 @@
     }
   },
   "metadata": {
-    "domains": ["basics", "education"],
-    "frameworks": ["autogen_agentchat", "autogen_core", "langgraph"]
+    "domains": [
+      "basics",
+      "education"
+    ],
+    "frameworks": [
+      "autogen_agentchat",
+      "autogen_core",
+      "langgraph"
+    ]
   }
 }

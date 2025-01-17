@@ -33,7 +33,7 @@ def calculator(a: float, b: float, operator: str) -> str:
 tools = [calculator]
 tool_node = ToolNode(tools)
 model = ChatOpenAI(
-    model="gpt-4o",
+    model="gpt-4o-2024-11-20",
     temperature=0
 ).bind_tools(tools)
 
