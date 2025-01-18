@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 import subprocess
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -7,12 +8,12 @@ import argparse
 
 def execute_python_file(file_path):
     """
-    Execute a Python file and return its output.
-    Returns tuple of (success, output, execution_time)
+    Execute a Python file and return structured results.
+    Returns dict with execution info and output.
     """
+    start_time = datetime.now()
+    
     try:
-        start_time = datetime.now()
-        
         # Create a new Python process to run the file
         result = subprocess.run(
             [sys.executable, file_path],
@@ -22,28 +23,64 @@ def execute_python_file(file_path):
         )
         
         end_time = datetime.now()
-        execution_duration = end_time - start_time
+        execution_duration = (end_time - start_time).total_seconds()
         
-        # Combine stdout and stderr
-        output = result.stdout
-        if result.stderr:
-            output += "\n=== ERRORS ===\n" + result.stderr
-            
-        success = result.returncode == 0
-        return success, output, execution_duration
+        return {
+            "execution": {
+                "start_time": start_time.isoformat(),
+                "duration_seconds": execution_duration,
+                "success": result.returncode == 0,
+                "timed_out": False,
+                "error": None
+            },
+            "output": {
+                "stdout": result.stdout,
+                "stderr": result.stderr
+            }
+        }
+        
     except subprocess.TimeoutExpired:
-        return False, "Execution timed out after 5 minutes"
+        end_time = datetime.now()
+        execution_duration = (end_time - start_time).total_seconds()
+        return {
+            "execution": {
+                "start_time": start_time.isoformat(),
+                "duration_seconds": execution_duration,
+                "success": False,
+                "timed_out": True,
+                "error": "Execution timed out after 5 minutes"
+            },
+            "output": {
+                "stdout": "",
+                "stderr": "Process timed out after 5 minutes"
+            }
+        }
     except Exception as e:
-        return False, f"Error executing file: {str(e)}"
+        end_time = datetime.now()
+        execution_duration = (end_time - start_time).total_seconds()
+        return {
+            "execution": {
+                "start_time": start_time.isoformat(),
+                "duration_seconds": execution_duration,
+                "success": False,
+                "timed_out": False,
+                "error": str(e)
+            },
+            "output": {
+                "stdout": "",
+                "stderr": f"Error executing file: {str(e)}"
+            }
+        }
 
-def save_results(output_path, content, start_time, execution_duration):
-    """Save execution results to a file with timing information."""
+def save_results(output_path, results):
+    """Save execution results as JSON."""
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    
+    # Convert to results.json instead of results.txt
+    output_path = os.path.splitext(output_path)[0] + '.json'
+    
     with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(f"Start Time: {start_time.strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write(f"Duration: {execution_duration.total_seconds():.2f} seconds\n\n")
-        f.write("=== Output ===\n")
-        f.write(content)
+        json.dump(results, f, indent=2)
 
 def process_implementation(impl_path):
     """Process a single implementation directory."""
@@ -54,11 +91,10 @@ def process_implementation(impl_path):
         return f"Skipped {impl_path}: No app.py found"
     
     print(f"Executing {code_file}...")
-    start_time = datetime.now()
-    success, output, execution_duration = execute_python_file(code_file)
-    save_results(results_path, output, start_time, execution_duration)
+    results = execute_python_file(code_file)
+    save_results(results_path, results)
     
-    status = "Successfully executed" if success else "Execution failed for"
+    status = "Successfully executed" if results["execution"]["success"] else "Execution failed for"
     return f"{status} {code_file}"
 
 def execute_samples(samples_path, max_workers=None):

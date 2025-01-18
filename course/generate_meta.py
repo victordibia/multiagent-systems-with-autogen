@@ -57,9 +57,9 @@ def generate_usecases_json(samples_path):
             if not os.path.isdir(impl_path) or impl_dir.startswith('.'):
                 continue
             
-            # Look for app.py and results.txt
+            # Look for app.py and results.json
             code_file = os.path.join(impl_path, 'app.py')
-            results_path = os.path.join(impl_dir, 'results.txt')
+            results_path = os.path.join(impl_dir, 'results.json')
             
             frameworks.add(impl_dir)  # Add to global frameworks set
             

@@ -7,7 +7,7 @@ name = "interfaceagent"
 authors = [
   { name="Victor Dibia", email="victor.dibia@gmail.com" },
 ]
-description = "Interface Agent: Addressing Tasks by Controlling Interfaces"
+description = "Interface Agent: A light library demonstrating AI Agent Concepts"
 readme = "README.md"
 license = { file="LICENSE" }
 requires-python = ">=3.10"
@@ -28,7 +28,7 @@ dependencies = [
     "openai",
      
 ]
-optional-dependencies = {web = ["fastapi", "uvicorn"]}
+optional-dependencies = {web = ["fastapi", "uvicorn"], memory = ["chromadb"]}
 
 dynamic = ["version"]
 

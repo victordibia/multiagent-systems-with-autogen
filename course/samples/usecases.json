@@ -8,15 +8,14 @@
   "usecases": {
     "hello_world": {
       "title": "Hello World Agent",
-      "description": "A simple conversational agent that demonstrates basic interaction patterns. Users can explore how different frameworks handle basic message passing and agent communication.",
+      "description": "A agent implementation that demonstrates the basic concepts of defining an agent that used a generative AI model and tools to address tasks. Users can explore how different frameworks handle basic message passing and agent communication.",
       "domains": [
         "basics",
         "education"
       ],
       "tags": [
         "beginner",
-        "conversation",
-        "single-agent"
+        "tools"
       ],
       "implementations": [
         {
@@ -30,7 +29,7 @@
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_agentchat/app.py"
           },
           "results": {
-            "path": "/samples/hello_world/autogen_agentchat/results.txt"
+            "path": "/samples/hello_world/autogen_agentchat/results.json"
           }
         },
         {
@@ -44,7 +43,7 @@
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_core/app.py"
           },
           "results": {
-            "path": "/samples/hello_world/autogen_core/results.txt"
+            "path": "/samples/hello_world/autogen_core/results.json"
           }
         },
         {
@@ -58,7 +57,7 @@
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/langgraph/app.py"
           },
           "results": {
-            "path": "/samples/hello_world/langgraph/results.txt"
+            "path": "/samples/hello_world/langgraph/results.json"
           }
         }
       ]
