@@ -63,10 +63,10 @@ def generate_usecases_json(samples_path):
             metadata_path = os.path.join(impl_path, 'metadata.json')
 
             # read metadata if it exists
-            metadata = {}
+            impl_metadata = {}
             if os.path.exists(metadata_path):
                 with open(metadata_path, 'r') as f:
-                    metadata = json.load(f)
+                    impl_metadata = json.load(f)
             
             frameworks.add(impl_dir)  # Add to global frameworks set
             
@@ -86,7 +86,7 @@ def generate_usecases_json(samples_path):
                     "language": "python",
                     "loc": loc,
                     "githubUrl": github_url,
-                    "metadata": metadata
+                    "metadata": impl_metadata
                 },
                 "results": {
                     "path": f"/samples/{usecase_dir}/{results_path}"

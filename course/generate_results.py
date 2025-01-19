@@ -5,6 +5,10 @@ import subprocess
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import argparse
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 def execute_python_file(file_path):
     """
