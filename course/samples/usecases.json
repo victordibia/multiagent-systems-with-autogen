@@ -8,15 +8,9 @@
   "usecases": {
     "hello_world": {
       "title": "Hello World Agent",
-      "description": "A agent implementation that demonstrates the basic concepts of defining an agent that used a generative AI model and tools to address tasks. Users can explore how different frameworks handle basic message passing and agent communication.",
-      "domains": [
-        "basics",
-        "education"
-      ],
-      "tags": [
-        "beginner",
-        "tools"
-      ],
+      "description": "A agent implementation that demonstrates the basic concepts of defining an agent that used a generative AI model and tools to address tasks. Users can compare how different frameworks (AutoGen Core API. AutoGen AgentChat API, LangGraph etc) handle basic message passing, tool use and agent communication.",
+      "domains": ["basics", "education"],
+      "tags": ["beginner", "tools"],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -30,14 +24,8 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the AutoGen AgentChat API",
-              "domains": [
-                "basics",
-                "education"
-              ],
-              "tags": [
-                "beginner",
-                "tools"
-              ]
+              "domains": ["basics", "education"],
+              "tags": ["beginner", "tools"]
             }
           },
           "results": {
@@ -56,14 +44,8 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the AutoGen Core API",
-              "domains": [
-                "basics",
-                "education"
-              ],
-              "tags": [
-                "beginner",
-                "tools"
-              ]
+              "domains": ["basics", "education"],
+              "tags": ["beginner", "tools"]
             }
           },
           "results": {
@@ -82,14 +64,8 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the LangGraph framework",
-              "domains": [
-                "basics",
-                "education"
-              ],
-              "tags": [
-                "beginner",
-                "tools"
-              ]
+              "domains": ["basics", "education"],
+              "tags": ["beginner", "tools"]
             }
           },
           "results": {
@@ -100,14 +76,7 @@
     }
   },
   "metadata": {
-    "domains": [
-      "basics",
-      "education"
-    ],
-    "frameworks": [
-      "autogen_agentchat",
-      "autogen_core",
-      "langgraph"
-    ]
+    "domains": ["basics", "education"],
+    "frameworks": ["autogen_agentchat", "autogen_core", "langgraph"]
   }
 }
