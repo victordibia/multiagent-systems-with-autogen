@@ -8,15 +8,9 @@
   "usecases": {
     "hello_world": {
       "title": "Hello World Agent",
-      "description": "A agent implementation that demonstrates the basic concepts of defining an agent that used a generative AI model and tools to address tasks. Users can explore how different frameworks handle basic message passing and agent communication.",
-      "domains": [
-        "basics",
-        "education"
-      ],
-      "tags": [
-        "beginner",
-        "tools"
-      ],
+      "description": "Built using the AutoGen AgentChat API",
+      "domains": ["basics", "education"],
+      "tags": ["beginner", "tools"],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -26,7 +20,13 @@
             "path": "/samples/hello_world/autogen_agentchat/app.py",
             "language": "python",
             "loc": 32,
-            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_agentchat/app.py"
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_agentchat/app.py",
+            "metadata": {
+              "title": "Hello World Agent",
+              "description": "Built using the AutoGen AgentChat API",
+              "domains": ["basics", "education"],
+              "tags": ["beginner", "tools"]
+            }
           },
           "results": {
             "path": "/samples/hello_world/autogen_agentchat/results.json"
@@ -40,7 +40,13 @@
             "path": "/samples/hello_world/autogen_core/app.py",
             "language": "python",
             "loc": 120,
-            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_core/app.py"
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_core/app.py",
+            "metadata": {
+              "title": "Hello World Agent",
+              "description": "Built using the AutoGen Core API",
+              "domains": ["basics", "education"],
+              "tags": ["beginner", "tools"]
+            }
           },
           "results": {
             "path": "/samples/hello_world/autogen_core/results.json"
@@ -54,7 +60,13 @@
             "path": "/samples/hello_world/langgraph/app.py",
             "language": "python",
             "loc": 76,
-            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/langgraph/app.py"
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/langgraph/app.py",
+            "metadata": {
+              "title": "Hello World Agent",
+              "description": "Built using the LangGraph framework",
+              "domains": ["basics", "education"],
+              "tags": ["beginner", "tools"]
+            }
           },
           "results": {
             "path": "/samples/hello_world/langgraph/results.json"
@@ -64,14 +76,7 @@
     }
   },
   "metadata": {
-    "domains": [
-      "basics",
-      "education"
-    ],
-    "frameworks": [
-      "autogen_agentchat",
-      "autogen_core",
-      "langgraph"
-    ]
+    "domains": ["basics", "education"],
+    "frameworks": ["autogen_agentchat", "autogen_core", "langgraph"]
   }
 }

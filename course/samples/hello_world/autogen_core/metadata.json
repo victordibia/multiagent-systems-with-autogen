@@ -1,0 +1,6 @@
+{
+  "title": "Hello World Agent",
+  "description": "Built using the AutoGen Core API",
+  "domains": ["basics", "education"],
+  "tags": ["beginner", "tools"]
+}

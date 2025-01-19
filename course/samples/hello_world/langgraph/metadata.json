@@ -1,0 +1,6 @@
+{
+  "title": "Hello World Agent",
+  "description": "Built using the LangGraph framework",
+  "domains": ["basics", "education"],
+  "tags": ["beginner", "tools"]
+}
