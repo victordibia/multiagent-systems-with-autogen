@@ -8,9 +8,15 @@
   "usecases": {
     "hello_world": {
       "title": "Hello World Agent",
-      "description": "A agent implementation that demonstrates the basic concepts of defining an agent that used a generative AI model and tools to address tasks. Users can compare how different frameworks (AutoGen Core API. AutoGen AgentChat API, LangGraph etc) handle basic message passing, tool use and agent communication.",
-      "domains": ["basics", "education"],
-      "tags": ["beginner", "tools"],
+      "description": "A agent implementation that demonstrates the basic concepts of defining an agent that used a generative AI model and tools to address tasks. Users can explore how different frameworks handle basic message passing and agent communication.",
+      "domains": [
+        "basics",
+        "education"
+      ],
+      "tags": [
+        "beginner",
+        "tools"
+      ],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -24,8 +30,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the AutoGen AgentChat API",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"]
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ]
             }
           },
           "results": {
@@ -44,8 +56,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the AutoGen Core API",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"]
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ]
             }
           },
           "results": {
@@ -64,8 +82,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the LangGraph framework",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"]
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ]
             }
           },
           "results": {
@@ -73,10 +97,54 @@
           }
         }
       ]
+    },
+    "book_generator": {
+      "title": "Book Generator with Gemini 2.0",
+      "description": "A multi-agent system that demonstrates collaborative story generation using Gemini 2.0. The system consists of two agents: a StoryGeneratorAgent that creates structured story content and a BookGeneratorAgent that handles image generation and PDF compilation. Features include structured JSON communication between agents, integration of non-openai models (Gemini 2.0), control flow routing using topics and messages and integration of tools (e.g. image generation, PDF generation).",
+      "domains": [
+        "media"
+      ],
+      "tags": [
+        "gemini"
+      ],
+      "implementations": [
+        {
+          "framework": "autogen_core",
+          "title": "Autogen Core Implementation",
+          "description": "Implementation using autogen_core",
+          "code": {
+            "path": "/samples/book_generator/autogen_core/app.py",
+            "language": "python",
+            "loc": 181,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/book_generator/autogen_core/app.py",
+            "metadata": {
+              "title": "Book Generator with Gemini 2.0",
+              "description": "Built using the AutoGen Core API",
+              "domains": [
+                "multiagent"
+              ],
+              "tags": [
+                "tools"
+              ]
+            }
+          },
+          "results": {
+            "path": "/samples/book_generator/autogen_core/results.json"
+          }
+        }
+      ]
     }
   },
   "metadata": {
-    "domains": ["basics", "education"],
-    "frameworks": ["autogen_agentchat", "autogen_core", "langgraph"]
+    "domains": [
+      "basics",
+      "education",
+      "media"
+    ],
+    "frameworks": [
+      "autogen_agentchat",
+      "autogen_core",
+      "langgraph"
+    ]
   }
 }

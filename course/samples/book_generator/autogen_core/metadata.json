@@ -1,0 +1,6 @@
+{
+  "title": "Book Generator with Gemini 2.0",
+  "description": "Built using the AutoGen Core API",
+  "domains": ["multiagent"],
+  "tags": ["tools"]
+}

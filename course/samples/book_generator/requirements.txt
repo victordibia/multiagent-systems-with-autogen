@@ -1,0 +1,3 @@
+fpdf  
+google-genai
+openai

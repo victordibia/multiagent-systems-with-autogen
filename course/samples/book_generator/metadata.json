@@ -1,0 +1,7 @@
+{
+  "title": "Book Generator with Gemini 2.0",
+  "description": "A multi-agent system that demonstrates collaborative story generation using Gemini 2.0. The system consists of two agents: a StoryGeneratorAgent that creates structured story content and a BookGeneratorAgent that handles image generation and PDF compilation. Features include structured JSON communication between agents, integration of non-openai models (Gemini 2.0), control flow routing using topics and messages and integration of tools (e.g. image generation, PDF generation).",
+  "domains": ["media"],
+  "tags": ["gemini"],
+  "difficulty": "intermediate"
+}
