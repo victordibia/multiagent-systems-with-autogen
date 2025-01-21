@@ -99,16 +99,17 @@ def generate_pdf_report(
 
 
 
-def generate_images(query: str, image_size: str = "1024x1024") -> List[str]:
+def generate_images(query: str, output_dir: Path = None, image_size: str = "1024x1024") -> List[str]:
     """
     Generate and save images based on a text description using OpenAI's DALL-E model.
     
     Args:
         query: A natural language description of the image to be generated
+        output_dir: Directory to save the images (default: current directory)
         image_size: The size of the image to be generated (default: "1024x1024")
     
     Returns:
-        List[str]: A list of filenames for the saved images
+        List[str]: A list of paths for the saved images
     
     Note:
         Requires a valid OpenAI API key set in your environment variables
@@ -127,13 +128,14 @@ def generate_images(query: str, image_size: str = "1024x1024") -> List[str]:
 
     saved_files = []
  
-
     # Process the response
     if response.data:
         for image_data in response.data:
             # Generate a unique filename
-            file_name = str(uuid.uuid4()) + ".png"
-            file_path = Path(file_name)
+            file_name = f"{uuid.uuid4()}.png"
+            
+            # Use output_dir if provided, otherwise use current directory
+            file_path = Path(output_dir) / file_name if output_dir else Path(file_name)
 
             base64_str = image_data.b64_json 
             img = Image.open(io.BytesIO(base64.decodebytes(bytes(base64_str, "utf-8")))) 
@@ -141,9 +143,9 @@ def generate_images(query: str, image_size: str = "1024x1024") -> List[str]:
             # Save the image to a file 
             img.save(file_path)  
 
-            saved_files.append(file_name)
+            saved_files.append(str(file_path))
              
     else:
         print("No image data found in the response!")
 
-    return saved_files 
+    return saved_files

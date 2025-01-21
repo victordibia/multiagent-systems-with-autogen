@@ -1,0 +1,13 @@
+{
+  "execution": {
+    "start_time": "2025-01-21T12:13:08.699249",
+    "duration_seconds": 33.724831,
+    "success": true,
+    "timed_out": false,
+    "error": null
+  },
+  "output": {
+    "stdout": "------------------------------------------------------------\n\nStoryGeneratorAgent: Received story request: Generate a children's story books on the wonders of the amazon rain forest\n\nGenerated story structure with 2 sections\n------------------------------------------------------------\n------------------------------------------------------------\n\nBookGeneratorAgent: Received book content with 2 sections\n------------------------------------------------------------\nGenerated image for prompt: A vibrant and colorful scene of the Amazon rainforest with tall trees, sunlight filtering through the leaves, colorful butterflies, and a variety of exotic plants.\n------------------------------------------------------------\n------------------------------------------------------------\nGenerated image for prompt: A playful monkey named Mika is swinging from a tree, with a toucan nearby, a sloth in the distance, pink dolphins in a river, and an anaconda on a rock.\n------------------------------------------------------------\nPDF report saved as /var/folders/wg/hgs_dt8n5lbd3gx3pq7k6lym0000gn/T/story_generator/story_book.pdf\n\nGenerated files in /var/folders/wg/hgs_dt8n5lbd3gx3pq7k6lym0000gn/T/story_generator:\n- PDF: /var/folders/wg/hgs_dt8n5lbd3gx3pq7k6lym0000gn/T/story_generator/story_book.pdf\n- JSON: /var/folders/wg/hgs_dt8n5lbd3gx3pq7k6lym0000gn/T/story_generator/sections_with_images.json\n------------------------------------------------------------\n",
+    "stderr": ""
+  }
+}

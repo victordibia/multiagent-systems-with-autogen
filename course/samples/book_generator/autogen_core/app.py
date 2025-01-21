@@ -115,10 +115,13 @@ class BookGeneratorAgent(RoutedAgent):
         """Generate image using Gemini and return the path"""
         try:
             print("-" * 60)
-            images = generate_images(prompt)
+            images = generate_images(prompt, output_dir=OUTPUT_DIR)  # Pass temp dir to generator
+            image_path = images[0] if images else ""
+            if image_path:
+                print(f"Generated image at: {image_path}")
             print(f"Generated image for prompt: {prompt}")
             print("-" * 60)
-            return images[0] if images else ""
+            return image_path
         except Exception as e:
             print(f"Error generating image: {str(e)}")
             return ""

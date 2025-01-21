@@ -86,13 +86,17 @@ def save_results(output_path, results):
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2)
 
-def process_implementation(impl_path):
+def process_implementation(impl_path, regenerate=False):
     """Process a single implementation directory."""
     code_file = os.path.join(impl_path, 'app.py')
-    results_path = os.path.join(impl_path, 'results.txt')
+    results_path = os.path.join(impl_path, 'results.json')
     
     if not os.path.exists(code_file):
         return f"Skipped {impl_path}: No app.py found"
+
+    # Check if results already exist and regenerate flag is false
+    if os.path.exists(results_path) and not regenerate:
+        return f"Skipped {code_file}: Results already exist"
     
     print(f"Executing {code_file}...")
     results = execute_python_file(code_file)
@@ -101,11 +105,12 @@ def process_implementation(impl_path):
     status = "Successfully executed" if results["execution"]["success"] else "Execution failed for"
     return f"{status} {code_file}"
 
-def execute_samples(samples_path, max_workers=None):
+def execute_samples(samples_path, regenerate=False, max_workers=None):
     """
     Execute all app.py files found in the samples directory structure.
     Args:
         samples_path: Path to the samples directory
+        regenerate: If True, always regenerate results even if they exist
         max_workers: Maximum number of concurrent executions (None for default)
     """
     print(f"Starting sample execution in {samples_path}")
@@ -125,8 +130,10 @@ def execute_samples(samples_path, max_workers=None):
     
     # Execute implementations in parallel
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        future_to_path = {executor.submit(process_implementation, path): path 
-                         for path in impl_paths}
+        future_to_path = {
+            executor.submit(process_implementation, path, regenerate): path 
+            for path in impl_paths
+        }
         
         for future in as_completed(future_to_path):
             result = future.result()
@@ -137,6 +144,8 @@ if __name__ == "__main__":
     parser.add_argument('samples_path', help='Path to the samples directory')
     parser.add_argument('--workers', type=int, default=None, 
                        help='Maximum number of concurrent executions')
+    parser.add_argument('--regenerate', action='store_true', default=False,
+                       help='Regenerate results even if they already exist')
     
     args = parser.parse_args()
     
@@ -144,4 +153,4 @@ if __name__ == "__main__":
         print(f"Error: Path {args.samples_path} does not exist")
         sys.exit(1)
     
-    execute_samples(args.samples_path, args.workers)
+    execute_samples(args.samples_path, args.regenerate, args.workers)
