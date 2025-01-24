@@ -1,8 +1,11 @@
-# pip install -U autogen-agentchat autogen-ext[openai]
+# create a virtual env e.g conda create -n autogen python=3.12
+# pip install -U autogen-agentchat autogen-ext[openai,web-surfer] 
+# playwright install 
+
 import asyncio
 from autogen_agentchat.agents import AssistantAgent, UserProxyAgent
 from autogen_agentchat.conditions import MaxMessageTermination, TextMentionTermination
-from autogen_agentchat.teams import RoundRobinGroupChat, SelectorGroupChat
+from autogen_agentchat.teams import SelectorGroupChat
 from autogen_agentchat.ui import Console
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_ext.agents.web_surfer import MultimodalWebSurfer
@@ -40,10 +43,8 @@ async def main() -> None:
         selector_prompt=selector_prompt,
         model_client=OpenAIChatCompletionClient(model="gpt-4o-mini"), termination_condition=termination)
 
-    await Console(team.run_stream(task="Who is Francois Cholley? Is he a researcher? Provide a detailed list of his recent research papers"))
+    await Console(team.run_stream(task="Who is Victor Dibia and what papers has we written?"))
 
     await websurfer_agent.close()
-
-# Find the best bargains for NVIDIA A6000 gpus and give me a comparison on price with links
 
 asyncio.run(main()) 
