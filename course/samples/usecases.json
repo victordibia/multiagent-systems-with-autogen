@@ -98,6 +98,44 @@
         }
       ]
     },
+    "interface_agent": {
+      "title": "Browser Interface Agents",
+      "description": "A multi-agent system that addresses tasks by controlling/driving a web browser, similar to the OpenAI Operator agent. The AutoGen implementation includes 3 agents - a WebSurfer agent that controls the browser, an AssistantAgent that verifies progress, and a UserAgent that will request human feedback when necessary.",
+      "domains": [
+        "media"
+      ],
+      "tags": [
+        "browser",
+        "operator"
+      ],
+      "implementations": [
+        {
+          "framework": "autogen_agentchat",
+          "title": "Autogen Agentchat Implementation",
+          "description": "Implementation using autogen_agentchat",
+          "code": {
+            "path": "/samples/interface_agent/autogen_agentchat/app.py",
+            "language": "python",
+            "loc": 39,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/interface_agent/autogen_agentchat/app.py",
+            "metadata": {
+              "title": "Browser Interface Agents",
+              "description": "Built using the AutoGen AgentChat API, includes 3 agents - a WebSurfer agent that addresses tasks by controlling/driving a web browser, an AssistantAgent that verifies progress and a UserAgent that will request human feedback when necessary.",
+              "domains": [
+                "browser",
+                "interfaceagent"
+              ],
+              "tags": [
+                "tools"
+              ]
+            }
+          },
+          "results": {
+            "path": "/samples/interface_agent/autogen_agentchat/results.json"
+          }
+        }
+      ]
+    },
     "book_generator": {
       "title": "Book Generator with Gemini 2.0",
       "description": "A multi-agent system that demonstrates collaborative story generation using Gemini 2.0. The system consists of two agents: a StoryGeneratorAgent that creates structured story content and a BookGeneratorAgent that handles image generation and PDF compilation. Features include structured JSON communication between agents, integration of non-openai models (Gemini 2.0), control flow routing using topics and messages and integration of tools (e.g. image generation, PDF generation).",
@@ -115,7 +153,7 @@
           "code": {
             "path": "/samples/book_generator/autogen_core/app.py",
             "language": "python",
-            "loc": 181,
+            "loc": 141,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/book_generator/autogen_core/app.py",
             "metadata": {
               "title": "Book Generator with Gemini 2.0",
