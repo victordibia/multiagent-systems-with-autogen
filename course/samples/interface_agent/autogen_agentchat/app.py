@@ -43,7 +43,7 @@ async def main() -> None:
         selector_prompt=selector_prompt,
         model_client=OpenAIChatCompletionClient(model="gpt-4o-mini"), termination_condition=termination)
 
-    await Console(team.run_stream(task="Who is Victor Dibia and what papers has we written?"))
+    await Console(team.run_stream(task="book me a flight to sand diego for next week"))
 
     await websurfer_agent.close()
 

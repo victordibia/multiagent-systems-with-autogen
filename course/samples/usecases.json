@@ -106,7 +106,8 @@
       ],
       "tags": [
         "browser",
-        "operator"
+        "operator",
+        "human-in-the-loop"
       ],
       "implementations": [
         {
@@ -116,11 +117,12 @@
           "code": {
             "path": "/samples/interface_agent/autogen_agentchat/app.py",
             "language": "python",
-            "loc": 39,
+            "loc": 40,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/interface_agent/autogen_agentchat/app.py",
             "metadata": {
               "title": "Browser Interface Agents",
               "description": "Built using the AutoGen AgentChat API, includes 3 agents - a WebSurfer agent that addresses tasks by controlling/driving a web browser, an AssistantAgent that verifies progress and a UserAgent that will request human feedback when necessary.",
+              "blog": "https://newsletter.victordibia.com/p/how-to-build-your-own-openai-operator",
               "domains": [
                 "browser",
                 "interfaceagent"

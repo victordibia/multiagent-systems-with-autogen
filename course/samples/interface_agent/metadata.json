@@ -2,6 +2,6 @@
   "title": "Browser Interface Agents",
   "description": "A multi-agent system that addresses tasks by controlling/driving a web browser, similar to the OpenAI Operator agent. The AutoGen implementation includes 3 agents - a WebSurfer agent that controls the browser, an AssistantAgent that verifies progress, and a UserAgent that will request human feedback when necessary.",
   "domains": ["media"],
-  "tags": ["browser", "operator"],
+  "tags": ["browser", "operator", "human-in-the-loop"],
   "difficulty": "intermediate"
 }

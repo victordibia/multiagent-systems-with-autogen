@@ -1,6 +1,7 @@
 {
   "title": "Browser Interface Agents",
   "description": "Built using the AutoGen AgentChat API, includes 3 agents - a WebSurfer agent that addresses tasks by controlling/driving a web browser, an AssistantAgent that verifies progress and a UserAgent that will request human feedback when necessary.",
+  "blog": "https://newsletter.victordibia.com/p/how-to-build-your-own-openai-operator",
   "domains": ["browser", "interfaceagent"],
   "tags": ["tools"]
 }
