@@ -1,3 +1,7 @@
+# pip install -U autogen-core
+# Simple Implementation of Sales Multi-Agent System using a Router Pattern
+# A Router Agent receives user messages and routes them to specialized agents
+
 from dataclasses import dataclass
 from typing import List, Dict
 import asyncio

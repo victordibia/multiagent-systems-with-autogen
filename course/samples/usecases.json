@@ -100,9 +100,9 @@
     },
     "router_pattern": {
       "title": "Router Pattern",
-      "description": "Many multiagent systems are designed using a router pattern - a user request is **_triaged_** by a router that then delegates the request to an appropriate agent. Consider a design where individual agents for a customer service system have been designed to address specific tasks - AccountAgent, FAQAgent, , each with domain specific knowledge and access to different data sources. A RouterAgent can be designed to receive user requests and route them to the appropriate agent based on the request type. ",
+      "description": "A simple implementation of a Sales Multi-Agent System using a Router Pattern.A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent",
       "domains": [
-        "customer-service"
+        "salese"
       ],
       "tags": [
         "router-pattern",
@@ -116,16 +116,17 @@
           "code": {
             "path": "/samples/router_pattern/autogen_core/app.py",
             "language": "python",
-            "loc": 160,
+            "loc": 163,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/router_pattern/autogen_core/app.py",
             "metadata": {
-              "title": "Book Generator with Gemini 2.0",
-              "description": "Built using the AutoGen Core API",
+              "title": "Router Pattern",
+              "description": "A simple implementation of a Sales Multi-Agent System using a Router Pattern.A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent",
               "domains": [
                 "multiagent"
               ],
               "tags": [
-                "tools"
+                "router-pattern",
+                "pattern"
               ]
             }
           },
@@ -215,9 +216,9 @@
   "metadata": {
     "domains": [
       "basics",
-      "customer-service",
       "education",
-      "media"
+      "media",
+      "salese"
     ],
     "frameworks": [
       "autogen_agentchat",

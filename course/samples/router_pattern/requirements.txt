@@ -1,4 +1,1 @@
-fpdf  
-google-genai 
-autogen-core
-autogen-ext[openai]
+autogen-core 

@@ -1,6 +1,6 @@
 {
-  "title": "Book Generator with Gemini 2.0",
-  "description": "Built using the AutoGen Core API",
+  "title": "Router Pattern",
+  "description": "A simple implementation of a Sales Multi-Agent System using a Router Pattern.A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent",
   "domains": ["multiagent"],
-  "tags": ["tools"]
+  "tags": ["router-pattern", "pattern"]
 }
