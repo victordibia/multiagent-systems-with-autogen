@@ -1,0 +1,13 @@
+{
+  "execution": {
+    "start_time": "2025-01-28T15:28:00.568517",
+    "duration_seconds": 4.583611,
+    "success": true,
+    "timed_out": false,
+    "error": null
+  },
+  "output": {
+    "stdout": "\n>>> User: I'm interested in learning more about your products\n>>> [RouterAgent] Delegating to ProductInfoAgent for product information\n>>> [ProductInfoAgent] Providing specs information for product default\n--------------------------------\n\n>>> User: What's the price for 100 units?\n>>> [RouterAgent] Delegating to QuotationAgent for pricing request\n>>> [QuotationAgent] Generating quote for default, quantity: 1\n--------------------------------\n\n>>> User: Can you compare Model A vs Model B?\n>>> [RouterAgent] Delegating to ProductInfoAgent for product information\n>>> [ProductInfoAgent] Providing specs information for product default\n--------------------------------\n\n>>> User: Please schedule a follow-up meeting\n>>> [RouterAgent] Delegating to SalesFollowupAgent for follow-up task\n>>> [SalesFollowupAgent] Scheduling general task (Priority: medium)\n--------------------------------\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "title": "Router Pattern",
+  "description": "Many multiagent systems are designed using a router pattern - a user request is **_triaged_** by a router that then delegates the request to an appropriate agent. Consider a design where individual agents for a customer service system have been designed to address specific tasks - AccountAgent, FAQAgent, , each with domain specific knowledge and access to different data sources. A RouterAgent can be designed to receive user requests and route them to the appropriate agent based on the request type. ",
+  "domains": ["customer-service"],
+  "tags": ["router-pattern", "pattern"],
+  "difficulty": "intermediate"
+}

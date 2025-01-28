@@ -98,6 +98,43 @@
         }
       ]
     },
+    "router_pattern": {
+      "title": "Router Pattern",
+      "description": "Many multiagent systems are designed using a router pattern - a user request is **_triaged_** by a router that then delegates the request to an appropriate agent. Consider a design where individual agents for a customer service system have been designed to address specific tasks - AccountAgent, FAQAgent, , each with domain specific knowledge and access to different data sources. A RouterAgent can be designed to receive user requests and route them to the appropriate agent based on the request type. ",
+      "domains": [
+        "customer-service"
+      ],
+      "tags": [
+        "router-pattern",
+        "pattern"
+      ],
+      "implementations": [
+        {
+          "framework": "autogen_core",
+          "title": "Autogen Core Implementation",
+          "description": "Implementation using autogen_core",
+          "code": {
+            "path": "/samples/router_pattern/autogen_core/app.py",
+            "language": "python",
+            "loc": 160,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/router_pattern/autogen_core/app.py",
+            "metadata": {
+              "title": "Book Generator with Gemini 2.0",
+              "description": "Built using the AutoGen Core API",
+              "domains": [
+                "multiagent"
+              ],
+              "tags": [
+                "tools"
+              ]
+            }
+          },
+          "results": {
+            "path": "/samples/router_pattern/autogen_core/results.json"
+          }
+        }
+      ]
+    },
     "interface_agent": {
       "title": "Browser Interface Agents",
       "description": "A multi-agent system that addresses tasks by controlling/driving a web browser, similar to the OpenAI Operator agent. The AutoGen implementation includes 3 agents - a WebSurfer agent that controls the browser, an AssistantAgent that verifies progress, and a UserAgent that will request human feedback when necessary.",
@@ -178,6 +215,7 @@
   "metadata": {
     "domains": [
       "basics",
+      "customer-service",
       "education",
       "media"
     ],

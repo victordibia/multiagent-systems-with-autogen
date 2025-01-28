@@ -141,7 +141,7 @@ def execute_samples(samples_path, regenerate=False, max_workers=None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Execute sample Python files and save results')
-    parser.add_argument('samples_path', help='Path to the samples directory')
+    parser.add_argument('samples_path', help='Path to the samples directory', default='course/samples')
     parser.add_argument('--workers', type=int, default=None, 
                        help='Maximum number of concurrent executions')
     parser.add_argument('--regenerate', action='store_true', default=False,
