@@ -1,6 +1,6 @@
 {
   "title": "Router Pattern",
-  "description": "A simple implementation of a Sales Multi-Agent System using a Router Pattern.A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent",
+  "description": "A mock implementation of a Sales Multi-Agent System using a Router Pattern. A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent.",
   "domains": ["multiagent"],
   "tags": ["router-pattern", "pattern"]
 }

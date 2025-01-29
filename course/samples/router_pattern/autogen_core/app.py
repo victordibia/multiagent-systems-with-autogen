@@ -1,5 +1,5 @@
 # pip install -U autogen-core
-# Simple Implementation of Sales Multi-Agent System using a Router Pattern
+# Mock implementation of Sales Multi-Agent System using a Router Pattern
 # A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent
 
 from dataclasses import dataclass
