@@ -1,208 +1,614 @@
 {
-  "id": "gallery_default_victor",
-  "name": "VD Teams",
-  "url": "https://raw.githubusercontent.com/victordibia/multiagent-systems-with-autogen/refs/heads/main/research/components/gallery/base.json",
+  "id": "gallery_default",
+  "name": "Default Component Gallery",
+  "url": null,
   "metadata": {
-    "author": "Victor Dibia",
-    "created_at": "2024-12-12T00:00:00Z",
-    "updated_at": "2024-12-12T00:00:00Z",
+    "author": "AutoGen Team",
+    "created_at": "2025-01-29T22:13:58.687387",
+    "updated_at": "2025-01-29T22:13:58.715730",
     "version": "1.0.0",
-    "description": "A sample gallery containing basic components for human-in-loop conversations",
-    "tags": ["human-in-loop", "assistant"],
+    "description": "A default gallery containing several teams and agents.",
+    "tags": ["human-in-loop", "assistant", "web agents"],
     "license": "MIT",
-    "category": "conversation"
+    "homepage": null,
+    "category": "conversation",
+    "last_synced": null
   },
   "items": {
     "teams": [
       {
+        "provider": "autogen_agentchat.teams.RoundRobinGroupChat",
         "component_type": "team",
-        "description": "A team with an assistant agent and a user agent to enable human-in-loop task completion in a round-robin fashion",
-        "name": "huma_in_loop_team",
-        "participants": [
-          {
-            "component_type": "agent",
-            "description": "An assistant agent that can help users complete tasks",
-            "name": "assistant_agent",
-            "agent_type": "AssistantAgent",
-            "system_message": "You are a helpful assistant. Solve tasks carefully. You also have a calculator tool which you can use if needed. When the task is done respond with TERMINATE.",
-            "model_client": {
-              "component_type": "model",
-              "description": "A GPT-4o mini model",
-              "model": "gpt-4o-mini",
-              "model_type": "OpenAIChatCompletionClient"
-            },
-            "tools": [
-              {
-                "component_type": "tool",
-                "name": "calculator",
-                "description": "A simple calculator that performs basic arithmetic operations between two numbers",
-                "content": "def calculator(a: float, b: float, operator: str) -> str:\n    try:\n        if operator == '+':\n            return str(a + b)\n        elif operator == '-':\n            return str(a - b)\n        elif operator == '*':\n            return str(a * b)\n        elif operator == '/':\n            if b == 0:\n                return 'Error: Division by zero'\n            return str(a / b)\n        else:\n            return 'Error: Invalid operator. Please use +, -, *, or /'\n    except Exception as e:\n        return f'Error: {str(e)}'",
-                "tool_type": "PythonFunction"
+        "version": 1,
+        "component_version": 1,
+        "description": "A single AssistantAgent (with a calculator tool) in a RoundRobinGroupChat team. ",
+        "label": "Deafult Team",
+        "config": {
+          "participants": [
+            {
+              "provider": "autogen_agentchat.agents.AssistantAgent",
+              "component_type": "agent",
+              "version": 1,
+              "component_version": 1,
+              "description": "An agent that provides assistance with tool use.",
+              "label": "AssistantAgent",
+              "config": {
+                "name": "assistant_agent",
+                "model_client": {
+                  "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+                  "component_type": "model",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "Chat completion client for OpenAI hosted models.",
+                  "label": "OpenAIChatCompletionClient",
+                  "config": {
+                    "model": "gpt-4o-mini"
+                  }
+                },
+                "tools": [
+                  {
+                    "provider": "autogen_core.tools.FunctionTool",
+                    "component_type": "tool",
+                    "version": 1,
+                    "component_version": 1,
+                    "description": "Create custom tools by wrapping standard Python functions.",
+                    "label": "FunctionTool",
+                    "config": {
+                      "source_code": "def calculator(a: float, b: float, operator: str) -> str:\n    try:\n        if operator == '+':\n            return str(a + b)\n        elif operator == '-':\n            return str(a - b)\n        elif operator == '*':\n            return str(a * b)\n        elif operator == '/':\n            if b == 0:\n                return 'Error: Division by zero'\n            return str(a / b)\n        else:\n            return 'Error: Invalid operator. Please use +, -, *, or /'\n    except Exception as e:\n        return f'Error: {str(e)}'\n",
+                      "name": "calculator",
+                      "description": "A simple calculator that performs basic arithmetic operations",
+                      "global_imports": [],
+                      "has_cancellation_support": false
+                    }
+                  }
+                ],
+                "handoffs": [],
+                "model_context": {
+                  "provider": "autogen_core.model_context.UnboundedChatCompletionContext",
+                  "component_type": "chat_completion_context",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "An unbounded chat completion context that keeps a view of the all the messages.",
+                  "label": "UnboundedChatCompletionContext",
+                  "config": {}
+                },
+                "description": "An agent that provides assistance with ability to use tools.",
+                "system_message": "You are a helpful assistant. Solve tasks carefully. When done, say TERMINATE.",
+                "model_client_stream": false,
+                "reflect_on_tool_use": false,
+                "tool_call_summary_format": "{result}"
               }
-            ]
-          },
-          {
-            "component_type": "agent",
-            "description": "A user agent that is driven by a human user",
-            "name": "user_agent",
-            "agent_type": "UserProxyAgent",
-            "tools": []
-          }
-        ],
-        "team_type": "RoundRobinGroupChat",
-        "termination_condition": {
-          "description": "Terminate the conversation when the user mentions 'TERMINATE' or after 10 messages",
-          "component_type": "termination",
-          "termination_type": "CombinationTermination",
-          "operator": "or",
-          "conditions": [
-            {
-              "component_type": "termination",
-              "description": "Terminate the conversation when the user mentions 'TERMINATE'",
-              "termination_type": "TextMentionTermination",
-              "text": "TERMINATE"
-            },
-            {
-              "component_type": "termination",
-              "description": "Terminate the conversation after 10 messages",
-              "termination_type": "MaxMessageTermination",
-              "max_messages": 10
             }
-          ]
+          ],
+          "termination_condition": {
+            "provider": "autogen_agentchat.base.OrTerminationCondition",
+            "component_type": "termination",
+            "version": 1,
+            "component_version": 1,
+            "label": "OrTerminationCondition",
+            "config": {
+              "conditions": [
+                {
+                  "provider": "autogen_agentchat.conditions.TextMentionTermination",
+                  "component_type": "termination",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "Terminate the conversation if a specific text is mentioned.",
+                  "label": "TextMentionTermination",
+                  "config": {
+                    "text": "TERMINATE"
+                  }
+                },
+                {
+                  "provider": "autogen_agentchat.conditions.MaxMessageTermination",
+                  "component_type": "termination",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "Terminate the conversation after a maximum number of messages have been exchanged.",
+                  "label": "MaxMessageTermination",
+                  "config": {
+                    "max_messages": 10
+                  }
+                }
+              ]
+            }
+          }
         }
       },
       {
-        "version": "1.0.0",
+        "provider": "autogen_agentchat.teams.RoundRobinGroupChat",
         "component_type": "team",
-        "name": "websurfer_team",
-        "participants": [
-          {
-            "component_type": "agent",
-            "name": "websurfer_agent",
-            "agent_type": "MultimodalWebSurfer",
-            "model_client": {
-              "component_type": "model",
-              "model": "gpt-4o-2024-08-06",
-              "model_type": "OpenAIChatCompletionClient"
+        "version": 1,
+        "component_version": 1,
+        "description": "A single AssistantAgent and a UserProxyAgent in a RoundRobinGroupChat team. ",
+        "label": "Human in the loop team",
+        "config": {
+          "participants": [
+            {
+              "provider": "autogen_agentchat.agents.AssistantAgent",
+              "component_type": "agent",
+              "version": 1,
+              "component_version": 1,
+              "description": "An agent that provides assistance with tool use.",
+              "label": "AssistantAgent",
+              "config": {
+                "name": "assistant_agent",
+                "model_client": {
+                  "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+                  "component_type": "model",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "Chat completion client for OpenAI hosted models.",
+                  "label": "OpenAIChatCompletionClient",
+                  "config": {
+                    "model": "gpt-4o-mini"
+                  }
+                },
+                "tools": [
+                  {
+                    "provider": "autogen_core.tools.FunctionTool",
+                    "component_type": "tool",
+                    "version": 1,
+                    "component_version": 1,
+                    "description": "Create custom tools by wrapping standard Python functions.",
+                    "label": "FunctionTool",
+                    "config": {
+                      "source_code": "def calculator(a: float, b: float, operator: str) -> str:\n    try:\n        if operator == '+':\n            return str(a + b)\n        elif operator == '-':\n            return str(a - b)\n        elif operator == '*':\n            return str(a * b)\n        elif operator == '/':\n            if b == 0:\n                return 'Error: Division by zero'\n            return str(a / b)\n        else:\n            return 'Error: Invalid operator. Please use +, -, *, or /'\n    except Exception as e:\n        return f'Error: {str(e)}'\n",
+                      "name": "calculator",
+                      "description": "A simple calculator that performs basic arithmetic operations",
+                      "global_imports": [],
+                      "has_cancellation_support": false
+                    }
+                  }
+                ],
+                "handoffs": [],
+                "model_context": {
+                  "provider": "autogen_core.model_context.UnboundedChatCompletionContext",
+                  "component_type": "chat_completion_context",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "An unbounded chat completion context that keeps a view of the all the messages.",
+                  "label": "UnboundedChatCompletionContext",
+                  "config": {}
+                },
+                "description": "An agent that provides assistance with ability to use tools.",
+                "system_message": "You are a helpful assistant. Solve tasks carefully. When done, say TERMINATE.",
+                "model_client_stream": false,
+                "reflect_on_tool_use": false,
+                "tool_call_summary_format": "{result}"
+              }
             },
-            "headless": true,
-            "logs_dir": "logs",
-            "downloads_folder": "logs",
-            "to_save_screenshots": false,
-            "use_ocr": false,
-            "animate_actions": false,
-            "tools": []
+            {
+              "provider": "autogen_agentchat.agents.UserProxyAgent",
+              "component_type": "agent",
+              "version": 1,
+              "component_version": 1,
+              "description": "An agent that can represent a human user through an input function.",
+              "label": "UserProxyAgent",
+              "config": {
+                "name": "user_proxy",
+                "description": "a human user that should be consulted only when the assistant_agent is unable to verify the information provided by the websurfer_agent"
+              }
+            }
+          ],
+          "termination_condition": {
+            "provider": "autogen_agentchat.base.OrTerminationCondition",
+            "component_type": "termination",
+            "version": 1,
+            "component_version": 1,
+            "label": "OrTerminationCondition",
+            "config": {
+              "conditions": [
+                {
+                  "provider": "autogen_agentchat.conditions.TextMentionTermination",
+                  "component_type": "termination",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "Terminate the conversation if a specific text is mentioned.",
+                  "label": "TextMentionTermination",
+                  "config": {
+                    "text": "TERMINATE"
+                  }
+                },
+                {
+                  "provider": "autogen_agentchat.conditions.MaxMessageTermination",
+                  "component_type": "termination",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "Terminate the conversation after a maximum number of messages have been exchanged.",
+                  "label": "MaxMessageTermination",
+                  "config": {
+                    "max_messages": 10
+                  }
+                }
+              ]
+            }
           }
-        ],
-        "team_type": "RoundRobinGroupChat",
-        "termination_condition": {
-          "component_type": "termination",
-          "termination_type": "MaxMessageTermination",
-          "max_messages": 5
+        }
+      },
+      {
+        "provider": "autogen_agentchat.teams.SelectorGroupChat",
+        "component_type": "team",
+        "version": 1,
+        "component_version": 1,
+        "description": "A group chat team that have participants takes turn to publish a message\n    to all, using a ChatCompletion model to select the next speaker after each message.",
+        "label": "Web Agent Team (Operator)",
+        "config": {
+          "participants": [
+            {
+              "provider": "autogen_ext.agents.web_surfer.MultimodalWebSurfer",
+              "component_type": "agent",
+              "version": 1,
+              "component_version": 1,
+              "description": "MultimodalWebSurfer is a multimodal agent that acts as a web surfer that can search the web and visit web pages.",
+              "label": "MultimodalWebSurfer",
+              "config": {
+                "name": "websurfer_agent",
+                "model_client": {
+                  "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+                  "component_type": "model",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "Chat completion client for OpenAI hosted models.",
+                  "label": "OpenAIChatCompletionClient",
+                  "config": {
+                    "model": "gpt-4o-mini"
+                  }
+                },
+                "description": "an agent that solves tasks by browsing the web",
+                "headless": true,
+                "start_page": "https://www.bing.com/",
+                "animate_actions": false,
+                "to_save_screenshots": false,
+                "use_ocr": false,
+                "to_resize_viewport": true
+              }
+            },
+            {
+              "provider": "autogen_agentchat.agents.AssistantAgent",
+              "component_type": "agent",
+              "version": 1,
+              "component_version": 1,
+              "description": "An agent that provides assistance with tool use.",
+              "label": "AssistantAgent",
+              "config": {
+                "name": "assistant_agent",
+                "model_client": {
+                  "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+                  "component_type": "model",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "Chat completion client for OpenAI hosted models.",
+                  "label": "OpenAIChatCompletionClient",
+                  "config": {
+                    "model": "gpt-4o-mini"
+                  }
+                },
+                "tools": [],
+                "handoffs": [],
+                "model_context": {
+                  "provider": "autogen_core.model_context.UnboundedChatCompletionContext",
+                  "component_type": "chat_completion_context",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "An unbounded chat completion context that keeps a view of the all the messages.",
+                  "label": "UnboundedChatCompletionContext",
+                  "config": {}
+                },
+                "description": "an agent that verifies and summarizes information",
+                "system_message": "You are a task verification assistant who is working with a web surfer agent to solve tasks. At each point, check if the task has been completed as requested by the user. If the websurfer_agent responds and the task has not yet been completed, respond with what is left to do and then say 'keep going'. If and only when the task has been completed, summarize and present a final answer that directly addresses the user task in detail and then respond with TERMINATE.",
+                "model_client_stream": false,
+                "reflect_on_tool_use": false,
+                "tool_call_summary_format": "{result}"
+              }
+            },
+            {
+              "provider": "autogen_agentchat.agents.UserProxyAgent",
+              "component_type": "agent",
+              "version": 1,
+              "component_version": 1,
+              "description": "An agent that can represent a human user through an input function.",
+              "label": "UserProxyAgent",
+              "config": {
+                "name": "user_proxy",
+                "description": "a human user that should be consulted only when the assistant_agent is unable to verify the information provided by the websurfer_agent"
+              }
+            }
+          ],
+          "model_client": {
+            "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+            "component_type": "model",
+            "version": 1,
+            "component_version": 1,
+            "description": "Chat completion client for OpenAI hosted models.",
+            "label": "OpenAIChatCompletionClient",
+            "config": {
+              "model": "gpt-4o-mini"
+            }
+          },
+          "termination_condition": {
+            "provider": "autogen_agentchat.base.OrTerminationCondition",
+            "component_type": "termination",
+            "version": 1,
+            "component_version": 1,
+            "label": "OrTerminationCondition",
+            "config": {
+              "conditions": [
+                {
+                  "provider": "autogen_agentchat.conditions.MaxMessageTermination",
+                  "component_type": "termination",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "Terminate the conversation after a maximum number of messages have been exchanged.",
+                  "label": "MaxMessageTermination",
+                  "config": {
+                    "max_messages": 20
+                  }
+                },
+                {
+                  "provider": "autogen_agentchat.conditions.TextMentionTermination",
+                  "component_type": "termination",
+                  "version": 1,
+                  "component_version": 1,
+                  "description": "Terminate the conversation if a specific text is mentioned.",
+                  "label": "TextMentionTermination",
+                  "config": {
+                    "text": "TERMINATE"
+                  }
+                }
+              ]
+            }
+          },
+          "selector_prompt": "You are the cordinator of role play game. The following roles are available:\n{roles}. Given a task, the websurfer_agent will be tasked to address it by browsing the web and providing information.  The assistant_agent will be tasked with verifying the information provided by the websurfer_agent and summarizing the information to present a final answer to the user. \nIf the task  needs assistance from a human user (e.g., providing feedback, preferences, or the task is stalled), you should select the user_proxy role to provide the necessary information.\n\nRead the following conversation. Then select the next role from {participants} to play. Only return the role.\n\n{history}\n\nRead the above conversation. Then select the next role from {participants} to play. Only return the role.",
+          "allow_repeated_speaker": false
         }
       }
     ],
     "components": {
       "agents": [
         {
+          "provider": "autogen_agentchat.agents.AssistantAgent",
           "component_type": "agent",
-          "description": "An assistant agent that can help users complete tasks",
-          "name": "assistant_agent",
-          "agent_type": "AssistantAgent",
-          "system_message": "You are a helpful assistant. Solve tasks carefully. You also have a calculator tool which you can use if needed. When the task is done respond with TERMINATE.",
-          "model_client": {
-            "component_type": "model",
-            "description": "A GPT-4o mini model",
-            "model": "gpt-4o-mini",
-            "model_type": "OpenAIChatCompletionClient"
-          },
-          "tools": [
-            {
-              "component_type": "tool",
-              "name": "calculator",
-              "description": "A simple calculator that performs basic arithmetic operations between two numbers",
-              "content": "def calculator(a: float, b: float, operator: str) -> str:\n    try:\n        if operator == '+':\n            return str(a + b)\n        elif operator == '-':\n            return str(a - b)\n        elif operator == '*':\n            return str(a * b)\n        elif operator == '/':\n            if b == 0:\n                return 'Error: Division by zero'\n            return str(a / b)\n        else:\n            return 'Error: Invalid operator. Please use +, -, *, or /'\n    except Exception as e:\n        return f'Error: {str(e)}'",
-              "tool_type": "PythonFunction"
-            }
-          ]
+          "version": 1,
+          "component_version": 1,
+          "description": "An agent that provides assistance with tool use.",
+          "label": "AssistantAgent",
+          "config": {
+            "name": "assistant_agent",
+            "model_client": {
+              "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+              "component_type": "model",
+              "version": 1,
+              "component_version": 1,
+              "description": "Chat completion client for OpenAI hosted models.",
+              "label": "OpenAIChatCompletionClient",
+              "config": {
+                "model": "gpt-4o-mini"
+              }
+            },
+            "tools": [
+              {
+                "provider": "autogen_core.tools.FunctionTool",
+                "component_type": "tool",
+                "version": 1,
+                "component_version": 1,
+                "description": "Create custom tools by wrapping standard Python functions.",
+                "label": "FunctionTool",
+                "config": {
+                  "source_code": "def calculator(a: float, b: float, operator: str) -> str:\n    try:\n        if operator == '+':\n            return str(a + b)\n        elif operator == '-':\n            return str(a - b)\n        elif operator == '*':\n            return str(a * b)\n        elif operator == '/':\n            if b == 0:\n                return 'Error: Division by zero'\n            return str(a / b)\n        else:\n            return 'Error: Invalid operator. Please use +, -, *, or /'\n    except Exception as e:\n        return f'Error: {str(e)}'\n",
+                  "name": "calculator",
+                  "description": "A simple calculator that performs basic arithmetic operations",
+                  "global_imports": [],
+                  "has_cancellation_support": false
+                }
+              }
+            ],
+            "handoffs": [],
+            "model_context": {
+              "provider": "autogen_core.model_context.UnboundedChatCompletionContext",
+              "component_type": "chat_completion_context",
+              "version": 1,
+              "component_version": 1,
+              "description": "An unbounded chat completion context that keeps a view of the all the messages.",
+              "label": "UnboundedChatCompletionContext",
+              "config": {}
+            },
+            "description": "An agent that provides assistance with ability to use tools.",
+            "system_message": "You are a helpful assistant. Solve tasks carefully. When done, say TERMINATE.",
+            "model_client_stream": false,
+            "reflect_on_tool_use": false,
+            "tool_call_summary_format": "{result}"
+          }
         },
         {
+          "provider": "autogen_ext.agents.web_surfer.MultimodalWebSurfer",
           "component_type": "agent",
-          "description": "A user agent that is driven by a human user",
-          "name": "user_agent",
-          "agent_type": "UserProxyAgent",
-          "tools": []
+          "version": 1,
+          "component_version": 1,
+          "description": "MultimodalWebSurfer is a multimodal agent that acts as a web surfer that can search the web and visit web pages.",
+          "label": "MultimodalWebSurfer",
+          "config": {
+            "name": "websurfer_agent",
+            "model_client": {
+              "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+              "component_type": "model",
+              "version": 1,
+              "component_version": 1,
+              "description": "Chat completion client for OpenAI hosted models.",
+              "label": "OpenAIChatCompletionClient",
+              "config": {
+                "model": "gpt-4o-mini"
+              }
+            },
+            "description": "an agent that solves tasks by browsing the web",
+            "headless": true,
+            "start_page": "https://www.bing.com/",
+            "animate_actions": false,
+            "to_save_screenshots": false,
+            "use_ocr": false,
+            "to_resize_viewport": true
+          }
+        },
+        {
+          "provider": "autogen_agentchat.agents.AssistantAgent",
+          "component_type": "agent",
+          "version": 1,
+          "component_version": 1,
+          "description": "An agent that provides assistance with tool use.",
+          "label": "AssistantAgent",
+          "config": {
+            "name": "assistant_agent",
+            "model_client": {
+              "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+              "component_type": "model",
+              "version": 1,
+              "component_version": 1,
+              "description": "Chat completion client for OpenAI hosted models.",
+              "label": "OpenAIChatCompletionClient",
+              "config": {
+                "model": "gpt-4o-mini"
+              }
+            },
+            "tools": [],
+            "handoffs": [],
+            "model_context": {
+              "provider": "autogen_core.model_context.UnboundedChatCompletionContext",
+              "component_type": "chat_completion_context",
+              "version": 1,
+              "component_version": 1,
+              "description": "An unbounded chat completion context that keeps a view of the all the messages.",
+              "label": "UnboundedChatCompletionContext",
+              "config": {}
+            },
+            "description": "an agent that verifies and summarizes information",
+            "system_message": "You are a task verification assistant who is working with a web surfer agent to solve tasks. At each point, check if the task has been completed as requested by the user. If the websurfer_agent responds and the task has not yet been completed, respond with what is left to do and then say 'keep going'. If and only when the task has been completed, summarize and present a final answer that directly addresses the user task in detail and then respond with TERMINATE.",
+            "model_client_stream": false,
+            "reflect_on_tool_use": false,
+            "tool_call_summary_format": "{result}"
+          }
+        },
+        {
+          "provider": "autogen_agentchat.agents.UserProxyAgent",
+          "component_type": "agent",
+          "version": 1,
+          "component_version": 1,
+          "description": "An agent that can represent a human user through an input function.",
+          "label": "UserProxyAgent",
+          "config": {
+            "name": "user_proxy",
+            "description": "a human user that should be consulted only when the assistant_agent is unable to verify the information provided by the websurfer_agent"
+          }
         }
       ],
       "models": [
         {
+          "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
           "component_type": "model",
-          "description": "A GPT-4o mini model",
-          "model": "gpt-4o-mini",
-          "model_type": "OpenAIChatCompletionClient"
+          "version": 1,
+          "component_version": 1,
+          "description": "Chat completion client for OpenAI hosted models.",
+          "label": "OpenAIChatCompletionClient",
+          "config": {
+            "model": "gpt-4o-mini"
+          }
         },
         {
-          "model": "TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
-          "model_type": "OpenAIChatCompletionClient",
-          "description": "A local Mistral 7B model",
-          "base_url": "http://localhost:1234/v1",
-          "api_version": "1.0",
+          "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
           "component_type": "model",
-          "model_capabilities": {
-            "vision": false,
-            "function_calling": false,
-            "json_output": false
+          "version": 1,
+          "component_version": 1,
+          "description": "Example on how to use the OpenAIChatCopletionClient with local models (Ollama, vllm etc).",
+          "label": "Mistral-7B vllm",
+          "config": {
+            "model": "TheBloke/Mistral-7B-Instruct-v0.2-GGUF",
+            "base_url": "http://localhost:1234/v1"
+          }
+        },
+        {
+          "provider": "autogen_ext.models.openai.OpenAIChatCompletionClient",
+          "component_type": "model",
+          "version": 1,
+          "component_version": 1,
+          "description": "Chat completion client for OpenAI hosted models.",
+          "label": "OpenAIChatCompletionClient",
+          "config": {
+            "model": "gpt-4o-mini"
           }
         }
       ],
       "tools": [
         {
+          "provider": "autogen_core.tools.FunctionTool",
           "component_type": "tool",
-          "name": "calculator",
-          "description": "A simple calculator that performs basic arithmetic operations between two numbers",
-          "content": "def calculator(a: float, b: float, operator: str) -> str:\n    try:\n        if operator == '+':\n            return str(a + b)\n        elif operator == '-':\n            return str(a - b)\n        elif operator == '*':\n            return str(a * b)\n        elif operator == '/':\n            if b == 0:\n                return 'Error: Division by zero'\n            return str(a / b)\n        else:\n            return 'Error: Invalid operator. Please use +, -, *, or /'\n    except Exception as e:\n        return f'Error: {str(e)}'",
-          "tool_type": "PythonFunction"
-        },
-        {
-          "component_type": "tool",
-          "name": "fetch_website",
-          "description": "Fetch and return the content of a website URL",
-          "content": "async def fetch_website(url: str) -> str:\n    try:\n        import requests\n        from urllib.parse import urlparse\n        \n        # Validate URL format\n        parsed = urlparse(url)\n        if not parsed.scheme or not parsed.netloc:\n            return \"Error: Invalid URL format. Please include http:// or https://\"\n            \n        # Add scheme if not present\n        if not url.startswith(('http://', 'https://')): \n            url = 'https://' + url\n            \n        # Set headers to mimic a browser request\n        headers = {\n            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'\n        }\n        \n        # Make the request with a timeout\n        response = requests.get(url, headers=headers, timeout=10)\n        response.raise_for_status()\n        \n        # Return the text content\n        return response.text\n        \n    except requests.exceptions.Timeout:\n        return \"Error: Request timed out\"\n    except requests.exceptions.ConnectionError:\n        return \"Error: Failed to connect to the website\"\n    except requests.exceptions.HTTPError as e:\n        return f\"Error: HTTP {e.response.status_code} - {e.response.reason}\"\n    except Exception as e:\n        return f\"Error: {str(e)}\"",
-          "tool_type": "PythonFunction"
+          "version": 1,
+          "component_version": 1,
+          "description": "Create custom tools by wrapping standard Python functions.",
+          "label": "FunctionTool",
+          "config": {
+            "source_code": "def calculator(a: float, b: float, operator: str) -> str:\n    try:\n        if operator == '+':\n            return str(a + b)\n        elif operator == '-':\n            return str(a - b)\n        elif operator == '*':\n            return str(a * b)\n        elif operator == '/':\n            if b == 0:\n                return 'Error: Division by zero'\n            return str(a / b)\n        else:\n            return 'Error: Invalid operator. Please use +, -, *, or /'\n    except Exception as e:\n        return f'Error: {str(e)}'\n",
+            "name": "calculator",
+            "description": "A simple calculator that performs basic arithmetic operations",
+            "global_imports": [],
+            "has_cancellation_support": false
+          }
         }
       ],
       "terminations": [
         {
+          "provider": "autogen_agentchat.conditions.TextMentionTermination",
           "component_type": "termination",
-          "description": "Terminate the conversation when the user mentions 'TERMINATE'",
-          "termination_type": "TextMentionTermination",
-          "text": "TERMINATE"
+          "version": 1,
+          "component_version": 1,
+          "description": "Terminate the conversation if a specific text is mentioned.",
+          "label": "TextMentionTermination",
+          "config": {
+            "text": "TERMINATE"
+          }
         },
         {
+          "provider": "autogen_agentchat.conditions.MaxMessageTermination",
           "component_type": "termination",
-          "description": "Terminate the conversation after 10 messages",
-          "termination_type": "MaxMessageTermination",
-          "max_messages": 10
+          "version": 1,
+          "component_version": 1,
+          "description": "Terminate the conversation after a maximum number of messages have been exchanged.",
+          "label": "MaxMessageTermination",
+          "config": {
+            "max_messages": 10
+          }
         },
         {
+          "provider": "autogen_agentchat.base.OrTerminationCondition",
           "component_type": "termination",
-          "description": "Terminate the conversation when the user mentions 'TERMINATE' or after 10 messages",
-          "termination_type": "CombinationTermination",
-          "operator": "or",
-          "conditions": [
-            {
-              "component_type": "termination",
-              "description": "Terminate the conversation when the user mentions 'TERMINATE'",
-              "termination_type": "TextMentionTermination",
-              "text": "TERMINATE"
-            },
-            {
-              "component_type": "termination",
-              "description": "Terminate the conversation after 10 messages",
-              "termination_type": "MaxMessageTermination",
-              "max_messages": 10
-            }
-          ]
+          "version": 1,
+          "component_version": 1,
+          "description": null,
+          "label": "OrTerminationCondition",
+          "config": {
+            "conditions": [
+              {
+                "provider": "autogen_agentchat.conditions.MaxMessageTermination",
+                "component_type": "termination",
+                "version": 1,
+                "component_version": 1,
+                "description": "Terminate the conversation after a maximum number of messages have been exchanged.",
+                "label": "MaxMessageTermination",
+                "config": {
+                  "max_messages": 20
+                }
+              },
+              {
+                "provider": "autogen_agentchat.conditions.TextMentionTermination",
+                "component_type": "termination",
+                "version": 1,
+                "component_version": 1,
+                "description": "Terminate the conversation if a specific text is mentioned.",
+                "label": "TextMentionTermination",
+                "config": {
+                  "text": "TERMINATE"
+                }
+              }
+            ]
+          }
         }
       ]
     }
