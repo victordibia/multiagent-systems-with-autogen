@@ -1,0 +1,7 @@
+{
+  "title": "RAG Agents",
+  "description": "Retrieval Augmented Generation (RAG) explores the use of external knowledge sources to improve the quality of generated text from a model. External knowlege may come from providing an agent with access to tools that it can intelligently call based on the task, or explicitly retrieving relevant context from a datastore (e.g., a vector database) .",
+  "domains": ["media"],
+  "tags": ["rag", "tools"],
+  "difficulty": "intermediate"
+}

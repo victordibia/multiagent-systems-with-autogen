@@ -1,0 +1,4 @@
+openai
+autogen-agentchat
+autogen-ext[openai]
+html2text

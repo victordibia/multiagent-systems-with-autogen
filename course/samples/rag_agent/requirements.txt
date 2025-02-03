@@ -1,0 +1,5 @@
+fpdf  
+google-genai
+openai
+autogen-agentchat
+autogen-ext[openai]

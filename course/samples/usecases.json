@@ -6,6 +6,45 @@
     "base_url": "https://raw.githubusercontent.com/victordibia/multiagent-systems-with-autogen/refs/heads/main/course/"
   },
   "usecases": {
+    "rag_agent": {
+      "title": "RAG Agents",
+      "description": "Retrieval Augmented Generation (RAG) explores the use of external knowledge sources to improve the quality of generated text from a model. External knowlege may come from providing an agent with access to tools that it can intelligently call based on the task, or explicitly retrieving relevant context from a datastore (e.g., a vector database) .",
+      "domains": [
+        "media"
+      ],
+      "tags": [
+        "rag",
+        "tools"
+      ],
+      "implementations": [
+        {
+          "framework": "autogen_agentchat",
+          "title": "Autogen Agentchat Implementation",
+          "description": "Implementation using autogen_agentchat",
+          "code": {
+            "path": "/samples/rag_agent/autogen_agentchat/app.py",
+            "language": "python",
+            "loc": 32,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/rag_agent/autogen_agentchat/app.py",
+            "metadata": {
+              "title": "RAG Agents",
+              "description": "Retrieval Augmented Generation (RAG) explores the use of external knowledge sources to improve the quality of generated text from a model. External knowlege may come from providing an agent with access to tools that it can intelligently call based on the task, or explicitly retrieving relevant context from a datastore (e.g., a vector database) .",
+              "blog": "https://newsletter.victordibia.com/p/how-to-build-your-own-openai-operator",
+              "domains": [
+                "media"
+              ],
+              "tags": [
+                "rag",
+                "tools"
+              ]
+            }
+          },
+          "results": {
+            "path": "/samples/rag_agent/autogen_agentchat/results.json"
+          }
+        }
+      ]
+    },
     "hello_world": {
       "title": "Hello World Agent",
       "description": "A agent implementation that demonstrates the basic concepts of defining an agent that used a generative AI model and tools to address tasks. Users can explore how different frameworks handle basic message passing and agent communication.",
@@ -100,7 +139,7 @@
     },
     "router_pattern": {
       "title": "Router Pattern",
-      "description": "A simple implementation of a Sales Multi-Agent System using a Router Pattern.A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent",
+      "description": "A mock implementation of a Sales Multi-Agent System using a Router Pattern. A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent.",
       "domains": [
         "salese"
       ],
@@ -120,7 +159,7 @@
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/router_pattern/autogen_core/app.py",
             "metadata": {
               "title": "Router Pattern",
-              "description": "A simple implementation of a Sales Multi-Agent System using a Router Pattern.A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent",
+              "description": "A mock implementation of a Sales Multi-Agent System using a Router Pattern. A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent.",
               "domains": [
                 "multiagent"
               ],
@@ -176,6 +215,45 @@
         }
       ]
     },
+    "deep_research": {
+      "title": "Deep Research Agents",
+      "description": "An implementation of a multi-agent system that explores multiple reasoning steps across multiple data sources to synthesize results to complex research tasks. Implemented using an AssistantAgent that performs web searches and analyzes information, a Verifier agent that ensures research quality and completeness, a Summary agent that provides detailed markdown summaries, and a SelectorGroupChat team that manages the order in which each agent acts based on conversation context.",
+      "domains": [
+        "research"
+      ],
+      "tags": [
+        "research",
+        "tools"
+      ],
+      "implementations": [
+        {
+          "framework": "autogen_agentchat",
+          "title": "Autogen Agentchat Implementation",
+          "description": "Implementation using autogen_agentchat",
+          "code": {
+            "path": "/samples/deep_research/autogen_agentchat/app.py",
+            "language": "python",
+            "loc": 91,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/deep_research/autogen_agentchat/app.py",
+            "metadata": {
+              "title": "Deep Research Agents",
+              "description": "An implementation of a multi-agent system that explores multiple reasoning steps across multiple data sources to synthesize results to complex research tasks. Implemented using an AssistantAgent that performs web searches and analyzes information, a Verifier agent that ensures research quality and completeness, a Summary agent that provides detailed markdown summaries, and a SelectorGroupChat team that manages the order in which each agent acts based on conversation context.",
+              "blog": "https://newsletter.victordibia.com/p/how-to-build-your-own-openai-operator",
+              "domains": [
+                "research"
+              ],
+              "tags": [
+                "research",
+                "tools"
+              ]
+            }
+          },
+          "results": {
+            "path": "/samples/deep_research/autogen_agentchat/results.json"
+          }
+        }
+      ]
+    },
     "book_generator": {
       "title": "Book Generator with Gemini 2.0",
       "description": "A multi-agent system that demonstrates collaborative story generation using Gemini 2.0. The system consists of two agents: a StoryGeneratorAgent that creates structured story content and a BookGeneratorAgent that handles image generation and PDF compilation. Features include structured JSON communication between agents, integration of non-openai models (Gemini 2.0), control flow routing using topics and messages and integration of tools (e.g. image generation, PDF generation).",
@@ -197,7 +275,7 @@
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/book_generator/autogen_core/app.py",
             "metadata": {
               "title": "Book Generator with Gemini 2.0",
-              "description": "Built using the AutoGen Core API",
+              "description": "Built using the AutoGen Core API. ",
               "domains": [
                 "multiagent"
               ],
@@ -218,6 +296,7 @@
       "basics",
       "education",
       "media",
+      "research",
       "salese"
     ],
     "frameworks": [

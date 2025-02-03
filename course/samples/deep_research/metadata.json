@@ -1,0 +1,7 @@
+{
+  "title": "Deep Research Agents",
+  "description": "An implementation of a multi-agent system that explores multiple reasoning steps across multiple data sources to synthesize results to complex research tasks. Implemented using an AssistantAgent that performs web searches and analyzes information, a Verifier agent that ensures research quality and completeness, a Summary agent that provides detailed markdown summaries, and a SelectorGroupChat team that manages the order in which each agent acts based on conversation context.",
+  "domains": ["research"],
+  "tags": ["research", "tools"],
+  "difficulty": "intermediate"
+}
