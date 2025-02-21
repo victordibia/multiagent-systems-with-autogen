@@ -28,7 +28,7 @@ dependencies = [
     "openai",
      
 ]
-optional-dependencies = {web = ["fastapi", "uvicorn"], memory = ["chromadb"]}
+optional-dependencies = {web = ["fastapi", "uvicorn"], memory = ["chromadb"], eval = ["chess"]}
 
 dynamic = ["version"]
 
