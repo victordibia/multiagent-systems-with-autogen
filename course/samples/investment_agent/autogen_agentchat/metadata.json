@@ -2,5 +2,5 @@
   "title": "Investment Advisory Agents",
   "description": "An implementation of a multi-agent system that creates personalized investment portfolios through a coordinated research and analysis process. Implemented using a Client Profiler Agent that analyzes client requirements, a Research Strategy Agent that crafts targeted search queries, a Research Agent that performs market research and data analysis, a Portfolio Constructor that builds recommendations, a Verifier agent that ensures compliance and suitability, and a Summary agent that generates a complete investment proposal. The system uses a SelectorGroupChat team that manages the workflow between agents to progressively build comprehensive investment recommendations.",
   "domains": ["finance"],
-  "tags": ["tools", "groupchat"]
+  "tags": ["tools", "groupchat-pattern"]
 }
