@@ -1,6 +1,5 @@
 # create a virtual env e.g conda create -n autogen python=3.12
-# pip install -U autogen-agentchat autogen-ext[openai,web-surfer] 
-# playwright install 
+# pip install -U autogen-agentchat autogen-ext[openai]  
 # This snippet uses the Google Search API. You need to set your google search engine id and api key
 # os.environ["GOOGLE_CSE_ID"] = "your_google_cse_id"
 # os.environ["GOOGLE_API_KEY"] = "your_google_api_key"
@@ -21,8 +20,7 @@ from fetch_webpage import fetch_webpage_tool
 async def main() -> None:
     # Initialize the model client
     model_client = OpenAIChatCompletionClient(
-        model="gpt-4o",
-        temperature=0.7,
+        model="gpt-4o", 
     )
 
     # Create the Research Assistant agent
