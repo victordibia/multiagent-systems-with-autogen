@@ -64,7 +64,7 @@
           "code": {
             "path": "/samples/hello_world/autogen_agentchat/app.py",
             "language": "python",
-            "loc": 36,
+            "loc": 32,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_agentchat/app.py",
             "metadata": {
               "title": "Hello World Agent",
@@ -236,15 +236,15 @@
             "loc": 89,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/deep_research/autogen_agentchat/app.py",
             "metadata": {
-              "title": "Investment Advisory Team Agents",
-              "description": "An implementation of a multi-agent system that creates personalized investment portfolios through a coordinated research and analysis process. Implemented using a Client Profiler Agent that analyzes client requirements, a Research Strategy Agent that crafts targeted search queries, a Research Agent that performs market research and data analysis, a Portfolio Constructor that builds recommendations, a Verifier agent that ensures compliance and suitability, and a Summary agent that generates professional investment proposals. The system uses a SelectorGroupChat team that manages the workflow between agents to progressively build comprehensive investment recommendations.",
+              "title": "Deep Research Agents",
+              "description": "An implementation of a multi-agent system that explores multiple reasoning steps across multiple data sources to synthesize results to complex research tasks. Implemented using an AssistantAgent that performs web searches and analyzes information, a Verifier agent that ensures research quality and completeness, a Summary agent that provides detailed markdown summaries, and a SelectorGroupChat team that manages the order in which each agent acts based on conversation context.",
+              "blog": "https://newsletter.victordibia.com/p/how-to-build-your-own-openai-operator",
               "domains": [
-                "finance"
+                "research"
               ],
               "tags": [
-                "rag",
-                "tools",
-                "portfolio"
+                "research",
+                "tools"
               ]
             }
           },
@@ -297,9 +297,8 @@
         "finance"
       ],
       "tags": [
-        "rag",
         "tools",
-        "portfolio"
+        "groupchat"
       ],
       "implementations": [
         {
@@ -318,9 +317,8 @@
                 "finance"
               ],
               "tags": [
-                "rag",
                 "tools",
-                "portfolio"
+                "groupchat"
               ]
             }
           },
