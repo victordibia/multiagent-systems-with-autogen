@@ -76,7 +76,8 @@
               "tags": [
                 "beginner",
                 "tools"
-              ]
+              ],
+              "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
             }
           },
           "results": {
@@ -102,7 +103,8 @@
               "tags": [
                 "beginner",
                 "tools"
-              ]
+              ],
+              "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
             }
           },
           "results": {
@@ -254,6 +256,45 @@
         }
       ]
     },
+    "mcp_tools": {
+      "title": "MCP Tool Agent",
+      "description": "An implementation demonstrating how to integrate Model Context Protocol (MCP) servers with AutoGen agents. This example shows how to connect an agent to an MCP server for fetching web resources, enabling content summarization and analysis. You can extend it to any MCP server.",
+      "domains": [
+        "research"
+      ],
+      "tags": [
+        "mcp",
+        "tools"
+      ],
+      "implementations": [
+        {
+          "framework": "autogen_agentchat",
+          "title": "Autogen Agentchat Implementation",
+          "description": "Implementation using autogen_agentchat",
+          "code": {
+            "path": "/samples/mcp_tools/autogen_agentchat/app.py",
+            "language": "python",
+            "loc": 20,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/mcp_tools/autogen_agentchat/app.py",
+            "metadata": {
+              "title": "MCP Tool Agent",
+              "description": "An implementation demonstrating how to integrate Model Context Protocol (MCP) servers with AutoGen agents. This example shows how to connect an agent to an MCP server for fetching web resources, enabling content summarization and analysis. You can extend it to any MCP server.",
+              "domains": [
+                "research"
+              ],
+              "tags": [
+                "mcp",
+                "tools"
+              ],
+              "blog": "https://newsletter.victordibia.com/p/you-have-ai-fatigue-thats-why-you"
+            }
+          },
+          "results": {
+            "path": "/samples/mcp_tools/autogen_agentchat/results.json"
+          }
+        }
+      ]
+    },
     "book_generator": {
       "title": "Book Generator with Gemini 2.0",
       "description": "A multi-agent system that demonstrates collaborative story generation using Gemini 2.0. The system consists of two agents: a StoryGeneratorAgent that creates structured story content and a BookGeneratorAgent that handles image generation and PDF compilation. Features include structured JSON communication between agents, integration of non-openai models (Gemini 2.0), control flow routing using topics and messages and integration of tools (e.g. image generation, PDF generation).",
@@ -298,7 +339,7 @@
       ],
       "tags": [
         "tools",
-        "groupchat"
+        "groupchat-pattern"
       ],
       "implementations": [
         {
@@ -318,7 +359,7 @@
               ],
               "tags": [
                 "tools",
-                "groupchat"
+                "groupchat-pattern"
               ]
             }
           },

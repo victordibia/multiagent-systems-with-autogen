@@ -15,9 +15,7 @@ async def main() -> None:
 
     # Create an agent that can use the fetch tool.
     model_client = OpenAIChatCompletionClient(model="gpt-4o")
-    agent = AssistantAgent(name="fetcher", model_client=model_client, tools=tools, reflect_on_tool_use=True)  # type: ignore
-
-    print(agent.dump_component())
+    agent = AssistantAgent(name="fetcher", model_client=model_client, tools=tools, reflect_on_tool_use=True)  # type: ignore 
 
     # The agent can now use any of the filesystem tools
     await Console(agent.run_stream(task="Summarize the content of https://newsletter.victordibia.com/p/you-have-ai-fatigue-thats-why-you", cancellation_token=CancellationToken()))
