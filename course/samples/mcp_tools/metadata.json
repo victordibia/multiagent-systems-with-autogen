@@ -1,0 +1,7 @@
+{
+  "title": "MCP Tool Agent",
+  "description": "An implementation demonstrating how to integrate Model Context Protocol (MCP) servers with AutoGen agents. This example shows how to connect an agent to an MCP server for fetching web resources, enabling content summarization and analysis. You can extend it to any MCP server.",
+  "domains": ["research"],
+  "tags": ["mcp", "tools"],
+  "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
+}
