@@ -4,15 +4,7 @@ import asyncio
 
 # Define a calculator function to be used as a tool
 @function_tool
-async def calculator(a: float, b: float, operator: str) -> str:
-    """
-    Perform basic arithmetic operations.
-    
-    Args:
-        a: First number
-        b: Second number
-        operator: The operation to perform (+, -, *, /)
-    """
+async def calculator(a: float, b: float, operator: str) -> str: 
     try:
         if operator == '+':
             return str(a + b)
@@ -29,19 +21,18 @@ async def calculator(a: float, b: float, operator: str) -> str:
     except Exception as e:
         return f'Error: {str(e)}'
 
-# Create a single assistant agent with the calculator tool
-assistant = Agent(
-    name="Calculator Assistant",
-    instructions=(
-        "You are a helpful AI assistant that can perform calculations. "
-        "When calculations are needed, use the calculator tool. "
-        "If you see 'TERMINATE', respond with a goodbye message."
-    ),
-    tools=[calculator]
-)
 
-async def main():
-    # Run the agent with a calculation request
+
+async def main(): 
+    assistant = Agent(
+        name="Calculator Assistant",
+        instructions=(
+            "You are a helpful AI assistant that can perform calculations. "
+            "When calculations are needed, use the calculator tool. "
+            "If you see 'TERMINATE', respond with a goodbye message."
+        ),
+        tools=[calculator]
+    ) 
     result = await Runner.run(
         assistant, 
         "What is the result of 545.34567 * 34555.34?"
