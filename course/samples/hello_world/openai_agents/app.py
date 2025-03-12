@@ -1,6 +1,8 @@
 # pip install openai-agents
-from agents import Agent, Runner, function_tool
+from agents import Agent, Runner, function_tool, OpenAIChatCompletionsModel
 import asyncio
+
+from openai import AsyncOpenAI
 
 # Define a calculator function to be used as a tool
 @function_tool
@@ -24,6 +26,10 @@ async def calculator(a: float, b: float, operator: str) -> str:
 
 
 async def main(): 
+    model_client = model= OpenAIChatCompletionsModel( 
+        model="gpt-4o",
+        openai_client=AsyncOpenAI()
+    )
     assistant = Agent(
         name="Calculator Assistant",
         instructions=(
@@ -31,8 +37,10 @@ async def main():
             "When calculations are needed, use the calculator tool. "
             "If you see 'TERMINATE', respond with a goodbye message."
         ),
-        tools=[calculator]
+        tools=[calculator],
+        model = model_client
     ) 
+    
     result = await Runner.run(
         assistant, 
         "What is the result of 545.34567 * 34555.34?"
