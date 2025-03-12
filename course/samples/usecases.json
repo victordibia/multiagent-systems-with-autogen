@@ -136,6 +136,33 @@
           "results": {
             "path": "/samples/hello_world/langgraph/results.json"
           }
+        },
+        {
+          "framework": "openai_agents",
+          "title": "Openai Agents Implementation",
+          "description": "Implementation using openai_agents",
+          "code": {
+            "path": "/samples/hello_world/openai_agents/app.py",
+            "language": "python",
+            "loc": 49,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/openai_agents/app.py",
+            "metadata": {
+              "title": "Hello World Agent",
+              "description": "Built using the OpenAI Agents SDK API",
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
+              "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
+            }
+          },
+          "results": {
+            "path": "/samples/hello_world/openai_agents/results.json"
+          }
         }
       ]
     },
@@ -274,7 +301,7 @@
           "code": {
             "path": "/samples/mcp_tools/autogen_agentchat/app.py",
             "language": "python",
-            "loc": 25,
+            "loc": 24,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/mcp_tools/autogen_agentchat/app.py",
             "metadata": {
               "title": "MCP Tool Agent",
@@ -382,7 +409,8 @@
     "frameworks": [
       "autogen_agentchat",
       "autogen_core",
-      "langgraph"
+      "langgraph",
+      "openai_agents"
     ]
   }
 }
