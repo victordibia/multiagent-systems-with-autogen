@@ -1,3 +1,4 @@
+# pip install -U autogen-ext[mcp]
 # uv tool install mcp-server-fetch
 # verify it in path by running uv tool update-shell
 import asyncio
