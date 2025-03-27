@@ -343,7 +343,7 @@
           "code": {
             "path": "/samples/mcp_tools/autogen_agentchat/app.py",
             "language": "python",
-            "loc": 24,
+            "loc": 25,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/mcp_tools/autogen_agentchat/app.py",
             "metadata": {
               "title": "MCP Tool Agent",
