@@ -1,0 +1,6 @@
+{
+  "title": "Travel Planning Agents",
+  "description": "An implementation of a multi-agent system that creates personalized travel itineraries through a coordinated planning process. Implemented using a Planner Agent that develops comprehensive travel routes based on traveler preferences, a Local Agent that recommends authentic experiences and hidden gems, a Language Agent that provides essential communication tips for the destination, and a Travel Summary Agent that integrates all recommendations into a cohesive final itinerary. The system uses a SelectorGroupChat team that manages the workflow between agents to progressively build comprehensive travel plans while minimizing unnecessary user involvement.",
+  "domains": ["travel", "tourism"],
+  "tags": ["tools", "groupchat-pattern", "web-search"]
+}

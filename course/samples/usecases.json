@@ -144,7 +144,7 @@
           "code": {
             "path": "/samples/hello_world/openai_agents/app.py",
             "language": "python",
-            "loc": 49,
+            "loc": 46,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/openai_agents/app.py",
             "metadata": {
               "title": "Hello World Agent",
@@ -162,6 +162,48 @@
           },
           "results": {
             "path": "/samples/hello_world/openai_agents/results.json"
+          }
+        }
+      ]
+    },
+    "trave_planning": {
+      "title": "Travel Planning Agents",
+      "description": "An implementation of a multi-agent system that creates personalized travel itineraries through a coordinated planning process. Implemented using a Planner Agent that develops comprehensive travel routes based on traveler preferences, a Local Agent that recommends authentic experiences and hidden gems, a Language Agent that provides essential communication tips for the destination, and a Travel Summary Agent that integrates all recommendations into a cohesive final itinerary. The system uses a SelectorGroupChat team that manages the workflow between agents to progressively build comprehensive travel plans while minimizing unnecessary user involvement.",
+      "domains": [
+        "travel",
+        "tourism"
+      ],
+      "tags": [
+        "tools",
+        "groupchat-pattern",
+        "web-search"
+      ],
+      "implementations": [
+        {
+          "framework": "autogen_agentchat",
+          "title": "Autogen Agentchat Implementation",
+          "description": "Implementation using autogen_agentchat",
+          "code": {
+            "path": "/samples/trave_planning/autogen_agentchat/app.py",
+            "language": "python",
+            "loc": 121,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/trave_planning/autogen_agentchat/app.py",
+            "metadata": {
+              "title": "Travel Planning Agents",
+              "description": "An implementation of a multi-agent system that creates personalized travel itineraries through a coordinated planning process. Implemented using a Planner Agent that develops comprehensive travel routes based on traveler preferences, a Local Agent that recommends authentic experiences and hidden gems, a Language Agent that provides essential communication tips for the destination, and a Travel Summary Agent that integrates all recommendations into a cohesive final itinerary. The system uses a SelectorGroupChat team that manages the workflow between agents to progressively build comprehensive travel plans while minimizing unnecessary user involvement.",
+              "domains": [
+                "travel",
+                "tourism"
+              ],
+              "tags": [
+                "tools",
+                "groupchat-pattern",
+                "web-search"
+              ]
+            }
+          },
+          "results": {
+            "path": "/samples/trave_planning/autogen_agentchat/results.json"
           }
         }
       ]
@@ -404,7 +446,9 @@
       "finance",
       "media",
       "research",
-      "salese"
+      "salese",
+      "tourism",
+      "travel"
     ],
     "frameworks": [
       "autogen_agentchat",
