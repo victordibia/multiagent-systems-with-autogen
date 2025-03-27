@@ -1,3 +1,4 @@
+# pip install -U autogen-ext[mcp] json-schema-to-pydantic>=0.2.2
 # uv tool install mcp-server-fetch
 # verify it in path by running uv tool update-shell
 import asyncio
