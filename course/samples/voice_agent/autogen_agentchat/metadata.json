@@ -1,0 +1,6 @@
+{
+  "title": "Voice Agents",
+  "description": "An implementation of a voice enabled multi-agent system where speech to text models are used to transcribe user queries and text to speech models are used to read out a summarized version of agent responses. .",
+  "domains": ["research"],
+  "tags": ["ui", "groupchat-pattern"]
+}
