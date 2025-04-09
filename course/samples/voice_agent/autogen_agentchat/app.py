@@ -9,7 +9,7 @@ from typing import List, cast
 
 import chainlit as cl
 from openai import OpenAI, AsyncOpenAI
-from autogen_agentchat.messages import ModelClientStreamingChunkEvent, TextMessage
+from autogen_agentchat.messages import ModelClientStreamingChunkEvent, TextMessage, BaseChatMessage
 from autogen_agentchat.base import TaskResult, Team
 from autogen_core import CancellationToken
 
@@ -28,8 +28,8 @@ openai_client = AsyncOpenAI(api_key=OPENAI_API_KEY)
 sync_client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Define silence detection parameters
-SILENCE_THRESHOLD = 3500  # Adjust based on your audio level
-SILENCE_TIMEOUT = 3000.0  # Seconds of silence to consider the turn finished
+SILENCE_THRESHOLD = 2000  # Adjust based on your audio level
+SILENCE_TIMEOUT = 5000.0  # Seconds of silence to consider the turn finished
 
 @cl.on_chat_start
 async def start():
@@ -340,7 +340,7 @@ async def process_with_team(transcription, status_msg):
     
     # Streaming response message
     streaming_response = None
-    final_messages = []
+    
     task_result = ""
     
     # Stream the messages from the team
@@ -348,22 +348,27 @@ async def process_with_team(transcription, status_msg):
         task=[TextMessage(content=transcription, source="user")],
         cancellation_token=CancellationToken(),
     ):
+        if  isinstance(msg, BaseChatMessage):
+            if msg.source == "user":
+                continue
+            await cl.Message(
+                content=msg.to_text(),
+                author=msg.source
+            ).send()
+
         if isinstance(msg, ModelClientStreamingChunkEvent):
             # Stream the model client response to the user
             if streaming_response is None:
                 # Start a new streaming response
                 streaming_response = cl.Message(content=msg.source + ": ", author=msg.source)
                 await streaming_response.send()
-            await streaming_response.stream_token(msg.content)
+            await streaming_response.stream_token(msg.content) 
             
-            # Collect content for the final response
-            if msg.source == "assistant":
-                final_messages.append(msg.content)
-                
+             
         elif streaming_response is not None:
             # Complete the streaming response
             streaming_response = None
-            
+        
         elif isinstance(msg, TaskResult):
             # Send the task termination message
             final_message = "Task completed."
@@ -373,7 +378,6 @@ async def process_with_team(transcription, status_msg):
             await cl.Message(content=final_message).send()
     
     # Generate the final response for TTS
-    final_text = "".join(final_messages)
     
     # Add summarization step before text-to-speech
     summarized_text = await summarize_content(task_result, status_msg)
@@ -382,7 +386,7 @@ async def process_with_team(transcription, status_msg):
     if summarized_text is None:
         status_msg.content = "❌ Summarization failed. Using original response instead."
         await status_msg.update()
-        summarized_text = final_text or "Sorry, I couldn't process your request properly."
+        summarized_text = task_result or "Sorry, I couldn't process your request properly."
     
     # Convert summarized text to speech
     tts_audio = await text_to_speech(summarized_text, status_msg)
@@ -427,3 +431,8 @@ async def set_starters(user_or_none: cl.User | None) -> List[cl.Starter]:
             message="Explain how neural networks work in simple terms",
         ),
     ]
+
+
+if __name__ == "__main__":
+    # Run the Chainlit app
+    print("Please run this script using Chainlit.")

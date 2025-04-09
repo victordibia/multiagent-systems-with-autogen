@@ -10,7 +10,7 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogenstudio.gallery.tools import google_search_tool, fetch_webpage_tool
  
 def create_agent_team(
-    model_name: str = "gpt-4o-2024-11-20", 
+    model_name: str = "gpt-4o-mini", 
 ) -> SelectorGroupChat:
     """
     Create a deep research team with specialized agents for comprehensive information gathering.
@@ -36,7 +36,7 @@ def create_agent_team(
         Break down complex queries into specific search terms.
         Always verify information across multiple sources when possible.
         When you find relevant information, explain why it's relevant and how it connects to the query. 
-        When you get feedback from the verifier agent, use your tools to act on the feedback and make progress.""",
+        When you get feedback from the verifier agent, use your tools to act on the feedback and make progress. If the request is underspecified or cannot be answered, mention the reasons for this and then respond with TERMINATE.""",
         model_client_stream=True
     )
 

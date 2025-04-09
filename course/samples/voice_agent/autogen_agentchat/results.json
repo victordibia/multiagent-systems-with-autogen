@@ -1,0 +1,13 @@
+{
+  "execution": {
+    "start_time": "2025-04-09T06:52:56.260400",
+    "duration_seconds": 23.57266,
+    "success": true,
+    "timed_out": false,
+    "error": null
+  },
+  "output": {
+    "stdout": "2025-04-09 06:53:02 - Created default translation file at /Users/victordibia/projects/autogenbook/dibia/code/autogeninaction/.chainlit/translations/nl.json\nPlease run this script using Chainlit.\n",
+    "stderr": "/Users/victordibia/projects/autogenbook/dibia/code/autogeninaction/course/samples/voice_agent/autogen_agentchat/app.py:7: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13\n  import audioop\n"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "title": "Voice Agents",
   "description": "An implementation of a voice enabled multi-agent system where speech to text models are used to transcribe user queries and text to speech models are used to read out a summarized version of agent responses. .",
+  "blog": "https://newsletter.victordibia.com/p/how-to-build-voice-agents-with-autogen",
   "domains": ["research"],
   "tags": ["ui", "groupchat-pattern"]
 }

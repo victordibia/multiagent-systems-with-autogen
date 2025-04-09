@@ -5,7 +5,7 @@ __pycache__/
 *$py.class
 
 */work_dir
-
+.chainlit
 *.env
 /data*
 
