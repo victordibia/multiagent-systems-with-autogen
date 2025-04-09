@@ -352,7 +352,7 @@ async def process_with_team(transcription, status_msg):
             if msg.source == "user":
                 continue
             await cl.Message(
-                content=msg.to_text(),
+                content= msg.source + ":" + msg.to_text(),
                 author=msg.source
             ).send()
 

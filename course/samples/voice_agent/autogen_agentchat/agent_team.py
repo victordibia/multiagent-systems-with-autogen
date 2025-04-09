@@ -32,7 +32,7 @@ def create_agent_team(
         model_client=model_client,
         tools=[google_search_tool, fetch_webpage_tool],
         system_message="""You are a research assistant focused on finding accurate information.
-        Use the google_search tool to find relevant information.
+        Use the google_search tool to find relevant information. However, if you can answer the question without searching, do and end with "TERMINATE".
         Break down complex queries into specific search terms.
         Always verify information across multiple sources when possible.
         When you find relevant information, explain why it's relevant and how it connects to the query. 
