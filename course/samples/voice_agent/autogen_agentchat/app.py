@@ -40,7 +40,19 @@ async def start():
     
     # Set default TTS settings
     cl.user_session.set("tts_voice", "coral")
-    cl.user_session.set("tts_instructions", "Speak in a clear and natural tone. You are ")
+    cl.user_session.set("tts_instructions", "Speak in a clear and natural tone.")
+    cl.user_session.set("use_custom_instructions", False)
+    cl.user_session.set("selected_preset", "default")
+    
+    # Define preset instructions
+    presets = {
+        "default": "Speak in a clear and natural tone.",
+        "friendly": "Speak in a warm, friendly tone with light enthusiasm.",
+        "professional": "Speak in a professional, authoritative manner.",
+        "enthusiastic": "Speak with high energy and excitement!",
+        "calm": "Speak in a calm, soothing voice at a measured pace."
+    }
+    cl.user_session.set("instruction_presets", presets)
     
     # Create the agent team (with no tools for now)
     team = create_agent_team()
@@ -55,10 +67,22 @@ async def start():
                 values=["alloy", "ash", "ballad", "coral", "echo", "fable", "onyx", "nova", "sage", "shimmer"],
                 initial_index=3  # coral is at index 3
             ),
+            Select(
+                id="instruction-mode",
+                label="Instruction Mode",
+                values=["preset", "custom"],
+                initial_index=0  # preset by default
+            ),
+            Select(
+                id="preset-select",
+                label="Voice Instruction Preset",
+                values=list(presets.keys()),
+                initial_index=0  # default preset
+            ),
             TextInput(
                 id="voice-instructions",
-                label="Voice Instructions",
-                initial="Speak in a clear and natural tone.",
+                label="Custom Voice Instructions",
+                initial="Speak in a clear and natural tone."
             )
         ]
     ).send()
@@ -70,15 +94,62 @@ async def start():
 @cl.on_settings_update
 async def handle_settings_update(settings):
     """Handle settings updates from the UI."""
-    if "voice-select" in settings:
-        cl.user_session.set("tts_voice", settings["voice-select"])
-    if "voice-instructions" in settings:
-        cl.user_session.set("tts_instructions", settings["voice-instructions"])
+    update_message = []
     
-    voice = settings.get("voice-select", cl.user_session.get("tts_voice", "coral"))
-    await cl.Message(
-        content=f"Voice settings updated: Using {voice} voice."
-    ).send()
+    # Handle voice selection update
+    if "voice-select" in settings:
+        voice = settings["voice-select"]
+        cl.user_session.set("tts_voice", voice)
+        update_message.append(f"Voice: {voice}")
+    
+    # Handle toggle between preset and custom instructions
+    if "instruction-mode" in settings:
+        mode = settings["instruction-mode"]
+        use_custom = mode == "custom"
+        cl.user_session.set("use_custom_instructions", use_custom)
+        update_message.append(f"Using {'custom' if use_custom else 'preset'} instructions")
+    
+    # Handle preset selection
+    if "preset-select" in settings:
+        preset_key = settings["preset-select"]
+        cl.user_session.set("selected_preset", preset_key)
+        
+        # Update the instructions if we're using presets
+        if not cl.user_session.get("use_custom_instructions"):
+            presets = cl.user_session.get("instruction_presets", {})
+            if presets and preset_key in presets:
+                preset_instruction = presets[preset_key]
+                cl.user_session.set("tts_instructions", preset_instruction)
+            update_message.append(f"Preset: {preset_key}")
+    
+    # Handle custom instructions update
+    if "voice-instructions" in settings:
+        custom_instructions = settings["voice-instructions"]
+        
+        # Only apply custom instructions if the toggle is on
+        if cl.user_session.get("use_custom_instructions"):
+            cl.user_session.set("tts_instructions", custom_instructions)
+            update_message.append("Custom instructions updated")
+    
+    # Determine which instructions are active
+    if cl.user_session.get("use_custom_instructions"):
+        active_instructions = cl.user_session.get("tts_instructions", "Speak in a clear and natural tone.")
+    else:
+        preset_key = cl.user_session.get("selected_preset", "default")
+        presets = cl.user_session.get("instruction_presets", {})
+        if presets and preset_key in presets:
+            active_instructions = presets[preset_key]
+        else:
+            active_instructions = "Speak in a clear and natural tone."
+    
+    # Always ensure tts_instructions is set correctly
+    cl.user_session.set("tts_instructions", active_instructions)
+    
+    # Send update message if there are changes
+    if update_message:
+        await cl.Message(
+            content=f"✅ Voice settings updated: {', '.join(update_message)}"
+        ).send()
 
 @cl.step(type="tool")
 async def speech_to_text(audio_file):
