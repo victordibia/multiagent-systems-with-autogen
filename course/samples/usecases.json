@@ -118,7 +118,7 @@
           "code": {
             "path": "/samples/hello_world/google_adk/app.py",
             "language": "python",
-            "loc": 77,
+            "loc": 69,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/google_adk/app.py",
             "metadata": {
               "title": "Hello World Agent",

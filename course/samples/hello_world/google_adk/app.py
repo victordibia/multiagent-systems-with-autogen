@@ -7,16 +7,6 @@ import asyncio
 
 # Define a calculator function to be used as a tool
 def calculator(a: float, b: float, operator: str) -> str:
-    """Performs basic arithmetic operations.
-    
-    Args:
-        a: The first number
-        b: The second number
-        operator: One of '+', '-', '*', or '/'
-        
-    Returns:
-        The result of the calculation as a string
-    """
     try:
         if operator == '+':
             return str(a + b)
