@@ -8,6 +8,7 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 
 
 def calculator(a: float, b: float, operator: str) -> str:
+    """Perform basic arithmetic operations."""
     try:
         if operator == '+':
             return str(a + b)

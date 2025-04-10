@@ -64,7 +64,7 @@
           "code": {
             "path": "/samples/hello_world/autogen_agentchat/app.py",
             "language": "python",
-            "loc": 32,
+            "loc": 33,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_agentchat/app.py",
             "metadata": {
               "title": "Hello World Agent",
@@ -91,7 +91,7 @@
           "code": {
             "path": "/samples/hello_world/autogen_core/app.py",
             "language": "python",
-            "loc": 120,
+            "loc": 121,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/autogen_core/app.py",
             "metadata": {
               "title": "Hello World Agent",
@@ -118,7 +118,7 @@
           "code": {
             "path": "/samples/hello_world/google_adk/app.py",
             "language": "python",
-            "loc": 69,
+            "loc": 70,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/google_adk/app.py",
             "metadata": {
               "title": "Hello World Agent",
@@ -162,6 +162,33 @@
           },
           "results": {
             "path": "/samples/hello_world/langgraph/results.json"
+          }
+        },
+        {
+          "framework": "llama_index",
+          "title": "Llama Index Implementation",
+          "description": "Implementation using llama_index",
+          "code": {
+            "path": "/samples/hello_world/llama_index/app.py",
+            "language": "python",
+            "loc": 34,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/llama_index/app.py",
+            "metadata": {
+              "title": "Hello World Agent",
+              "description": "Built using the LlamaIndex framework",
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
+              "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
+            }
+          },
+          "results": {
+            "path": "/samples/hello_world/llama_index/results.json"
           }
         },
         {
@@ -521,6 +548,7 @@
       "autogen_core",
       "google_adk",
       "langgraph",
+      "llama_index",
       "openai_agents"
     ]
   }
