@@ -112,6 +112,33 @@
           }
         },
         {
+          "framework": "google_adk",
+          "title": "Google Adk Implementation",
+          "description": "Implementation using google_adk",
+          "code": {
+            "path": "/samples/hello_world/google_adk/app.py",
+            "language": "python",
+            "loc": 77,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/google_adk/app.py",
+            "metadata": {
+              "title": "Hello World Agent",
+              "description": "Built using the Google Agent Development Kit (ADK), this agent is a simple implementation of a multi-agent system that can be used to build more complex systems. It is designed to be easy to use and understand, making it a great starting point for those new to the field of AI and machine learning.",
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
+              "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
+            }
+          },
+          "results": {
+            "path": "/samples/hello_world/google_adk/results.json"
+          }
+        },
+        {
           "framework": "langgraph",
           "title": "Langgraph Implementation",
           "description": "Implementation using langgraph",
@@ -184,7 +211,7 @@
           "code": {
             "path": "/samples/voice_agent/autogen_agentchat/app.py",
             "language": "python",
-            "loc": 359,
+            "loc": 421,
             "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/voice_agent/autogen_agentchat/app.py",
             "metadata": {
               "title": "Voice Agents",
@@ -492,6 +519,7 @@
     "frameworks": [
       "autogen_agentchat",
       "autogen_core",
+      "google_adk",
       "langgraph",
       "openai_agents"
     ]

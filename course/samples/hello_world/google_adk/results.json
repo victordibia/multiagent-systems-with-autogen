@@ -1,0 +1,13 @@
+{
+  "execution": {
+    "start_time": "2025-04-09T18:17:06.006078",
+    "duration_seconds": 16.737862,
+    "success": true,
+    "timed_out": false,
+    "error": null
+  },
+  "output": {
+    "stdout": "Running calculation...\nResponse: The result of 545.34567 * 34555.34 is 18844605.0443778.\n\n",
+    "stderr": "Warning: there are non-text parts in the response: ['function_call'],returning concatenated text result from text parts,check out the non text parts for full response from model.\n"
+  }
+}
