@@ -1,0 +1,46 @@
+{
+  "frameworks": [
+    {
+      "id": "crewai",
+      "name": "CrewAI",
+      "file": "data/crewai.json",
+      "imageUrl": "logos/crewai.png"
+    },
+    {
+      "id": "googleadk",
+      "name": "Google ADK",
+      "file": "data/googleadk.json",
+      "imageUrl": "logos/googleadk.png"
+    },
+    {
+      "id": "langgraph",
+      "name": "LangGraph",
+      "file": "data/langgraph.json",
+      "imageUrl": "logos/langchain.png"
+    },
+    {
+      "id": "llamaindex",
+      "name": "LlamaIndex",
+      "file": "data/llamaindex.json",
+      "imageUrl": "logos/llamaindex.png"
+    },
+    {
+      "id": "openai-agents",
+      "name": "OpenAI Agents SDK",
+      "file": "data/openai-agents.json",
+      "imageUrl": "logos/openai.png"
+    },
+    {
+      "id": "autogen",
+      "name": "AutoGen",
+      "file": "data/autogen.json",
+      "imageUrl": "logos/autogen.jpeg"
+    },
+    {
+      "id": "pydanticai",
+      "name": "PydanticAI",
+      "file": "data/pydanticai.json",
+      "imageUrl": "logos/pydanticai.png"
+    }
+  ]
+}

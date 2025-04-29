@@ -1,0 +1,408 @@
+{
+  "framework_name": "OpenAI Agents SDK",
+  "framework_url": "https://openai.github.io/openai-agents-python/",
+  "evaluation_date": "2025-04-14",
+  "framework_summary": "The OpenAI Agents SDK is a lightweight, production-ready Python framework for building agentic AI applications with very few abstractions. It focuses on a small set of core primitives: Agents (LLMs with instructions and tools), Handoffs (for agent delegation), and Guardrails (for input validation). The framework includes built-in tracing for debugging and monitoring, and is designed to be simple yet powerful, with Python-first orchestration that allows developers to leverage standard language features rather than learning new abstractions.",
+  "dimensions": [
+    {
+      "name": "Developer Experience",
+      "dimension_slug": "developer_experience",
+      "dimension_justification": "The OpenAI Agents SDK excels in developer experience by following a philosophy of minimal abstractions while providing powerful capabilities. It offers a straightforward, Python-first approach that allows developers to use familiar language features for orchestration rather than learning new concepts. The framework has few primitives (Agents, Handoffs, Guardrails) making it quick to learn, yet provides enough flexibility for complex applications. The automatic schema generation for function tools, built-in tracing, and compatibility with any model supporting the OpenAI Chat Completions API further enhance the developer experience.",
+      "questions": [
+        {
+          "question": "Does it provide a high level Agent abstraction with the ability to attach any LLM/model, tools, memory components?",
+          "question_slug": "developer_experience_high_level_abstraction",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/",
+              "excerpt": "Agents, which are LLMs equipped with instructions and tools",
+              "relevance": "Shows the core agent abstraction"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/agents/",
+              "excerpt": "model: which LLM to use, and optional model_settings to configure model tuning parameters like temperature, top_p, etc.",
+              "relevance": "Shows ability to configure LLM models"
+            },
+            {
+              "source_url": "https://github.com/openai/openai-agents-python",
+              "excerpt": "our SDK is compatible with any model providers that support the OpenAI Chat Completions API format",
+              "relevance": "Shows model flexibility beyond OpenAI models"
+            }
+          ]
+        },
+        {
+          "question": "Does it provide a low level API for custom agents and complex orchestration behavior?",
+          "question_slug": "developer_experience_low_level_api",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/",
+              "excerpt": "Python-first: Use built-in language features to orchestrate and chain agents, rather than needing to learn new abstractions",
+              "relevance": "Shows the low-level orchestration approach"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/multi_agent/",
+              "excerpt": "Orchestrating via code: determining the flow of agents via your code",
+              "relevance": "Shows code-based orchestration options"
+            },
+            {
+              "source_url": "https://github.com/openai/openai-agents-python",
+              "excerpt": "The Agents SDK is designed to be highly flexible, allowing you to model a wide range of LLM workflows",
+              "relevance": "Indicates flexibility for custom workflows"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Asynchronous API",
+      "dimension_slug": "async_api",
+      "dimension_justification": "The OpenAI Agents SDK provides strong asynchronous support, making it well-suited for building responsive agentic applications. The framework is designed with async/await patterns in mind, offering both synchronous and asynchronous APIs to accommodate different use cases. The Runner class provides methods like run() for async execution and run_sync() for synchronous operation, and supports async functions for dynamic instructions and tool implementations. This enables developers to build non-blocking applications that can handle concurrent agent operations efficiently.",
+      "questions": [
+        {
+          "question": "Is the framework async first?",
+          "question_slug": "async_api_async_first",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://www.datacamp.com/tutorial/openai-agents-sdk-tutorial",
+              "excerpt": "Asynchronous programming: Familiarity with async/await patterns in Python, as the Agents SDK is built around asynchronous execution",
+              "relevance": "Indicates async-first design"
+            },
+            {
+              "source_url": "https://github.com/openai/openai-agents-python",
+              "excerpt": "result = await Runner.run(triage_agent, input=\"Hola, ¿cómo estás?\")",
+              "relevance": "Shows async execution with await"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/agents/",
+              "excerpt": "Both regular and async functions are accepted",
+              "relevance": "Shows support for both sync and async functions"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Event-Driven Communication",
+      "dimension_slug": "event_driven",
+      "dimension_justification": "The OpenAI Agents SDK provides moderate support for event-driven communication. While it doesn't explicitly feature a comprehensive event system as its core architectural paradigm, it does support certain event-driven patterns through its agent loop and handoff mechanisms. The agent loop handles tool calls and responses in an event-like manner, and the framework's tracing capabilities capture events during execution. The primary mode of inter-agent communication is through direct handoffs or using agents as tools, which represents a more direct delegation pattern rather than a decoupled event-based system.",
+      "questions": [
+        {
+          "question": "Is the framework event-driven at its core?",
+          "question_slug": "event_driven_core",
+          "score": 5,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/",
+              "excerpt": "Agent loop: Built-in agent loop that handles calling tools, sending results to the LLM, and looping until the LLM is done",
+              "relevance": "Shows loop-based rather than event-driven architecture"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/tracing/",
+              "excerpt": "The Agents SDK includes built-in tracing, collecting a comprehensive record of events during an agent run",
+              "relevance": "Shows event recording but not event-driven design"
+            },
+            {
+              "source_url": "https://github.com/openai/openai-agents-python",
+              "excerpt": "We process the tool calls (if any) and append the tool responses messages. Then we go to step 1",
+              "relevance": "Shows sequential processing approach"
+            }
+          ]
+        },
+        {
+          "question": "Does it provide a runtime abstraction that supports both local and distributed deployments?",
+          "question_slug": "event_driven_runtime_abstraction",
+          "score": 6,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/multi_agent/",
+              "excerpt": "Running multiple agents in parallel, e.g. via Python primitives like asyncio.gather",
+              "relevance": "Shows parallel execution support"
+            },
+            {
+              "source_url": "https://github.com/openai/openai-realtime-agents",
+              "excerpt": "Sequential agent handoffs according to a defined agent graph",
+              "relevance": "Shows support for handoff patterns that could work across runtimes"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/multi_agent/",
+              "excerpt": "Orchestrating via code: determining the flow of agents via your code",
+              "relevance": "Implies local orchestration rather than distributed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "State Management",
+      "dimension_slug": "state_management",
+      "dimension_justification": "The OpenAI Agents SDK provides solid state management capabilities through its Context object, which serves as a dependency-injection tool for sharing state across agents, tools, and handoffs within a run. This Context object allows developers to pass data between different components of their agent system, maintaining state throughout the execution flow. While not as comprehensive as some other frameworks' state management features, the SDK's approach is lightweight and flexible, fitting with its minimalist philosophy. The framework also supports maintaining conversation history and managing the agent loop state internally.",
+      "questions": [
+        {
+          "question": "Can you checkpoint and resume an agent or entire workflow (consisting of multiple agents)?",
+          "question_slug": "state_management_checkpoint_resume",
+          "score": 7,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/agents/",
+              "excerpt": "Context is a dependency-injection tool: it's an object you create and pass to Runner.run(), that is passed to every agent, tool, handoff etc",
+              "relevance": "Shows state sharing capabilities"
+            },
+            {
+              "source_url": "https://www.datacamp.com/tutorial/openai-agents-sdk-tutorial",
+              "excerpt": "context management for maintaining conversation state",
+              "relevance": "Indicates conversation state persistence"
+            },
+            {
+              "source_url": "https://github.com/openai/openai-agents-python",
+              "excerpt": "Final output is the last thing the agent produces in the loop",
+              "relevance": "Shows agent loop state management"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Declarative Specifications",
+      "dimension_slug": "declarative",
+      "dimension_justification": "The OpenAI Agents SDK takes a more imperative than declarative approach to agent specification, aligning with its Python-first philosophy. While it doesn't have a full declarative configuration system (like YAML or JSON specifications), it does incorporate some declarative elements through Pydantic models for tool parameter validation and structured outputs. The framework automatically generates schemas for function tools based on type annotations and docstrings, providing a semi-declarative way to specify tool interfaces. However, the overall workflow construction is more code-driven than declaration-driven.",
+      "questions": [
+        {
+          "question": "Can agents be serialized to a declarative format like JSON and runtime objects reconstructed from them?",
+          "question_slug": "declarative_serialization",
+          "score": 5,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/tools/",
+              "excerpt": "We use Python's inspect module to extract the function signature, along with griffe to parse docstrings and pydantic for schema creation",
+              "relevance": "Shows schema generation from code"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/tools/",
+              "excerpt": "The Agents SDK will setup the tool automatically: The name of the tool will be the name of the Python function",
+              "relevance": "Shows automatic extraction rather than declarative definition"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/tools/",
+              "excerpt": "from pydantic import BaseModel from agents import RunContextWrapper, FunctionTool",
+              "relevance": "Shows Pydantic for schema validation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Debugging and Evaluation Tools",
+      "dimension_slug": "debugging",
+      "dimension_justification": "The OpenAI Agents SDK provides strong debugging and evaluation capabilities through its built-in tracing system. This system collects comprehensive records of events during agent runs, including LLM generations, tool calls, handoffs, and guardrails, enabling developers to visualize and monitor their workflows. The tracing functionality is extensible by design, supporting custom spans and integration with external observability platforms like Langfuse, LangSmith, and AgentOps. The framework's traces can be used with OpenAI's evaluation, fine-tuning, and distillation tools, providing a robust ecosystem for debugging and optimizing agent performance.",
+      "questions": [
+        {
+          "question": "Does the framework provide a UI interface to rapidly modify prototype teams, reuse existing components, inspect agent runtime behaviors?",
+          "question_slug": "debugging_ui_interface",
+          "score": 7,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/tracing/",
+              "excerpt": "Using the Traces dashboard, you can debug, visualize, and monitor your workflows during development and in production",
+              "relevance": "Shows visualization interface for debugging"
+            },
+            {
+              "source_url": "https://langfuse.com/docs/integrations/openaiagentssdk/example-evaluating-openai-agents",
+              "excerpt": "Langfuse records a trace that contains spans, which represent each step of your agent's logic",
+              "relevance": "Shows third-party debugging interface"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/",
+              "excerpt": "the SDK comes with built-in tracing that lets you visualize and debug your agentic flows",
+              "relevance": "Confirms built-in visualization capabilities"
+            }
+          ]
+        },
+        {
+          "question": "Does the framework provide evaluation tools (interactive or offline/batch) to compare multiple multi-agent configurations?",
+          "question_slug": "debugging_evaluation_tools",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/",
+              "excerpt": "use the OpenAI suite of evaluation, fine-tuning and distillation tools",
+              "relevance": "Shows integration with evaluation tools"
+            },
+            {
+              "source_url": "https://langfuse.com/docs/integrations/openaiagentssdk/example-evaluating-openai-agents",
+              "excerpt": "Then compare them side-by-side in Langfuse. In this example, I did run the agent 3 times on the 50 dataset questions",
+              "relevance": "Shows comparison capabilities"
+            },
+            {
+              "source_url": "https://cookbook.openai.com/examples/agents_sdk/dispute_agent",
+              "excerpt": "implementing Guardrails is strongly recommended for production applications to validate inputs and proactively detect errors",
+              "relevance": "Mentions production-ready validation tools"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Multi-Agent Pattern Support",
+      "dimension_slug": "multiagent",
+      "dimension_justification": "The OpenAI Agents SDK provides strong support for multi-agent patterns through its handoff mechanism and the ability to use agents as tools. These features enable the creation of various collaboration patterns including sequential agent handoffs, hierarchical delegation, and specialized agent networks. The framework supports both LLM-driven decision-making for agent orchestration and code-driven orchestration for more deterministic flows. Examples in the repository demonstrate patterns like triage agents, specialized worker agents, and supervisor-worker relationships, making it flexible for implementing different multi-agent architectures.",
+      "questions": [
+        {
+          "question": "Does the framework provide both autonomous multi-agent patterns and deterministic workflow patterns?",
+          "question_slug": "multiagent_patterns",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/multi_agent/",
+              "excerpt": "There are two main ways to orchestrate agents: Allowing the LLM to make decisions... Orchestrating via code: determining the flow of agents via your code",
+              "relevance": "Shows both autonomous and deterministic options"
+            },
+            {
+              "source_url": "https://github.com/openai/openai-agents-python",
+              "excerpt": "The Agents SDK is designed to be highly flexible, allowing you to model a wide range of LLM workflows including deterministic flows, iterative loops, and more",
+              "relevance": "Confirms support for deterministic workflows"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/",
+              "excerpt": "Handoffs, which allow agents to delegate to other agents for specific tasks",
+              "relevance": "Shows agent delegation capabilities"
+            }
+          ]
+        },
+        {
+          "question": "Do these patterns include built-in task management capabilities (determining when a task is complete, human delegation mechanisms)?",
+          "question_slug": "multiagent_task_management",
+          "score": 7,
+          "evidence": [
+            {
+              "source_url": "https://github.com/openai/openai-agents-python",
+              "excerpt": "If the current agent has an output_type, the loop runs until the agent produces structured output matching that type",
+              "relevance": "Shows task completion determination"
+            },
+            {
+              "source_url": "https://www.datacamp.com/tutorial/openai-agents-sdk-tutorial",
+              "excerpt": "Handoffs completely transfer control to another agent, making them ideal when the conversation needs to continue with a specialist",
+              "relevance": "Shows delegation patterns"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/multi_agent/",
+              "excerpt": "Have specialized agents that excel in one task, rather than having a general purpose agent that is expected to be good at anything",
+              "relevance": "Shows task specialization approach"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Observability",
+      "dimension_slug": "observability",
+      "dimension_justification": "The OpenAI Agents SDK offers strong observability capabilities through its built-in tracing system, which automatically tracks LLM generations, tool calls, handoffs, and guardrails. This tracing functionality provides visibility into agent interactions and workflow execution, helping developers debug and monitor their applications. The framework supports integration with various observability platforms including OpenAI's own Traces dashboard, Langfuse, LangSmith, AgentOps, and others through its extensible tracing processors. This flexibility allows developers to choose their preferred observability tools and gain insights into their agent applications' performance.",
+      "questions": [
+        {
+          "question": "Does the framework provide visibility into agent interactions, message flows, and resource metrics?",
+          "question_slug": "observability_visibility",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/tracing/",
+              "excerpt": "The Agents SDK includes built-in tracing, collecting a comprehensive record of events during an agent run: LLM generations, tool calls, handoffs, guardrails",
+              "relevance": "Shows extensive tracing capabilities"
+            },
+            {
+              "source_url": "https://langfuse.com/docs/integrations/openaiagentssdk/openai-agents",
+              "excerpt": "Langfuse is an open-source observability platform for AI agents. It helps you visualize and monitor LLM calls, tool usage, cost, latency, and more",
+              "relevance": "Shows integration with observability platform"
+            },
+            {
+              "source_url": "https://github.com/openai/openai-agents-python",
+              "excerpt": "The Agents SDK automatically traces your agent runs, making it easy to track and debug the behavior of your agents",
+              "relevance": "Confirms automatic tracing"
+            }
+          ]
+        },
+        {
+          "question": "Does it integrate with standard observability tools for production monitoring and debugging?",
+          "question_slug": "observability_external_tools",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://github.com/openai/openai-agents-python",
+              "excerpt": "Tracing is extensible by design, supporting custom spans and a wide variety of external destinations, including Logfire, AgentOps, Braintrust, Scorecard, and Keywords AI",
+              "relevance": "Shows extensive integration options"
+            },
+            {
+              "source_url": "https://docs.smith.langchain.com/observability/how_to_guides/trace_with_openai_agents_sdk",
+              "excerpt": "You can integrate LangSmith tracing with the OpenAI Agents SDK by using the OpenAIAgentsTracingProcessor class",
+              "relevance": "Shows integration with LangSmith"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/tracing/",
+              "excerpt": "add_trace_processor() lets you add an additional trace processor that will receive traces and spans as they are ready",
+              "relevance": "Shows capability to extend tracing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deployment Capabilities",
+      "dimension_slug": "deployment_capabilities",
+      "dimension_justification": "The OpenAI Agents SDK provides moderate deployment capabilities. As a Python library, it can be deployed using standard Python deployment methods, but lacks dedicated deployment infrastructure compared to some other frameworks. The SDK's lightweight nature makes it relatively easy to integrate into existing systems, and its tracing capabilities support production monitoring. While there aren't explicit deployment guides or tools in the documentation, examples demonstrate integration with web services like Stripe API, suggesting adaptability to various deployment scenarios. The framework's focus is more on the agent functionality than deployment infrastructure.",
+      "questions": [
+        {
+          "question": "Does it provide guidance and tooling for scalable, resilient production deployments?",
+          "question_slug": "deployment_scalable_tooling",
+          "score": 6,
+          "evidence": [
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/",
+              "excerpt": "It's a production-ready upgrade of our previous experimentation for agents, Swarm",
+              "relevance": "Indicates production readiness"
+            },
+            {
+              "source_url": "https://cookbook.openai.com/examples/agents_sdk/dispute_agent",
+              "excerpt": "implementing Guardrails is strongly recommended for production applications to validate inputs and proactively detect errors",
+              "relevance": "Shows production considerations"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/multi_agent/",
+              "excerpt": "Running multiple agents in parallel, e.g. via Python primitives like asyncio.gather. This is useful for speed",
+              "relevance": "Shows scalability approach"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ecosystem and Community",
+      "dimension_slug": "ecosystem_community",
+      "dimension_justification": "The OpenAI Agents SDK benefits from association with OpenAI's brand and ecosystem, providing integration with OpenAI's evaluation, fine-tuning, and distillation tools. As an open-source framework, it encourages community contributions and is compatible with any model provider supporting the OpenAI Chat Completions API format. The SDK integrates with multiple observability platforms like Langfuse, LangSmith, and AgentOps, expanding its ecosystem. While newer compared to some frameworks, its documentation includes examples, tutorials, and official repositories with sample implementations, showing a growing but still developing ecosystem and community.",
+      "questions": [
+        {
+          "question": "Is there an active community with strong documentation and growing ecosystem?",
+          "question_slug": "community_active",
+          "score": 7,
+          "evidence": [
+            {
+              "source_url": "https://github.com/openai/openai-agents-python",
+              "excerpt": "We're committed to continuing to build the Agents SDK as an open source framework so others in the community can expand on our approach",
+              "relevance": "Shows commitment to open-source community"
+            },
+            {
+              "source_url": "https://openai.github.io/openai-agents-python/examples/",
+              "excerpt": "Check out a variety of sample implementations of the SDK in the examples section of the repo",
+              "relevance": "Shows availability of examples"
+            },
+            {
+              "source_url": "https://cookbook.openai.com/examples/agents_sdk/dispute_agent",
+              "excerpt": "We recently announced our new open-source Agents SDK, designed to help you build agentic AI applications",
+              "relevance": "Indicates recency of the framework"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

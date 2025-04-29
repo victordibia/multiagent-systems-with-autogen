@@ -1,0 +1,243 @@
+{
+  "framework_name": "FrameworkName",
+  "framework_url": "https://framework-documentation-url.com/",
+  "evaluation_date": "2025-04-14",
+  "framework_summary": "A brief summary of the framework's purpose, architecture, and key features.",
+  "dimensions": [
+    {
+      "name": "Developer Experience",
+      "dimension_score": 0,
+      "dimension_justification": "Overall assessment of the framework's developer experience.",
+      "questions": [
+        {
+          "question": "Does it provide a high level Agent abstraction with the ability to attach any LLM/model, tools, memory components?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        },
+        {
+          "question": "Does it provide a low level API for custom agents and complex orchestration behavior?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Asynchronous API",
+      "dimension_score": 0,
+      "dimension_justification": "Overall assessment of the framework's asynchronous capabilities.",
+      "questions": [
+        {
+          "question": "Is the framework async first?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Event-Driven Communication",
+      "dimension_score": 0,
+      "dimension_justification": "Overall assessment of the framework's event-driven communication capabilities.",
+      "questions": [
+        {
+          "question": "Is the framework event-driven at its core?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        },
+        {
+          "question": "Does it provide a runtime abstraction that supports both local and distributed deployments?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "State Management",
+      "dimension_score": 0,
+      "dimension_justification": "Overall assessment of the framework's state management capabilities.",
+      "questions": [
+        {
+          "question": "Can you checkpoint and resume an agent or entire workflow (consisting of multiple agents)?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Declarative Specifications",
+      "dimension_score": 0,
+      "dimension_justification": "Overall assessment of the framework's support for declarative specifications.",
+      "questions": [
+        {
+          "question": "Can agents be serialized to a declarative format like JSON and runtime objects reconstructed from them?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Debugging and Evaluation Tools",
+      "dimension_score": 0,
+      "dimension_justification": "Overall assessment of the framework's debugging and evaluation tools.",
+      "questions": [
+        {
+          "question": "Does the framework provide a UI interface to rapidly modify prototype teams, reuse existing components, inspect agent runtime behaviors?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        },
+        {
+          "question": "Does the framework provide evaluation tools (interactive or offline/batch) to compare multiple multi-agent configurations?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Multi-Agent Pattern Support",
+      "dimension_score": 0,
+      "dimension_justification": "Overall assessment of the framework's support for multi-agent patterns.",
+      "questions": [
+        {
+          "question": "Does the framework provide both autonomous multi-agent patterns and deterministic workflow patterns?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        },
+        {
+          "question": "Do these patterns include built-in task management capabilities (determining when a task is complete, human delegation mechanisms)?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Observability",
+      "dimension_score": 0,
+      "dimension_justification": "Overall assessment of the framework's observability capabilities.",
+      "questions": [
+        {
+          "question": "Does the framework provide visibility into agent interactions, message flows, and resource metrics?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        },
+        {
+          "question": "Does it integrate with standard observability tools for production monitoring and debugging?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deployment Capabilities",
+      "dimension_score": 0,
+      "dimension_justification": "Overall assessment of the framework's deployment capabilities.",
+      "questions": [
+        {
+          "question": "Does it provide guidance and tooling for scalable, resilient production deployments?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ecosystem and Community",
+      "dimension_score": 0,
+      "dimension_justification": "Overall assessment of the framework's ecosystem and community.",
+      "questions": [
+        {
+          "question": "Is there an active community with strong documentation and growing ecosystem?",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://documentation-url/section",
+              "excerpt": "Relevant excerpt from documentation",
+              "relevance": "How this evidence relates to the question"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

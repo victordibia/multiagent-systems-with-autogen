@@ -1,0 +1,350 @@
+{
+  "framework_name": "AutoGen",
+  "framework_url": "https://microsoft.github.io/autogen/",
+  "evaluation_date": "2025-04-14",
+  "framework_summary": "AutoGen is an open-source programming framework (MIT license) from Microsoft for building agentic AI applications, particularly those involving multiple agents that can collaborate to solve complex tasks. It offers a layered architecture with a low-level Core API for fine-grained control and a high-level AgentChat API for rapid prototyping of conversational agents. The framework offers strong support for asynchronous and event-driven communication, making it suitable for building scalable and responsive systems. AutoGen provides built-in mechanisms for state management, allowing agents and teams to maintain context across interactions. The framework is equipped with a robust set of debugging and evaluation tools, including tracing, logging, and benchmarking capabilities, and benefits from a growing ecosystem with numerous extensions and an active community providing support and integrations.",
+  "dimensions": [
+    {
+      "name": "Developer Experience",
+      "dimension_slug": "developer_experience",
+      "dimension_justification": "AutoGen offers a versatile and comprehensive developer experience through its layered architecture, providing both high-level abstractions for beginners and low-level APIs for advanced users. The AgentChat API enables rapid prototyping with pre-built agents and intuitive defaults, while the Core API offers granular control for custom implementations. The framework is further enhanced by AutoGen Studio, a no-code GUI for visual agent development, and extensive documentation and examples. The learning curve can be steeper for the Core API, but the availability of multiple abstraction levels ensures that developers of varying skill levels can effectively use the framework.",
+      "questions": [
+        {
+          "question": "Does it provide a high level Agent abstraction with the ability to attach any LLM/model, tools, memory components?",
+          "question_slug": "developer_experience_high_level_abstraction",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://github.com/microsoft/autogen",
+              "excerpt": "AgentChat API implements a simpler but opinionated API for rapid prototyping... and supports common multi-agent patterns such as two-agent chat or group chats",
+              "relevance": "Shows high-level agent abstractions with common patterns"
+            },
+            {
+              "source_url": "https://microsoft.github.io/autogen/stable//user-guide/agentchat-user-guide/memory.html",
+              "excerpt": "AgentChat provides a Memory protocol that can be extended to provide this functionality",
+              "relevance": "Demonstrates memory components integration"
+            },
+            {
+              "source_url": "https://microsoft.github.io/autogen/stable//user-guide/extensions-user-guide/index.html",
+              "excerpt": "autogen_ext.models.* for model clients like OpenAIChatCompletionClient and SKChatCompletionAdapter for connecting to hosted and local models",
+              "relevance": "Shows ability to attach various LLM models"
+            }
+          ]
+        },
+        {
+          "question": "Does it provide a low level API for custom agents and complex orchestration behavior?",
+          "question_slug": "developer_experience_low_level_api",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://github.com/microsoft/autogen",
+              "excerpt": "Core API implements message passing, event-driven agents, and local and distributed runtime for flexibility and power",
+              "relevance": "Describes the low-level API capabilities"
+            },
+            {
+              "source_url": "https://www.microsoft.com/en-us/research/project/autogen/",
+              "excerpt": "Modular and extensible: Users can easily customize systems with pluggable components, including custom agents, tools, memory, and models",
+              "relevance": "Shows extensibility for custom implementations"
+            },
+            {
+              "source_url": "https://microsoft.github.io/autogen/stable//user-guide/core-user-guide/index.html",
+              "excerpt": "AutoGen core offers an easy way to quickly build event-driven, distributed, scalable, resilient AI agent systems",
+              "relevance": "Illustrates core API capabilities for complex orchestration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Asynchronous API",
+      "dimension_slug": "async_api",
+      "dimension_justification": "AutoGen v0.4 was redesigned with asynchronous messaging as a fundamental architectural feature. The framework is built around an event-driven model where agents communicate through asynchronous messages, supporting both event-driven and request/response interaction patterns. This architectural choice enhances performance, scalability, and responsiveness, particularly for complex multi-agent applications. Asynchronous capabilities are integral to both the Core API and AgentChat, with native async/await support and streaming functionality.",
+      "questions": [
+        {
+          "question": "Is the framework async first?",
+          "question_slug": "async_api_async_first",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://www.microsoft.com/en-us/research/project/autogen/",
+              "excerpt": "Asynchronous messaging: Agents communicate through asynchronous messages, supporting both event-driven and request/response interaction patterns",
+              "relevance": "Explicitly states asynchronous messaging as core architectural feature"
+            },
+            {
+              "source_url": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen",
+              "excerpt": "AutoGen Core: A low level api focused on enabling communication between entities through asynchronous messages",
+              "relevance": "Confirms the asynchronous nature of the Core API"
+            },
+            {
+              "source_url": "https://devblogs.microsoft.com/autogen/autogen-reimagined-launching-autogen-0-4/",
+              "excerpt": "Asynchronous Messaging: Agents now communicate through asynchronous messages, supporting both event-driven and request/response interaction patterns",
+              "relevance": "Highlights asynchronous messaging as a key feature of v0.4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Event-Driven Communication",
+      "dimension_slug": "event_driven",
+      "dimension_justification": "AutoGen's architecture is fundamentally event-driven, particularly in the Core API which implements an actor model for agents. This design enables sophisticated communication patterns where agents react to events and messages from other agents. The centralized message delivery system enhances observability and debugging capabilities, while supporting both local and distributed deployments across organizational boundaries. This event-driven approach allows for the implementation of complex agent interaction patterns, dynamic workflows, and scalable distributed systems.",
+      "questions": [
+        {
+          "question": "Is the framework event-driven at its core?",
+          "question_slug": "event_driven_core",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://www.microsoft.com/en-us/research/project/autogen/",
+              "excerpt": "AutoGen v0.4 addresses these issues with its asynchronous, event-driven architecture",
+              "relevance": "Explicitly identifies event-driven architecture as a core feature"
+            },
+            {
+              "source_url": "https://www.microsoft.com/en-us/research/video/autogen-v0-4-reimagining-the-foundation-of-agentic-ai-for-scale-and-more-microsoft-research-forum/",
+              "excerpt": "The Core implements an actor model for agentic AI... asynchronous message exchange between agents",
+              "relevance": "Explains the actor model implementation for message exchange"
+            }
+          ]
+        },
+        {
+          "question": "Does it provide a runtime abstraction that supports both local and distributed deployments?",
+          "question_slug": "event_driven_runtime_abstraction",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://github.com/microsoft/autogen",
+              "excerpt": "Agents are developed by using the Actor model. You can build and run your agent system locally and easily move to a distributed system in the cloud when you are ready",
+              "relevance": "Directly addresses local and distributed deployment capabilities"
+            },
+            {
+              "source_url": "https://microsoft.github.io/autogen/stable//user-guide/core-user-guide/index.html",
+              "excerpt": "Enable complex scenarios with networks of agents across organizational boundaries",
+              "relevance": "Indicates support for distributed agent networks"
+            },
+            {
+              "source_url": "https://microsoft.github.io/autogen/stable//user-guide/extensions-user-guide/index.html",
+              "excerpt": "autogen_ext.runtimes.* for agent runtimes like GrpcWorkerAgentRuntime",
+              "relevance": "Shows specific runtime implementations for distributed deployment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "State Management",
+      "dimension_slug": "state_management",
+      "dimension_justification": "AutoGen provides robust state management capabilities that are essential for building context-aware and persistent agent applications. The framework offers built-in features for saving and loading agent states, allowing for workflows to be paused, persisted, and resumed.",
+      "questions": [
+        {
+          "question": "Can you checkpoint and resume an agent or entire workflow (consisting of multiple agents)?",
+          "question_slug": "state_management_checkpoint_resume",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://microsoft.github.io/autogen/dev/user-guide/agentchat-user-guide/tutorial/state.html",
+              "excerpt": "Tutorial on loading and saving agent state, including pausing and resuming workflows",
+              "relevance": "Shows state persistence capabilities for checkpoint/resume functionality"
+            },
+
+            {
+              "source_url": "https://microsoft.github.io/autogen/dev/user-guide/agentchat-user-guide/memory.html",
+              "excerpt": "AgentChat provides a Memory protocol that can be extended to provide this functionality. The key methods are query, update_context, add, clear, and close",
+              "relevance": "Describes  how to implement Memory and add that to an agent "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Declarative Specifications",
+      "dimension_slug": "declarative",
+      "dimension_justification": "AutoGen primarily supports imperative python code for defining agents and workflows but also provides an input component serialization interface where agents can be represented entirely as declarative configurations that be loaded and instantiated. The declarative capabilities are more focused on configuration and less on comprehensive behavior definition (which resides in the python classes referenced in the declarative specifications).",
+      "questions": [
+        {
+          "question": "Can agents be serialized to a declarative format like JSON and runtime objects reconstructed from them?",
+          "question_slug": "declarative_serialization",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://microsoft.github.io/autogen/stable/user-guide/autogenstudio-user-guide/index.html",
+              "excerpt": "A visual interface for creating agent teams through declarative specification (JSON) or drag-and-drop",
+              "relevance": "Shows declarative JSON specification support in AutoGen Studio"
+            },
+            {
+              "source_url": "https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/framework/component-config.html",
+              "excerpt": "AutoGen provides a component serialization interface that allows you to represent components in a declarative format",
+              "relevance": "Describes the component serialization interface for declarative specifications"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Debugging and Evaluation Tools",
+      "dimension_slug": "debugging",
+      "dimension_justification": "AutoGen offers built-in tracing, logging, and debugging capabilities, with support for industry-standard observability through OpenTelemetry. AutoGen Studio provides visualization of agent interactions and workflows, while AutoGen Bench offers benchmarking for systematic agent evaluation.",
+      "questions": [
+        {
+          "question": "Does the framework provide a UI interface to rapidly modify prototype teams, reuse existing components, inspect agent runtime behaviors?",
+          "question_slug": "debugging_ui_interface",
+          "score": 10,
+          "evidence": [
+            {
+              "source_url": "https://microsoft.github.io/autogen/stable/user-guide/autogenstudio-user-guide/index.html",
+              "excerpt": "AutoGen Studio is a low-code interface built to help you rapidly prototype AI agents, enhance them with skills, compose them into workflows",
+              "relevance": "Describes the dedicated UI tool for agent prototyping"
+            },
+            {
+              "source_url": "https://www.microsoft.com/en-us/research/blog/autogen-v0-4-reimagining-the-foundation-of-agentic-ai-for-scale-extensibility-and-robustness/",
+              "excerpt": "Mid-execution control: Pause conversations, redirect agent actions, and adjust team composition. Then seamlessly resume tasks",
+              "relevance": "Shows runtime inspection and modification capabilities"
+            },
+            {
+              "source_url": "https://www.microsoft.com/en-us/research/blog/introducing-autogen-studio-a-low-code-interface-for-building-multi-agent-workflows/",
+              "excerpt": "Dynamic prototyping and testing: Experimentation is key to perfecting agent workflows",
+              "relevance": "Highlights the rapid prototyping capabilities"
+            }
+          ]
+        },
+        {
+          "question": "Does the framework provide evaluation tools (interactive or offline/batch) to compare multiple multi-agent configurations?",
+          "question_slug": "debugging_evaluation_tools",
+          "score": 7,
+          "evidence": [
+            {
+              "source_url": "https://devblogs.microsoft.com/autogen/autogen-reimagined-launching-autogen-0-4/",
+              "excerpt": "AutoGen Bench: Benchmark agents by measuring and comparing performance across tasks and environments",
+              "relevance": "Describes dedicated benchmarking and evaluation tool"
+            },
+
+            {
+              "source_url": "https://www.microsoft.com/en-us/research/project/autogen/",
+              "excerpt": "Observability and debugging: Built-in tools provide tracking, tracing, and debugging agent interactions and workflows",
+              "relevance": "Highlights comprehensive debugging tools"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Multi-Agent Pattern Support",
+      "dimension_slug": "multiagent",
+      "dimension_justification": "Multi-agent pattern support is a core strength of AutoGen, as the framework was specifically designed for collaborative AI agent applications. It provides extensive support for diverse interaction patterns, including two-agent conversations, group chats with various coordination mechanisms (RoundRobinGroupChat, SelectorGroupChat), hierarchical delegation, and custom collaborative patterns. The AgentChat API offers intuitive implementations of common patterns, while the Core API enables the creation of highly customized and complex multi-agent systems. This comprehensive support for diverse multi-agent patterns makes AutoGen exceptionally strong in this dimension.",
+      "questions": [
+        {
+          "question": "Does the framework provide both autonomous multi-agent patterns and deterministic workflow patterns?",
+          "question_slug": "multiagent_patterns",
+          "score": 10,
+          "evidence": [
+            {
+              "source_url": "https://github.com/microsoft/autogen",
+              "excerpt": "AgentChat API... supports common multi-agent patterns such as two-agent chat or group chats",
+              "relevance": "Shows built-in support for common multi-agent patterns"
+            },
+            {
+              "source_url": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen",
+              "excerpt": "AgentChat offers a SelectorGroupChat where an LLM (or a specific function you provide) defined the next agent that takes a turn as the task is solved",
+              "relevance": "Demonstrates dynamic agent selection pattern"
+            }
+          ]
+        },
+        {
+          "question": "Do these patterns include built-in task management capabilities (determining when a task is complete, human delegation mechanisms)?",
+          "question_slug": "multiagent_task_management",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://microsoft.github.io/autogen/dev/user-guide/agentchat-user-guide/tutorial/teams.html",
+              "excerpt": "AutoGen provides multiple built in multi-agent patterns as team presets including RoundRobinGroupChat, SelectorGroupChat, and Swarm and MagenticOne ",
+              "relevance": "Describes built-in multi-agent patterns with task management capabilities"
+            },
+            {
+              "source_url": "https://github.com/microsoft/autogen",
+              "excerpt": "The termination condition is set to end the conversation when the user types 'exit'",
+              "relevance": "Demonstrates termination conditions for tasks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Observability",
+      "dimension_slug": "observability",
+      "dimension_justification": "Observability is a significant strength in AutoGen, particularly in version 0.4 which was designed with a strong focus on this capability. The framework provides built-in metric tracking, message tracing, and debugging tools for monitoring agent interactions and workflows. It supports integration with industry-standard observability tools through OpenTelemetry. The centralized message delivery system in the event-driven architecture also contributes to improved observability, making it easier to track and understand agent behaviors.",
+      "questions": [
+        {
+          "question": "Does the framework provide visibility into agent interactions, message flows, and resource metrics?",
+          "question_slug": "observability_visibility",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://microsoft.github.io/autogen/dev/user-guide/agentchat-user-guide/tracing.html",
+              "excerpt": "AutoGen has built-in support for tracing and observability for collecting comprehensive records on the execution of your application. This feature is useful for debugging, performance analysis, and understanding the flow of your application. This capability is powered by the OpenTelemetry library, which means you can use any OpenTelemetry-compatible backend to collect and analyze traces.",
+              "relevance": "Directly addresses visibility into agent interactions"
+            }
+          ]
+        },
+        {
+          "question": "Does it integrate with standard observability tools for production monitoring and debugging?",
+          "question_slug": "observability_external_tools",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://microsoft.github.io/autogen/dev/user-guide/agentchat-user-guide/tracing.html",
+              "excerpt": "with support for OpenTelemetry for industry-standard observability",
+              "relevance": "Shows support for industry-standard observability tools"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deployment Capabilities",
+      "dimension_slug": "deployment_capabilities",
+      "dimension_justification": "AutoGen focuses mainly on agent development with limited built-in deployment infrastructure. However it provides many examples on how to integrate agents with application frameworks such as FastAPI, Streamlit, Chainlit etc that can be deployed.",
+      "questions": [
+        {
+          "question": "Does it provide guidance and tooling for scalable, resilient production deployments?",
+          "question_slug": "deployment_scalable_tooling",
+          "score": 6,
+          "evidence": [
+            {
+              "source_url": "https://github.com/microsoft/autogen/tree/main/python/samples",
+              "excerpt": "AutoGen provides a set of examples and templates for deploying agents using popular frameworks like FastAPI, Streamlit, and Chainlit",
+              "relevance": "Shows examples of integrating with deployment frameworks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ecosystem and Community",
+      "dimension_slug": "ecosystem_community",
+      "dimension_justification": "AutoGen has developed a vibrant ecosystem and active community since its initial release. The framework is backed by Microsoft Research, ensuring strong support and continuous development. It has a growing community with weekly office hours, a Discord server for real-time chat, GitHub Discussions for Q&A, and regular blog posts. The framework is designed to be highly extensible, with both first-party extensions maintained by the AutoGen team and the ability for third-party developers to create and publish their own extensions. These factors contribute to a rich ecosystem that enhances the framework's capabilities and usability.",
+      "questions": [
+        {
+          "question": "Is there an active community with strong documentation and growing ecosystem?",
+          "question_slug": "community_active",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://github.com/microsoft/autogen",
+              "excerpt": "We host weekly office hours and talks with maintainers and community. We also have a Discord server for real-time chat, GitHub Discussions for Q&A, and a blog for tutorials and updates",
+              "relevance": "Shows active community engagement channels"
+            },
+            {
+              "source_url": "https://www.microsoft.com/en-us/research/blog/introducing-autogen-studio-a-low-code-interface-for-building-multi-agent-workflows/",
+              "excerpt": "With more than 290 community contributors on GitHub and 890,000 downloads of the Python package (as of May 2024)",
+              "relevance": "Demonstrates community size and adoption"
+            },
+            {
+              "source_url": "https://microsoft.github.io/autogen/stable//user-guide/extensions-user-guide/create-your-own.html",
+              "excerpt": "With the new package structure in 0.4, it is easier than ever to create and publish your own extension to the AutoGen ecosystem",
+              "relevance": "Shows support for ecosystem expansion through extensions"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

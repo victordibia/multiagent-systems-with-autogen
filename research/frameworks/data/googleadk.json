@@ -1,0 +1,363 @@
+{
+  "framework_name": "Google ADK",
+  "framework_url": "https://google.github.io/adk-docs/",
+  "evaluation_date": "2025-04-15",
+  "framework_summary": "Google's Agent Development Kit (ADK) is an open-source, code-first Python toolkit designed for building, evaluating, and deploying sophisticated AI agents with flexibility and control. It allows developers to define agent behavior, orchestration, and tool use directly in code, focusing on tight integration with Google Cloud and Gemini models. ADK provides support for multi-agent systems through hierarchical composition, workflow agents (Sequential, Parallel, Loop), and LLM-driven delegation. The framework includes tools for local development through CLI and Web UI, evaluation of agent performance, and deployment options ranging from local environments to Vertex AI Agent Engine.",
+  "dimensions": [
+    {
+      "name": "Developer Experience",
+      "dimension_slug": "developer_experience",
+      "dimension_justification": "Google ADK offers a strong developer experience through its code-first approach, providing fine-grained control while maintaining simplicity for basic use cases. Provides clear abstractions for memory, models, tools and event hooks for responsible AI development.",
+      "questions": [
+        {
+          "question": "Does it provide a high level Agent abstraction with the ability to attach any LLM/model, tools, memory components?",
+          "question_slug": "developer_experience_high_level_abstraction",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://google.github.io/adk-docs/agents/models/",
+              "excerpt": "The Agent Development Kit (ADK) is designed for flexibility, allowing you to integrate various Large Language Models (LLMs) into your agents",
+              "relevance": "Shows versatility in model integration"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/get-started/about/",
+              "excerpt": "Broad LLM Support: While optimized for Google's Gemini models, the framework is designed for flexibility, allowing integration with various LLMs",
+              "relevance": "Demonstrates support for various LLMs beyond Google's own models"
+            }
+          ]
+        },
+        {
+          "question": "Does it provide a low level API for custom agents and complex orchestration behavior?",
+          "question_slug": "developer_experience_low_level_api",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://google.github.io/adk-docs/agents/custom-agents/",
+              "excerpt": "Custom agents provide the ultimate flexibility in ADK, allowing you to define arbitrary orchestration logic by inheriting directly from BaseAgent and implementing your own control flow. This goes beyond the predefined patterns of SequentialAgent, LoopAgent, and ParallelAgent, enabling you to build highly specific and complex agentic workflows.",
+              "relevance": "Describes the ability to create custom agents with complex orchestration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Asynchronous API",
+      "dimension_slug": "async_api",
+      "dimension_justification": "Google ADK provides strong support for asynchronous operations, which is crucial for building responsive and efficient agent applications. The framework leverages Python's asyncio library for asynchronous programming, enabling non-blocking operations when interacting with LLMs, tools, and other services. This architecture allows for concurrent execution of tasks, improving performance in complex workflows. ADK's support for streaming capabilities further enhances the responsiveness of agent applications.",
+      "questions": [
+        {
+          "question": "Is the framework async first?",
+          "question_slug": "async_api_async_first",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://google.github.io/adk-docs/tools/mcp-tools/",
+              "excerpt": "Asynchronous nature: Both ADK and the MCP Python library are heavily based on the asyncio Python library. Tool implementations and server handlers should generally be async functions",
+              "relevance": "Explicitly states the asynchronous nature of the framework"
+            },
+            {
+              "source_url": "https://developers.googleblog.com/en/agent-development-kit-easy-to-build-multi-agent-applications/",
+              "excerpt": "Built-in streaming: Interact with your agents in human-like conversations with ADK's unique bidirectional audio and video streaming capabilities",
+              "relevance": "Demonstrates streaming capabilities which rely on asynchronous operations"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/get-started/tutorial/",
+              "excerpt": "async def get_tools_async(): \"\"\"Gets tools from the File System MCP Server.\"\"\"",
+              "relevance": "Shows the use of async functions in the framework"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Event-Driven Communication",
+      "dimension_slug": "event_driven",
+      "dimension_justification": "Google ADK provides some support for event-driven communication through its hierarchical agent structure and message handling. The framework allows for passing events between agents and handling user interactions through a defined event system. However, the architecture appears to be more focused on direct agent invocation and structured workflows rather than a fully decoupled publish-subscribe event model. The parent-child relationship between agents facilitates message passing, but this seems more tightly coupled than a true event-driven architecture.",
+      "questions": [
+        {
+          "question": "Is the framework event-driven at its core?",
+          "question_slug": "event_driven_core",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://google.github.io/adk-docs/events/",
+              "excerpt": "Events are the fundamental units of information flow within the Agent Development Kit (ADK). They represent every significant occurrence during an agent's interaction lifecycle, from initial user input to the final response and all the steps in between.",
+              "relevance": "Explicitly defines events as foundational to the framework"
+            }
+          ]
+        },
+        {
+          "question": "Does it provide a runtime abstraction that supports both local and distributed deployments?",
+          "question_slug": "event_driven_runtime_abstraction",
+          "score": 5,
+          "evidence": [
+            {
+              "source_url": "https://github.com/google/adk-python",
+              "excerpt": "Deploy Anywhere: Easily containerize and deploy agents on Cloud Run or scale seamlessly with Vertex AI Agent Engine",
+              "relevance": "Shows support for different deployment environments"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "State Management",
+      "dimension_slug": "state_management",
+      "dimension_justification": "Google ADK offers robust state management capabilities, providing both session-based short-term memory and integration with persistent long-term memory services. The framework distinguishes between Session State (for ongoing conversations) and long-term Memory/Knowledge (for information across multiple sessions). It supports various storage options for state, from in-memory for development to persistent database and cloud-based options for production. The structured approach to state updates and clearly defined state lifecycle helps maintain consistency in complex agent applications.",
+      "questions": [
+        {
+          "question": "Can you checkpoint and resume an agent or entire workflow (consisting of multiple agents)?",
+          "question_slug": "state_management_checkpoint_resume",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://google.github.io/adk-docs/sessions/memory/",
+              "excerpt": "Session / State: Like your short-term memory during one specific chat. Long-Term Knowledge (MemoryService): Like a searchable archive or knowledge library the agent can consult",
+              "relevance": "Shows the framework's conceptual model for short and long-term memory"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/sessions/",
+              "excerpt": "State (session.state): Data Within the Current Conversation · Data stored within a specific Session",
+              "relevance": "Explains state management within a session"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/get-started/tutorial/",
+              "excerpt": "You've now successfully integrated session state to personalize agent behavior using ToolContext, manually manipulated state for testing InMemorySessionService",
+              "relevance": "Demonstrates use of session state for personalization"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Declarative Specifications",
+      "dimension_slug": "declarative",
+      "dimension_justification": "Google ADK emphasizes a code-first approach over declarative specifications, with agent behaviors, orchestration, and tool use defined directly in Python code. While this provides significant flexibility and control, it does not heavily rely on declarative formats like YAML or JSON for defining the core structure of agent systems. The framework does use JSON for some aspects, like the Agent2Agent protocol's .well-known/agent.json for describing agent identity and purpose, but this appears to be for interoperability rather than a primary pattern for defining agents.",
+      "questions": [
+        {
+          "question": "Can agents be serialized to a declarative format like JSON and runtime objects reconstructed from them?",
+          "question_slug": "declarative_serialization",
+          "score": 5,
+          "evidence": [
+            {
+              "source_url": "https://github.com/google/adk-python",
+              "excerpt": "Code-First Development: Define agent logic, tools, and orchestration directly in Python for ultimate flexibility, testability, and versioning",
+              "relevance": "Emphasizes imperative code-based approach rather than declarative"
+            },
+            {
+              "source_url": "https://www.datacamp.com/tutorial/agent-development-kit-adk",
+              "excerpt": "We use this JSON file to describe the agent's identity and purpose as per the A2A (Agent-to-Agent) protocol",
+              "relevance": "Shows limited use of JSON for agent metadata rather than full configuration"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/get-started/about/",
+              "excerpt": "ADK is built around a few key primitives and concepts that make it powerful and flexible",
+              "relevance": "Focuses on code primitives rather than declarative configurations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Debugging and Evaluation Tools",
+      "dimension_slug": "debugging",
+      "dimension_justification": "Google ADK excels in providing tools for debugging and evaluating agent applications. The framework includes a comprehensive evaluation system for assessing agent performance against predefined test cases, examining both the final response quality and step-by-step execution trajectories. Debugging is supported through a visual Web UI that allows developers to inspect agent execution, state changes, and event flow. The CLI's evaluation command provides a systematic way to test agents against datasets, and the AgentEvaluator.evaluate() method enables programmatic evaluation within test suites.",
+      "questions": [
+        {
+          "question": "Does the framework provide a UI interface to rapidly modify prototype teams, reuse existing components, inspect agent runtime behaviors?",
+          "question_slug": "debugging_ui_interface",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://developers.googleblog.com/en/agent-development-kit-easy-to-build-multi-agent-applications/",
+              "excerpt": "Integrated Developer Experience: Develop, test, and debug locally with a powerful CLI and a visual Web UI. Inspect events, state, and agent execution step-by-step",
+              "relevance": "Explicitly mentions visual UI for debugging and inspection"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/get-started/quickstart/",
+              "excerpt": "There are multiple ways to interact with your agent: Dev UI (adk web), Terminal (adk run), API Server (adk api_server)",
+              "relevance": "Shows the availability of a Dev UI for agent interaction"
+            },
+            {
+              "source_url": "https://github.com/google/adk-python",
+              "excerpt": "A built-in development UI to help you test, evaluate, debug, and showcase your agent(s)",
+              "relevance": "Confirms the UI's debugging capabilities"
+            }
+          ]
+        },
+        {
+          "question": "Does the framework provide evaluation tools (interactive or offline/batch) to compare multiple multi-agent configurations?",
+          "question_slug": "debugging_evaluation_tools",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://developers.googleblog.com/en/agent-development-kit-easy-to-build-multi-agent-applications/",
+              "excerpt": "Built-in Evaluation: Systematically assess agent performance by evaluating both the final response quality and the step-by-step execution trajectory against predefined test cases",
+              "relevance": "Describes the built-in evaluation capabilities"
+            },
+            {
+              "source_url": "https://developers.googleblog.com/en/agent-development-kit-easy-to-build-multi-agent-applications/",
+              "excerpt": "You can run these checks programmatically within your test suites using AgentEvaluator.evaluate(). You can also use evaluation directly via the ADK eval command-line tool",
+              "relevance": "Shows multiple interfaces for evaluation"
+            },
+            {
+              "source_url": "https://github.com/google/adk-python",
+              "excerpt": "adk eval \\ samples_for_testing/hello_world \\ samples_for_testing/hello_world/hello_world_eval_set_001.evalset.json",
+              "relevance": "Demonstrates evaluation command with test datasets"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Multi-Agent Pattern Support",
+      "dimension_slug": "multiagent",
+      "dimension_justification": "Google ADK provides strong support for multi-agent patterns through its hierarchical composition model and workflow agents. The framework allows developers to build modular applications by composing specialized agents in a hierarchy, with parent agents delegating tasks to sub-agents based on their capabilities. ADK offers both LLM-driven delegation for adaptive behavior and workflow agents (Sequential, Parallel, Loop) for predictable, deterministic pipelines. This flexibility allows for implementing various collaborative patterns and complex orchestration scenarios.",
+      "questions": [
+        {
+          "question": "Does the framework provide both autonomous multi-agent patterns and deterministic workflow patterns?",
+          "question_slug": "multiagent_patterns",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://google.github.io/adk-docs/",
+              "excerpt": "Define workflows using workflow agents (Sequential, Parallel, Loop) for predictable pipelines, or leverage LLM-driven dynamic routing (LlmAgent transfer) for adaptive behavior",
+              "relevance": "Shows support for both deterministic and adaptive agent patterns"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/agents/multi-agents/",
+              "excerpt": "In ADK, a multi-agent system is an application where different agents, often forming a hierarchy, collaborate or coordinate to achieve a larger goal",
+              "relevance": "Explains the core concept of multi-agent systems in ADK"
+            },
+            {
+              "source_url": "https://developers.googleblog.com/en/agent-development-kit-easy-to-build-multi-agent-applications/",
+              "excerpt": "Multi-Agent by Design: Build modular and scalable applications by composing multiple specialized agents in a hierarchy. Enable complex coordination and delegation",
+              "relevance": "Emphasizes the framework's design for multi-agent systems"
+            }
+          ]
+        },
+        {
+          "question": "Do these patterns include built-in task management capabilities (determining when a task is complete, human delegation mechanisms)?",
+          "question_slug": "multiagent_task_management",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://google.github.io/adk-docs/get-started/tutorial/",
+              "excerpt": "You'll learn how to structure interactions, manage state, ensure safety, and orchestrate multiple AI \"brains\" working together",
+              "relevance": "Indicates orchestration capabilities"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/agents/multi-agents/",
+              "excerpt": "Structure: A central LlmAgent (Coordinator) manages several specialized sub_agents. Goal: Route incoming requests to the appropriate specialist agent",
+              "relevance": "Describes task routing and delegation patterns"
+            },
+            {
+              "source_url": "https://www.datacamp.com/tutorial/agent-development-kit-adk",
+              "excerpt": "The host_agent acts as a central planner for the demo. The host_agent exemplifies the controller pattern in multi-agent systems",
+              "relevance": "Shows centralized control and task management"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Observability",
+      "dimension_slug": "observability",
+      "dimension_justification": "Google ADK allows developers to inspect agent execution, state changes, and event flow through the visual Web UI. While these capabilities are robust, there does not appear to be extensive integration with external observability platforms or detailed metrics collection beyond what's provided in the built-in tools.",
+      "questions": [
+        {
+          "question": "Does the framework provide visibility into agent interactions, message flows, and resource metrics?",
+          "question_slug": "observability_visibility",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://developers.googleblog.com/en/agent-development-kit-easy-to-build-multi-agent-applications/",
+              "excerpt": "Integrated Developer Experience: Develop, test, and debug locally with a powerful CLI and a visual Web UI. Inspect events, state, and agent execution step-by-step",
+              "relevance": "Shows capability to inspect execution details"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/get-started/about/",
+              "excerpt": "Event: The basic unit of communication representing things that happen during a session (user message, agent reply, tool use), forming the conversation history",
+              "relevance": "Indicates tracking of message flows"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/sessions/",
+              "excerpt": "Activity Tracking (last_update_time): A timestamp indicating the last time an event was added to this conversation thread",
+              "relevance": "Shows tracking of activity timing"
+            }
+          ]
+        },
+        {
+          "question": "Does it integrate with standard observability tools for production monitoring and debugging?",
+          "question_slug": "observability_external_tools",
+          "score": 6,
+          "evidence": [
+            {
+              "source_url": "https://google.github.io/adk-docs/get-started/tutorial/",
+              "excerpt": "ADK provides Callbacks – functions that allow you to hook into specific points in the agent's execution lifecycle",
+              "relevance": "Indicates hooks for monitoring execution"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deployment Capabilities",
+      "dimension_slug": "deployment_capabilities",
+      "dimension_justification": "Google ADK offers excellent deployment capabilities, supporting a range of deployment options from local development to cloud-based production environments. Developers can deploy agents locally using Docker containers, or leverage cloud platforms like Google Cloud Run, Kubernetes, or Vertex AI Agent Engine. The tight integration with Google Cloud services, particularly Vertex AI, provides a streamlined path to production with managed infrastructure. The framework's containerization support ensures consistent execution across different environments, facilitating the transition from development to production.",
+      "questions": [
+        {
+          "question": "Does it provide guidance and tooling for scalable, resilient production deployments?",
+          "question_slug": "deployment_scalable_tooling",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://github.com/google/adk-python",
+              "excerpt": "Deploy Anywhere: Easily containerize and deploy agents on Cloud Run or scale seamlessly with Vertex AI Agent Engine",
+              "relevance": "Explicitly mentions deployment options"
+            },
+            {
+              "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/build-and-manage-multi-system-agents-with-vertex-ai",
+              "excerpt": "Agent Engine is a fully managed runtime in Vertex AI that helps you deploy your custom agents to production with built-in testing, release, and reliability at a global, secure scale",
+              "relevance": "Shows production-grade deployment capabilities"
+            },
+            {
+              "source_url": "https://google.github.io/adk-docs/get-started/quickstart/",
+              "excerpt": "adk api_server enables you to create a local FastAPI server in a single command, enabling you to test local cURL requests before you deploy your agent",
+              "relevance": "Demonstrates testing capabilities before deployment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ecosystem and Community",
+      "dimension_slug": "ecosystem_community",
+      "dimension_justification": "Google ADK has a growing ecosystem with active development and support from Google. Being relatively new, its community may not be as large as some more established frameworks, but it benefits from its integration with the broader Google Cloud and AI ecosystem. The framework supports interoperability with other agent frameworks through initiatives like the Agent2Agent protocol, and it can leverage tools from various sources including Model Context Protocol (MCP), LangChain, CrewAI, and any OpenAPI endpoints. The availability of sample agents in Agent Garden and documentation provide resources for developers to get started.",
+      "questions": [
+        {
+          "question": "Is there an active community with strong documentation and growing ecosystem?",
+          "question_slug": "community_active",
+          "score": 7,
+          "evidence": [
+            {
+              "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/build-and-manage-multi-system-agents-with-vertex-ai",
+              "excerpt": "Agent2Agent protocol enables agents across different ecosystems to communicate with each other, irrespective of the framework (ADK, LangGraph, Crew.ai, or others) or vendor they are built on",
+              "relevance": "Shows interoperability with other frameworks"
+            },
+            {
+              "source_url": "https://github.com/google/adk-samples",
+              "excerpt": "A collection of sample agents built with Agent Development (ADK)",
+              "relevance": "Indicates availability of samples and examples"
+            },
+            {
+              "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/build-and-manage-multi-system-agents-with-vertex-ai",
+              "excerpt": "Jumpstart your development with Agent Garden, a collection of ready-to-use samples and tools directly accessible within ADK",
+              "relevance": "Shows ecosystem resources for developers"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

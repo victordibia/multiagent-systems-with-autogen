@@ -1,0 +1,338 @@
+{
+  "framework_name": "LangGraph",
+  "framework_url": "https://langchain-ai.github.io/langgraph/",
+  "evaluation_date": "2025-04-14",
+  "framework_summary": "LangGraph is a low-level orchestration framework for building controllable, stateful, and multi-actor applications with LLMs. Built by LangChain Inc., it enables developers to model agent workflows as graphs, providing robust support for cyclical and complex interactions between agents. The framework offers extensive state management capabilities, human-in-the-loop functionality, and flexible deployment options through the LangGraph Platform. While designed to integrate seamlessly with LangChain, LangGraph can be used independently and supports both Python and JavaScript environments.",
+  "dimensions": [
+    {
+      "name": "Developer Experience",
+      "dimension_slug": "developer_experience",
+      "dimension_justification": "LangGraph offers a powerful but specialized developer experience that focuses on graph-based orchestration of LLM applications. While it provides significant flexibility and low-level control for building complex agent systems, the framework has a technical learning curve due to its graph paradigm and more abstract programming model. The framework is well-documented with tutorials, examples, and API references, and integrates seamlessly with LangChain components if desired. LangGraph Studio enhances the experience by providing visual tools for debugging and development, but overall the framework requires more technical expertise compared to some alternatives.",
+      "questions": [
+        {
+          "question": "Does it provide a high level Agent abstraction with the ability to attach any LLM/model, tools, memory components?",
+          "question_slug": "developer_experience_high_level_abstraction",
+          "score": 4,
+          "evidence": [
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/tutorials/",
+              "excerpt": "LangGraph Quickstart: Build a chatbot that can use tools and keep track of conversation history",
+              "relevance": "Extensive code for a basic chatbot"
+            }
+          ]
+        },
+        {
+          "question": "Does it provide a low level API for custom agents and complex orchestration behavior?",
+          "question_slug": "developer_experience_low_level_api",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/tutorials/",
+              "excerpt": "LangGraph Quickstart: Build a chatbot that can use tools and keep track of conversation history",
+              "relevance": "shows low level API for custom agents"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Asynchronous API",
+      "dimension_slug": "async_api",
+      "dimension_justification": "LangGraph provides  support both synchronous and asynchronous operations, with first-class async capabilities throughout the framework. The graph architecture is designed to handle asynchronous execution of nodes, supporting both synchronous and asynchronous functions within the same graph. Built-in methods like astream and ainvoke allow for non-blocking operations.",
+      "questions": [
+        {
+          "question": "Is the framework async first?",
+          "question_slug": "async_api_async_first",
+          "score": 7,
+          "evidence": [
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/how-tos/async/",
+              "excerpt": "Because many LangChain objects implement the Runnable Protocol which has async variants of all the sync methods it's typically fairly quick to upgrade a sync graph to an async graph",
+              "relevance": "Shows built-in support for async operations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Event-Driven Communication",
+      "dimension_slug": "event_driven",
+      "dimension_justification": "While langgraph mentions event driven capabilities, it is unclear that its core architecture is event driven or that events are exposed in the API. While there are options in LangSmith, it is unclear that LangGraph itself provides  clear runtime abstractions (e.g., for distributed agents) exposed to developers in the API ",
+      "questions": [
+        {
+          "question": "Is the framework event-driven at its core?",
+          "question_slug": "event_driven_core",
+          "score": 6,
+          "evidence": [
+            {
+              "source_url": "https://blog.langchain.dev/command-a-new-tool-for-multi-agent-architectures-in-langgraph/",
+              "excerpt": "Our agent framework langgraph is powered by an event-driven system",
+              "relevance": "Explicitly states event-driven nature"
+            }
+          ]
+        },
+        {
+          "question": "Does it provide a runtime abstraction that supports both local and distributed deployments?",
+          "question_slug": "event_driven_runtime_abstraction",
+          "score": 0,
+          "evidence": [
+            {
+              "source_url": "https://www.langchain.com/langgraph",
+              "excerpt": "We currently have the following deployment options for LangGraph applications: ‍Self-Hosted Lite: A free (up to 1M nodes executed), limited version of LangGraph Platform",
+              "relevance": "Shows support for self-hosted deployment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "State Management",
+      "dimension_slug": "state_management",
+      "dimension_justification": "LangGraph provides exceptional state management capabilities, which is a core strength of the framework. It offers built-in persistence for agent state through checkpointers, allowing for saving and resuming workflows at any point. The framework supports various state types including TypedDict, Pydantic models, and dataclasses, with specialized reducers for controlling how state updates are processed. The ability to maintain context across interactions, support cross-thread persistence for long-term memory, and handle state migrations makes LangGraph particularly powerful for building stateful applications.",
+      "questions": [
+        {
+          "question": "Can you checkpoint and resume an agent or entire workflow (consisting of multiple agents)?",
+          "question_slug": "state_management_checkpoint_resume",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/concepts/low_level/",
+              "excerpt": "LangGraph provides built-in persistence for your agent's state using checkpointers. Checkpointers save snapshots of the graph state at every superstep, allowing resumption at any time",
+              "relevance": "Explicitly describes checkpoint capabilities"
+            },
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/how-tos/",
+              "excerpt": "LangGraph Persistence makes it easy to persist state across graph runs (per-thread persistence) and across threads (cross-thread persistence)",
+              "relevance": "Shows multiple persistence options"
+            },
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/concepts/low_level/",
+              "excerpt": "This enables cross-thread persistence, allowing agents to maintain long-term memories, learn from past interactions, and accumulate knowledge over time",
+              "relevance": "Describes long-term memory capabilities"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Declarative Specifications",
+      "dimension_slug": "declarative",
+      "dimension_justification": "LangGraph provides strong support for declarative specifications through its graph-based approach to defining agent workflows. The framework allows developers to specify the structure of agents and their interactions as a graph with nodes and edges, separating the workflow definition from the implementation details. State schemas can be defined declaratively using TypedDict or Pydantic models, and the Command type enables more dynamic, declarative routing between nodes. Does not support serialization of workflows to a declarative format like JSON etc.",
+      "questions": [
+        {
+          "question": "Can agents be serialized to a declarative format like JSON and runtime objects reconstructed from them?",
+          "question_slug": "declarative_serialization",
+          "score": 5,
+          "evidence": [
+            {
+              "source_url": "https://blog.langchain.dev/command-a-new-tool-for-multi-agent-architectures-in-langgraph/",
+              "excerpt": "This declarative architecture is helpful for mapping an agent's path to a visual representation",
+              "relevance": "Shows declarative nature of the architecture"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Debugging and Evaluation Tools",
+      "dimension_slug": "debugging",
+      "dimension_justification": "LangGraph offers comprehensive debugging and evaluation tools that enhance the development experience. The standout feature is LangGraph Studio, an IDE specifically designed for visualizing, interacting with, and debugging agent graphs. The framework also supports time travel functionality to replay and explore alternative paths in agent execution. Integration with LangSmith provides additional observability and evaluation capabilities. Built-in visualization of graph structures and streaming for step-by-step monitoring further enhance the debugging experience, making the framework particularly strong in this dimension.",
+      "questions": [
+        {
+          "question": "Does the framework provide a UI interface to rapidly modify prototype teams, reuse existing components, inspect agent runtime behaviors?",
+          "question_slug": "debugging_ui_interface",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://blog.langchain.dev/langgraph-studio-the-first-agent-ide/",
+              "excerpt": "LangGraph Studio - the first IDE designed specifically for agent development",
+              "relevance": "Shows dedicated UI for agent development"
+            },
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/how-tos/",
+              "excerpt": "LangGraph Studio is a built-in UI for visualizing, testing, and debugging your agents",
+              "relevance": "Confirms debugging capabilities"
+            },
+            {
+              "source_url": "https://blog.langchain.dev/langgraph-studio-the-first-agent-ide/",
+              "excerpt": "you can directly modify the response and then continue with that new response",
+              "relevance": "Shows ability to modify runtime behavior"
+            }
+          ]
+        },
+        {
+          "question": "Does the framework provide evaluation tools (interactive or offline/batch) to compare multiple multi-agent configurations?",
+          "question_slug": "debugging_evaluation_tools",
+          "score": 7,
+          "evidence": [
+            {
+              "source_url": "https://www.langchain.com/langgraph",
+              "excerpt": "Deploy your application with 1-click deploy with our SaaS offering or within your own VPC. Then, monitor app performance with LangSmith",
+              "relevance": "Shows monitoring capabilities"
+            },
+            {
+              "source_url": "https://langfuse.com/docs/integrations/langchain/example-python-langgraph",
+              "excerpt": "You can create them via our annotation workflow in the Langfuse UI, run model-based evaluation or ingest via the SDK",
+              "relevance": "Shows integration with evaluation tools"
+            },
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/tutorials/",
+              "excerpt": "In LangSmith: Evaluate chatbots in LangSmith over a dialog dataset",
+              "relevance": "Shows evaluation capabilities"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Multi-Agent Pattern Support",
+      "dimension_slug": "multiagent",
+      "dimension_justification": "LangGraph excels in multi-agent pattern support, which is a core strength of the framework. It provides extensive capabilities for building sophisticated multi-agent systems with various collaboration patterns, including hierarchical teams, supervisor models, network collaboration, and more. The framework allows for clear separation of agent responsibilities, custom communication protocols between agents, and flexible orchestration patterns. The recent addition of the Command type further enhances multi-agent communication. Real-world implementations by companies like LinkedIn, Uber, and Replit demonstrate the framework's production-grade multi-agent capabilities.",
+      "questions": [
+        {
+          "question": "Does the framework provide both autonomous multi-agent patterns and deterministic workflow patterns?",
+          "question_slug": "multiagent_patterns",
+          "score": 10,
+          "evidence": [
+            {
+              "source_url": "https://www.langchain.com/langgraph",
+              "excerpt": "LangGraph's flexible framework supports diverse control flows – single agent, multi-agent, hierarchical, sequential – and robustly handles realistic, complex scenarios",
+              "relevance": "Shows support for multiple patterns"
+            },
+            {
+              "source_url": "https://blog.langchain.dev/langgraph-multi-agent-workflows/",
+              "excerpt": "Multi-agent designs allow you to divide complicated problems into tractable units of work that can be targeted by specialized agents and LLM programs",
+              "relevance": "Explains multi-agent design patterns"
+            },
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/tutorials/",
+              "excerpt": "Network: Enable two or more agents to collaborate on a task · Supervisor: Use an LLM to orchestrate and delegate to individual agents · Hierarchical Teams: Orchestrate nested teams of agents to solve problems",
+              "relevance": "Lists specific multi-agent patterns"
+            }
+          ]
+        },
+        {
+          "question": "Do these patterns include built-in task management capabilities (determining when a task is complete, human delegation mechanisms)?",
+          "question_slug": "multiagent_task_management",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/how-tos/",
+              "excerpt": "Human-in-the-loop functionality allows you to involve humans in the decision-making process of your graph",
+              "relevance": "Shows human delegation capabilities"
+            },
+            {
+              "source_url": "https://www.langchain.com/langgraph",
+              "excerpt": "With built-in statefulness, LangGraph agents seamlessly collaborate with humans by writing drafts for review and awaiting approval before acting",
+              "relevance": "Describes human-agent collaboration features"
+            },
+            {
+              "source_url": "https://www.langchain.com/langgraph",
+              "excerpt": "Ensure reliability with easy-to-add moderation and quality loops that prevent agents from veering off course",
+              "relevance": "Shows task control mechanisms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Observability",
+      "dimension_slug": "observability",
+      "dimension_justification": "LangGraph provides strong observability features that enable developers to monitor and debug agent applications effectively. The framework integrates with LangSmith for agent evaluation and observability, allowing for debugging poor-performing LLM runs, evaluating agent trajectories, and gaining production visibility. LangGraph also supports streaming of execution steps for real-time observability and offers time travel functionality to explore execution paths. Additional integrations with tools like Langfuse extend observability options. These capabilities are particularly valuable for complex multi-agent systems.",
+      "questions": [
+        {
+          "question": "Does the framework provide visibility into agent interactions, message flows, and resource metrics?",
+          "question_slug": "observability_visibility",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/reference/graphs/",
+              "debug": "Emit debug events with as much information as possible for each step",
+              "relevance": "Shows detailed debugging capabilities"
+            },
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/how-tos/",
+              "excerpt": "Streaming is crucial for enhancing the responsiveness of applications built on LLMs... streaming significantly improves user experience",
+              "relevance": "Highlights streaming for observability"
+            },
+            {
+              "source_url": "https://blog.langchain.dev/langgraph-studio-the-first-agent-ide/",
+              "excerpt": "When you interact with the agent, you'll get a stream of real-time information about what steps are happening",
+              "relevance": "Shows real-time monitoring capabilities"
+            }
+          ]
+        },
+        {
+          "question": "Does it integrate with standard observability tools for production monitoring and debugging?",
+          "question_slug": "observability_external_tools",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://github.com/langchain-ai/langgraph",
+              "excerpt": "LangSmith — Helpful for agent evals and observability. Debug poor-performing LLM app runs, evaluate agent trajectories, gain visibility in production",
+              "relevance": "Shows primary observability integration"
+            },
+            {
+              "source_url": "https://langfuse.com/docs/integrations/langchain/example-python-langgraph",
+              "excerpt": "This cookbook demonstrates how Langfuse helps to debug, analyze, and iterate on your LangGraph application using the LangChain integration",
+              "relevance": "Shows third-party observability integration"
+            },
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/reference/graphs/",
+              "excerpt": "Whether to checkpoint intermediate steps, defaults to True. If False, only the final checkpoint is saved",
+              "relevance": "Shows built-in observability options"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deployment Capabilities",
+      "dimension_slug": "deployment_capabilities",
+      "dimension_justification": "LangGraph offers excellent deployment capabilities through its LangGraph Platform, which provides purpose-built infrastructure for deploying and scaling agent applications. The platform offers multiple deployment options, including Self-Hosted Lite, Cloud SaaS, Bring Your Own Cloud (BYOC), and Self-Hosted Enterprise, catering to different organizational needs. Features like horizontally-scaling servers, built-in persistence, task queues, automated retries, and intelligent caching enhance the robustness of deployed applications. The 1-click deployment option and integration with existing VPCs make the deployment process streamlined and flexible.",
+      "questions": [
+        {
+          "question": "Does it provide guidance and tooling for scalable, resilient production deployments?",
+          "question_slug": "deployment_scalable_tooling",
+          "score": 9,
+          "evidence": [
+            {
+              "source_url": "https://www.langchain.com/langgraph",
+              "excerpt": "Handle large workloads gracefully with horizontally-scaling servers, task queues, and built-in persistence. Enhance resilience with intelligent caching and automated retries",
+              "relevance": "Shows scalability and resilience features"
+            },
+            {
+              "source_url": "https://www.langchain.com/langgraph",
+              "excerpt": "We currently have the following deployment options for LangGraph applications: ‍Self-Hosted Lite: A free (up to 1M nodes executed), limited version of LangGraph Platform",
+              "relevance": "Shows deployment options"
+            },
+            {
+              "source_url": "https://langchain-ai.github.io/langgraph/how-tos/",
+              "excerpt": "LangGraph Platform is a commercial solution for deploying agentic applications in production, built on the open-source LangGraph framework",
+              "relevance": "Indicates dedicated deployment solution"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ecosystem and Community",
+      "dimension_slug": "ecosystem_community",
+      "dimension_justification": "LangGraph has a strong ecosystem and growing community, backed by LangChain Inc. and used by major companies like Replit, Uber, LinkedIn, and GitLab. The framework integrates seamlessly with the broader LangChain ecosystem, including LangSmith for observability. The documentation is comprehensive with tutorials, examples, and API references, and the LangGraph Platform provides additional enterprise-grade services. Regular updates and new features like LangGraph Studio and Command demonstrate active development. While newer than some frameworks, its adoption by high-profile companies and the backing of LangChain give it a solid foundation.",
+      "questions": [
+        {
+          "question": "Is there an active community with strong documentation and growing ecosystem?",
+          "question_slug": "community_active",
+          "score": 8,
+          "evidence": [
+            {
+              "source_url": "https://github.com/langchain-ai/langgraph",
+              "excerpt": "LangGraph — used by Replit, Uber, LinkedIn, GitLab and more — is a low-level orchestration framework for building controllable agents",
+              "relevance": "Shows adoption by major companies"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
