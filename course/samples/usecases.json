@@ -217,6 +217,33 @@
           "results": {
             "path": "/samples/hello_world/openai_agents/results.json"
           }
+        },
+        {
+          "framework": "pydanticai",
+          "title": "Pydanticai Implementation",
+          "description": "Implementation using pydanticai",
+          "code": {
+            "path": "/samples/hello_world/pydanticai/app.py",
+            "language": "python",
+            "loc": 57,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/pydanticai/app.py",
+            "metadata": {
+              "title": "Hello World Agent",
+              "description": "Built using the Pydantic AI SDK",
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
+              "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
+            }
+          },
+          "results": {
+            "path": "/samples/hello_world/pydanticai/results.json"
+          }
         }
       ]
     },
@@ -549,7 +576,8 @@
       "google_adk",
       "langgraph",
       "llama_index",
-      "openai_agents"
+      "openai_agents",
+      "pydanticai"
     ]
   }
 }
