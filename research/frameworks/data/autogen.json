@@ -34,7 +34,7 @@
         {
           "question": "Does it provide a low level API for custom agents and complex orchestration behavior?",
           "question_slug": "developer_experience_low_level_api",
-          "score": 8,
+          "score": 10,
           "evidence": [
             {
               "source_url": "https://github.com/microsoft/autogen",
@@ -229,7 +229,7 @@
     {
       "name": "Multi-Agent Pattern Support",
       "dimension_slug": "multiagent",
-      "dimension_justification": "Multi-agent pattern support is a core strength of AutoGen, as the framework was specifically designed for collaborative AI agent applications. It provides extensive support for diverse interaction patterns, including two-agent conversations, group chats with various coordination mechanisms (RoundRobinGroupChat, SelectorGroupChat), hierarchical delegation, and custom collaborative patterns. The AgentChat API offers intuitive implementations of common patterns, while the Core API enables the creation of highly customized and complex multi-agent systems. This comprehensive support for diverse multi-agent patterns makes AutoGen exceptionally strong in this dimension.",
+      "dimension_justification": "Multi-agent pattern support is a core strength of AutoGen, as the framework was specifically designed for collaborative AI agent applications. It provides extensive support for diverse interaction patterns, including two-agent conversations, group chats with various coordination mechanisms (RoundRobinGroupChat, SelectorGroupChat, Swarm, MagenticOne, GraphFlow), hierarchical delegation, and custom collaborative patterns. The AgentChat API offers intuitive implementations of common patterns, while the Core API enables the creation of highly customized and complex multi-agent systems. This comprehensive support for diverse multi-agent patterns makes AutoGen exceptionally strong in this dimension.",
       "questions": [
         {
           "question": "Does the framework provide both autonomous multi-agent patterns and deterministic workflow patterns?",

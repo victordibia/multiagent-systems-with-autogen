@@ -34,7 +34,7 @@
         {
           "question": "Does it provide a low level API for custom agents and complex orchestration behavior?",
           "question_slug": "developer_experience_low_level_api",
-          "score": 9,
+          "score": 7,
           "evidence": [
             {
               "source_url": "https://ai.pydantic.dev/agents/",
