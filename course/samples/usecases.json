@@ -244,6 +244,33 @@
           "results": {
             "path": "/samples/hello_world/pydanticai/results.json"
           }
+        },
+        {
+          "framework": "semantic_kernel",
+          "title": "Semantic Kernel Implementation",
+          "description": "Implementation using semantic_kernel",
+          "code": {
+            "path": "/samples/hello_world/semantic_kernel/app.py",
+            "language": "python",
+            "loc": 49,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/hello_world/semantic_kernel/app.py",
+            "metadata": {
+              "title": "Hello World Agent",
+              "description": "Built using the Semantic Kernel framework",
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
+              "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
+            }
+          },
+          "results": {
+            "path": "/samples/hello_world/semantic_kernel/results.json"
+          }
         }
       ]
     },
@@ -577,7 +604,8 @@
       "langgraph",
       "llama_index",
       "openai_agents",
-      "pydanticai"
+      "pydanticai",
+      "semantic_kernel"
     ]
   }
 }
