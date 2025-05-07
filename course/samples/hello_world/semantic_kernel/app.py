@@ -1,7 +1,6 @@
 # pip install semantic-kernel httpx python-dotenv
 import asyncio
 from typing import Annotated
-import httpx
 from semantic_kernel.agents import ChatCompletionAgent
 from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
 from semantic_kernel.functions import kernel_function
