@@ -1,0 +1,425 @@
+{
+  "last_updated": "2025-05-23T20:17:07.697920",
+  "clusters": {
+    "0": {
+      "domain": "fintech",
+      "description": "These companies provide digital financial infrastructure, embedded finance, and payment solutions tailored for businesses and individuals, with a focus on automation, cross-border payments, payroll, banking-as-a-service, and financial access in emerging markets.",
+      "agent_usecases": "Mesh explicitly uses AI agents as finance co-workers that automate accounting, answer financial questions, and integrate with communication channels.",
+      "value_prop": "Enabling businesses to easily access, automate, and scale financial operations through modern, API-driven platforms and embedded finance solutions.",
+      "cluster_id": 0,
+      "sample_count": 10,
+      "sample_companies": [
+        {
+          "id": 30292,
+          "slug": "mesh-2",
+          "long_slug": "30292_mesh_mesh2_httpwwwusemeshcom",
+          "name": "Mesh"
+        },
+        {
+          "id": 29338,
+          "slug": "swift-2",
+          "long_slug": "29338_swift_swift2_httpsjoinswiftapp",
+          "name": "Swift"
+        },
+        {
+          "id": 27049,
+          "slug": "anchor",
+          "long_slug": "27049_anchor_anchor_httpsgetanchorco",
+          "name": "Anchor"
+        },
+        {
+          "id": 25315,
+          "slug": "rebill",
+          "long_slug": "25315_rebill_rebill_httpswwwrebillcom",
+          "name": "Rebill"
+        },
+        {
+          "id": 25670,
+          "slug": "eazipay-inc",
+          "long_slug": "25670_eazipayinc_eazipayinc_httpsmyeazipaycom",
+          "name": "Eazipay Inc."
+        },
+        {
+          "id": 25660,
+          "slug": "paycaddy",
+          "long_slug": "25660_paycaddy_paycaddy_httpspaycaddycom",
+          "name": "PayCaddy"
+        },
+        {
+          "id": 25304,
+          "slug": "kapital-bank",
+          "long_slug": "25304_kapitalbank_kapitalbank_httpswwwkapitalmx",
+          "name": "Kapital Bank"
+        },
+        {
+          "id": 23645,
+          "slug": "flux-2",
+          "long_slug": "23645_flux_flux2_httpsifluxapp",
+          "name": "Flux"
+        },
+        {
+          "id": 24540,
+          "slug": "floatpays-inc",
+          "long_slug": "24540_floatpaysinc_floatpaysinc_httpswwwfloatpayscom",
+          "name": "Floatpays Inc"
+        },
+        {
+          "id": 22712,
+          "slug": "gobuild-fka-brick",
+          "long_slug": "22712_gobuildfkabrick_gobuildfkabrick_httpsgobuild",
+          "name": "GoBuild (fka Brick)"
+        }
+      ]
+    },
+    "1": {
+      "domain": "healthcare",
+      "description": "These companies leverage AI and digital platforms to automate, streamline, and personalize healthcare operations, patient engagement, diagnostics, and clinical workflows. Their solutions address challenges such as administrative burden, patient identification, communication, and access to care.",
+      "agent_usecases": "AI agents for patient support (Galen AI), medical sales (SynthioLabs), healthcare communication (Clarion), and paperwork automation (Trellis) are explicitly mentioned.",
+      "value_prop": "Increased efficiency, reduced administrative burden, and improved patient outcomes through AI-driven automation and personalized healthcare solutions.",
+      "cluster_id": 1,
+      "sample_count": 10,
+      "sample_companies": [
+        {
+          "id": 30422,
+          "slug": "galen-ai",
+          "long_slug": "30422_galenai_galenai_httpswwwgalenaicom",
+          "name": "Galen AI"
+        },
+        {
+          "id": 30421,
+          "slug": "synthiolabs",
+          "long_slug": "30421_synthiolabs_synthiolabs_httpssynthiolabscom",
+          "name": "SynthioLabs"
+        },
+        {
+          "id": 30249,
+          "slug": "healthkey",
+          "long_slug": "30249_healthkey_healthkey_httpsgethealthkeycom",
+          "name": "HealthKey"
+        },
+        {
+          "id": 29418,
+          "slug": "sample",
+          "long_slug": "29418_sample_sample_httpssamplehccom",
+          "name": "Sample"
+        },
+        {
+          "id": 29339,
+          "slug": "clarion",
+          "long_slug": "29339_clarion_clarion_httpsclarionhealthcom",
+          "name": "Clarion"
+        },
+        {
+          "id": 29300,
+          "slug": "trellis",
+          "long_slug": "29300_trellis_trellis_httpsruntrelliscom",
+          "name": "Trellis"
+        },
+        {
+          "id": 29484,
+          "slug": "haplotype-labs",
+          "long_slug": "29484_haplotypelabs_haplotypelabs_httpswwwhaplotypelabscom",
+          "name": "Haplotype Labs"
+        },
+        {
+          "id": 29159,
+          "slug": "healthtech-1",
+          "long_slug": "29159_healthtech1_healthtech1_httpswwwhealthtech1uk",
+          "name": "Healthtech 1"
+        },
+        {
+          "id": 25985,
+          "slug": "rthm",
+          "long_slug": "25985_rthm_rthm_httpswwwrthmcom",
+          "name": "RTHM"
+        },
+        {
+          "id": 25285,
+          "slug": "scout-2",
+          "long_slug": "25285_scout_scout2_httpscouthealthcom",
+          "name": "Scout"
+        }
+      ]
+    },
+    "2": {
+      "domain": "retailtech",
+      "description": "These companies provide technology-driven platforms and software solutions to modernize, automate, and optimize operations for retailers, brands, and marketplaces across various sectors including grocery, restaurants, fashion, liquor, office space, and logistics.",
+      "agent_usecases": "AI co-pilot for B2B office search (Tandem)",
+      "value_prop": "Streamlining and automating retail and commerce operations to increase efficiency, reduce costs, and unlock new revenue opportunities for businesses.",
+      "cluster_id": 2,
+      "sample_count": 10,
+      "sample_companies": [
+        {
+          "id": 29844,
+          "slug": "oway",
+          "long_slug": "29844_oway_oway_httpswwwshipowaycom",
+          "name": "Oway"
+        },
+        {
+          "id": 29691,
+          "slug": "tandem-2",
+          "long_slug": "29691_tandem_tandem2_httpstandemspace",
+          "name": "Tandem"
+        },
+        {
+          "id": 28883,
+          "slug": "transformity",
+          "long_slug": "28883_transformity_transformity_httpstransformitytech",
+          "name": "Transformity"
+        },
+        {
+          "id": 12527,
+          "slug": "matagora",
+          "long_slug": "12527_matagora_matagora_httpswwwmatagoracom",
+          "name": "matagora"
+        },
+        {
+          "id": 28366,
+          "slug": "vendora",
+          "long_slug": "28366_vendora_vendora_httpswwwvendoraio",
+          "name": "Vendora"
+        },
+        {
+          "id": 27846,
+          "slug": "polo",
+          "long_slug": "27846_polo_polo_httpspolotabcom",
+          "name": "Polo"
+        },
+        {
+          "id": 1948,
+          "slug": "avo-2",
+          "long_slug": "1948_avo_avo2_httpswwwavonowcom",
+          "name": "Avo"
+        },
+        {
+          "id": 27164,
+          "slug": "autone",
+          "long_slug": "27164_autone_autone_httpsautoneio",
+          "name": "autone"
+        },
+        {
+          "id": 25592,
+          "slug": "ole",
+          "long_slug": "25592_ole_ole_httpswwwoleshopcom",
+          "name": "Ole"
+        },
+        {
+          "id": 26147,
+          "slug": "cofactr",
+          "long_slug": "26147_cofactr_cofactr_httpswwwcofactrcom",
+          "name": "Cofactr"
+        }
+      ]
+    },
+    "3": {
+      "domain": "workflow",
+      "description": "These companies provide platforms and tools to streamline, automate, and optimize business workflows, data integration, and internal application development for a variety of industries and use cases.",
+      "agent_usecases": "Vybe and CustomerOS explicitly mention built-in AI agents for automating repetitive tasks and customer workflows.",
+      "value_prop": "Enable businesses to rapidly build, automate, and manage complex workflows and internal tools without extensive engineering resources, improving efficiency, scalability, and data-driven decision making.",
+      "cluster_id": 3,
+      "sample_count": 10,
+      "sample_companies": [
+        {
+          "id": 30404,
+          "slug": "vybe",
+          "long_slug": "30404_vybe_vybe_httpswwwvybebuild",
+          "name": "Vybe"
+        },
+        {
+          "id": 30032,
+          "slug": "coblocks",
+          "long_slug": "30032_coblocks_coblocks_httpscoblocksai",
+          "name": "Coblocks"
+        },
+        {
+          "id": 30024,
+          "slug": "upshift",
+          "long_slug": "30024_upshift_upshift_httpsupshiftdev",
+          "name": "Upshift"
+        },
+        {
+          "id": 29686,
+          "slug": "snowpilot",
+          "long_slug": "29686_snowpilot_snowpilot_httpswwwsnowpilotcom",
+          "name": "Snowpilot"
+        },
+        {
+          "id": 29596,
+          "slug": "comfy-deploy",
+          "long_slug": "29596_comfydeploy_comfydeploy_httpscomfydeploycom",
+          "name": "Comfy Deploy"
+        },
+        {
+          "id": 29326,
+          "slug": "omniai",
+          "long_slug": "29326_omniai_omniai_httpsgetomniai",
+          "name": "OmniAI"
+        },
+        {
+          "id": 28921,
+          "slug": "surface-labs",
+          "long_slug": "28921_surfacelabs_surfacelabs_httpswithsurfacecom",
+          "name": "Surface Labs"
+        },
+        {
+          "id": 27824,
+          "slug": "coperniq",
+          "long_slug": "27824_coperniq_coperniq_httpscoperniqio",
+          "name": "Coperniq"
+        },
+        {
+          "id": 26723,
+          "slug": "customeros",
+          "long_slug": "26723_customeros_customeros_httpscustomerosai",
+          "name": "CustomerOS"
+        },
+        {
+          "id": 26717,
+          "slug": "blitz",
+          "long_slug": "26717_blitz_blitz_httpswwwblitznocodecom",
+          "name": "Blitz"
+        }
+      ]
+    },
+    "4": {
+      "domain": "productivity",
+      "description": "These companies provide digital tools and platforms to enhance productivity, collaboration, and workflow for individuals and teams. Their offerings include no-code app builders, virtual co-working spaces, embeddable browsers, investment analysis, job search automation, and interactive storytelling tools.",
+      "agent_usecases": "Srcbook and Mocha explicitly mention state-of-the-art coding agents that build web apps for users.",
+      "value_prop": "Enabling users to work more efficiently, collaborate seamlessly, and create or manage digital content and workflows with minimal friction or technical barriers.",
+      "cluster_id": 4,
+      "sample_count": 10,
+      "sample_companies": [
+        {
+          "id": 12583,
+          "slug": "muddy",
+          "long_slug": "12583_muddy_muddy_httpsfeelmuddycom",
+          "name": "Muddy"
+        },
+        {
+          "id": 29115,
+          "slug": "srcbook",
+          "long_slug": "29115_srcbook_srcbook_httpssrcbookcom",
+          "name": "Srcbook"
+        },
+        {
+          "id": 29115,
+          "slug": "mocha",
+          "long_slug": "29115_mocha_mocha_httpsgetmochacom",
+          "name": "Mocha"
+        },
+        {
+          "id": 25614,
+          "slug": "t3-chat-prev-ping-gg",
+          "long_slug": "25614_t3chatprevpinggg_t3chatprevpinggg_httpst3chat",
+          "name": "T3 Chat (prev. Ping.gg)"
+        },
+        {
+          "id": 25509,
+          "slug": "hyperbeam",
+          "long_slug": "25509_hyperbeam_hyperbeam_httpshyperbeamcomchyc",
+          "name": "Hyperbeam"
+        },
+        {
+          "id": 25560,
+          "slug": "stock-unlock",
+          "long_slug": "25560_stockunlock_stockunlock_httpsstockunlockcom",
+          "name": "Stock Unlock"
+        },
+        {
+          "id": 25287,
+          "slug": "lifeat",
+          "long_slug": "25287_lifeat_lifeat_httpslifeatcom",
+          "name": "LifeAt"
+        },
+        {
+          "id": 23972,
+          "slug": "flow-club",
+          "long_slug": "23972_flowclub_flowclub_httpswwwflowclub",
+          "name": "Flow Club"
+        },
+        {
+          "id": 25047,
+          "slug": "careerist",
+          "long_slug": "25047_careerist_careerist_httpcareeristcom",
+          "name": "Careerist"
+        },
+        {
+          "id": 23638,
+          "slug": "journey",
+          "long_slug": "23638_journey_journey_httpjourneyio",
+          "name": "Journey"
+        }
+      ]
+    },
+    "5": {
+      "domain": "automation",
+      "description": "These companies develop AI-powered platforms and agents to automate complex business workflows, enhance productivity, and reduce manual effort across industries such as engineering, customer experience, financial services, e-commerce, and operations.",
+      "agent_usecases": "AI agents for workflow automation (e.g., sales order processing, product data enrichment, customer support, financial analysis, project tracking, and pre-sales documentation); autonomous AI coworkers for web-based tools; in-product copilots; evaluation and deployment of vertical AI agents.",
+      "value_prop": "Accelerate and automate business processes, reduce operational costs, and enable teams to scale efficiently by leveraging AI agents to perform tasks traditionally handled by humans.",
+      "cluster_id": 5,
+      "sample_count": 10,
+      "sample_companies": [
+        {
+          "id": 30512,
+          "slug": "morphoai",
+          "long_slug": "30512_morphoai_morphoai_httpsmorphoai",
+          "name": "MorphoAI"
+        },
+        {
+          "id": 30425,
+          "slug": "auctor",
+          "long_slug": "30425_auctor_auctor_httpsgetauctorcom",
+          "name": "Auctor"
+        },
+        {
+          "id": 30254,
+          "slug": "hud",
+          "long_slug": "30254_hud_hud_httpshudso",
+          "name": "HUD"
+        },
+        {
+          "id": 30242,
+          "slug": "oki",
+          "long_slug": "30242_oki_oki_httpswwwokiapplicationscom",
+          "name": "Oki"
+        },
+        {
+          "id": 30343,
+          "slug": "cedar",
+          "long_slug": "30343_cedar_cedar_httpswwwcedarlawhome",
+          "name": "Cedar"
+        },
+        {
+          "id": 30222,
+          "slug": "general-agency",
+          "long_slug": "30222_generalagency_generalagency_httpsheytessaai",
+          "name": "General Agency"
+        },
+        {
+          "id": 29748,
+          "slug": "seals-ai",
+          "long_slug": "29748_sealsai_sealsai_httpswwwhiresealsai",
+          "name": "Seals AI"
+        },
+        {
+          "id": 29983,
+          "slug": "pathpilot",
+          "long_slug": "29983_pathpilot_pathpilot_httpswwwgetpathpilotcom",
+          "name": "PathPilot"
+        },
+        {
+          "id": 29655,
+          "slug": "decisional-ai",
+          "long_slug": "29655_decisionalai_decisionalai_httpswwwdecisionalcom",
+          "name": "Decisional AI"
+        },
+        {
+          "id": 29957,
+          "slug": "anglera",
+          "long_slug": "29957_anglera_anglera_httpswwwangleracom",
+          "name": "Anglera"
+        }
+      ]
+    }
+  }
+}
