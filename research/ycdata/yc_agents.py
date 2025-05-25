@@ -6,6 +6,7 @@ from pydantic import BaseModel
 import os
 import concurrent.futures
 import random
+import datetime
 
 # 1. Pydantic model for LLM response
 class AgentAnalysis(BaseModel):
@@ -134,8 +135,13 @@ def main(batch_size=10, output_path='yc_agents.json', max_workers=3):
             results.extend(batch_results)
             # Ensure all results are JSON serializable before dumping
             serializable_results = ensure_json_serializable(results)
+            # Write as a dict with last_updated and agents keys
+            output_dict = {
+                "last_updated": datetime.datetime.now().isoformat(),
+                "agents": serializable_results
+            }
             with open(output_path, 'w') as f:
-                json.dump(serializable_results, f, indent=2)
+                json.dump(output_dict, f, indent=2)
             print(f"Checkpoint: saved {len(results)} results.")
     print("Done! Results saved to yc_agents.json")
 
