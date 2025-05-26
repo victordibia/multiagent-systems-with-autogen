@@ -21,16 +21,21 @@ import datetime
 # 1. DATA LOADING
 # ============================================================================
 
-def load_data(data_path: str = 'yc_data_with_long_slug.json', 
+def load_data(data_path: str = 'yc_agents.json', 
               embeddings_path: str = 'yc_embeddings.json') -> Tuple[pd.DataFrame, Dict]:
-    """Load YC data and embeddings."""
+    """Load YC data and embeddings, focusing on the 'agents' section and filtering for is_agent == True."""
     print("📂 Loading data...")
     
-    df = pd.read_json(data_path)
+    with open(data_path, 'r') as f:
+        data = json.load(f)
+    agents = data.get('agents', [])
+    df = pd.DataFrame(agents)
+    # Filter for is_agent == True
+    df = df[df['is_agent'] == True].reset_index(drop=True)
     with open(embeddings_path, 'r') as f:
         embeddings_dict = json.load(f)
     
-    print(f"Loaded {len(df)} companies and {len(embeddings_dict)} embeddings")
+    print(f"Loaded {len(df)} agents (is_agent=True) and {len(embeddings_dict)} embeddings")
     return df, embeddings_dict
 
 # ============================================================================
@@ -167,7 +172,17 @@ def generate_cluster_metadata(cluster_info: Dict, df: pd.DataFrame, key_col: str
         samples = closest_df.head(n_samples)
         # Prepare prompt
         companies_text = "\n".join([f"- {row['name']}: {row['desc']}" for _, row in samples.iterrows()])
-        system_message = """You are an incredibly smart company analyst. Your task is to analyze a cluster of similar companies and provide structured labels.\n\nCRITICAL INSTRUCTIONS:\n- For 'domain': Use a single descriptive word (e.g., 'fintech', 'healthcare', 'logistics')\n- For 'description': Provide a clear, concise explanation of what these companies do\n- For 'agent_usecases': Only include specific AI agent applications if there are CLEAR, EXPLICIT examples. If no clear evidence of AI agents exists, use an empty string ""\n- For 'value_prop': Identify the main value proposition shared across these companies\n\nFocus on accuracy and specificity. Do not speculate about AI agent usage unless explicitly mentioned."""
+        system_message = (
+            "You are an expert in analyzing AI agent startups. "
+            "All companies in this cluster build or use AI agents. "
+            "Your task is to analyze the cluster and provide structured labels.\n\n"
+            "INSTRUCTIONS:\n"
+            "- For 'domain': Use a single descriptive word for the main problem area or industry (e.g., 'fintech', 'healthcare', 'logistics').\n"
+            "- For 'description': Give a clear, concise summary of the types of problems or use cases these AI agents address.\n"
+            "- For 'agent_usecases': Summarize the main use cases or tasks the AI agents are applied to in this cluster.\n"
+            "- For 'value_prop': Identify the main value proposition arguments these companies use (e.g., efficiency, automation, cost savings, new capabilities).\n\n"
+            "Focus on the diversity of use cases and value props. Do not repeat that these are AI agents—focus on what the agents do and why it matters."
+        )
         user_message = f"""Analyze these {len(samples)} companies from cluster {cluster_id}:\n\n{companies_text}\n\nProvide a structured analysis of this cluster."""
         try:
             completion = client.beta.chat.completions.parse(
@@ -188,7 +203,9 @@ def generate_cluster_metadata(cluster_info: Dict, df: pd.DataFrame, key_col: str
                     'id': row.get('id', None),
                     'slug': row.get('slug', None),
                     'long_slug': row.get('long_slug', None),
-                    'name': row.get('name', None)
+                    'name': row.get('name', None),
+                    'desc': row.get('desc', None),
+                    'website': row.get('website', None),
                 }
                 for _, row in samples.iterrows()
             ]
@@ -311,10 +328,10 @@ def main():
     print("=" * 50)
     
     # Step 1: Load data
-    df, embeddings_dict = load_data(data_path='yc_data.json')
+    df, embeddings_dict = load_data(data_path='yc_agents.json')
 
     # Step 2: Get clusters
-    cluster_info = get_clusters(df, embeddings_dict, n_clusters=6)
+    cluster_info = get_clusters(df, embeddings_dict)
     
     # # Step 3: Annotate dataframe
     df_annotated = annotate_df(cluster_info, df)

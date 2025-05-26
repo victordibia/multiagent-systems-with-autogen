@@ -1,423 +1,273 @@
 {
-  "last_updated": "2025-05-23T20:17:07.697920",
+  "last_updated": "2025-05-24T21:17:07.763427",
   "clusters": {
     "0": {
-      "domain": "fintech",
-      "description": "These companies provide digital financial infrastructure, embedded finance, and payment solutions tailored for businesses and individuals, with a focus on automation, cross-border payments, payroll, banking-as-a-service, and financial access in emerging markets.",
-      "agent_usecases": "Mesh explicitly uses AI agents as finance co-workers that automate accounting, answer financial questions, and integrate with communication channels.",
-      "value_prop": "Enabling businesses to easily access, automate, and scale financial operations through modern, API-driven platforms and embedded finance solutions.",
+      "domain": "productivity",
+      "description": "This cluster focuses on enhancing productivity and workflow automation for knowledge workers and technical teams. The companies address challenges in project management, documentation, software development, design, and specialized professional tasks by leveraging intelligent systems that can understand, automate, and optimize complex processes.",
+      "agent_usecases": "Automating project tracking and reporting, generating and improving technical documentation, assisting with code understanding and architecture, streamlining design and architecture workflows, building and evaluating custom workflow agents, and enabling seamless human-AI collaboration in professional environments.",
+      "value_prop": "Increased efficiency, reduced manual effort, accelerated iteration cycles, improved accuracy and reliability, and the ability to scale or automate complex knowledge work that traditionally required significant human expertise.",
       "cluster_id": 0,
       "sample_count": 10,
       "sample_companies": [
         {
-          "id": 30292,
-          "slug": "mesh-2",
-          "long_slug": "30292_mesh_mesh2_httpwwwusemeshcom",
-          "name": "Mesh"
-        },
-        {
-          "id": 29338,
-          "slug": "swift-2",
-          "long_slug": "29338_swift_swift2_httpsjoinswiftapp",
-          "name": "Swift"
-        },
-        {
-          "id": 27049,
-          "slug": "anchor",
-          "long_slug": "27049_anchor_anchor_httpsgetanchorco",
-          "name": "Anchor"
-        },
-        {
-          "id": 25315,
-          "slug": "rebill",
-          "long_slug": "25315_rebill_rebill_httpswwwrebillcom",
-          "name": "Rebill"
-        },
-        {
-          "id": 25670,
-          "slug": "eazipay-inc",
-          "long_slug": "25670_eazipayinc_eazipayinc_httpsmyeazipaycom",
-          "name": "Eazipay Inc."
-        },
-        {
-          "id": 25660,
-          "slug": "paycaddy",
-          "long_slug": "25660_paycaddy_paycaddy_httpspaycaddycom",
-          "name": "PayCaddy"
-        },
-        {
-          "id": 25304,
-          "slug": "kapital-bank",
-          "long_slug": "25304_kapitalbank_kapitalbank_httpswwwkapitalmx",
-          "name": "Kapital Bank"
-        },
-        {
-          "id": 23645,
-          "slug": "flux-2",
-          "long_slug": "23645_flux_flux2_httpsifluxapp",
-          "name": "Flux"
-        },
-        {
-          "id": 24540,
-          "slug": "floatpays-inc",
-          "long_slug": "24540_floatpaysinc_floatpaysinc_httpswwwfloatpayscom",
-          "name": "Floatpays Inc"
-        },
-        {
-          "id": 22712,
-          "slug": "gobuild-fka-brick",
-          "long_slug": "22712_gobuildfkabrick_gobuildfkabrick_httpsgobuild",
-          "name": "GoBuild (fka Brick)"
-        }
-      ]
-    },
-    "1": {
-      "domain": "healthcare",
-      "description": "These companies leverage AI and digital platforms to automate, streamline, and personalize healthcare operations, patient engagement, diagnostics, and clinical workflows. Their solutions address challenges such as administrative burden, patient identification, communication, and access to care.",
-      "agent_usecases": "AI agents for patient support (Galen AI), medical sales (SynthioLabs), healthcare communication (Clarion), and paperwork automation (Trellis) are explicitly mentioned.",
-      "value_prop": "Increased efficiency, reduced administrative burden, and improved patient outcomes through AI-driven automation and personalized healthcare solutions.",
-      "cluster_id": 1,
-      "sample_count": 10,
-      "sample_companies": [
-        {
-          "id": 30422,
-          "slug": "galen-ai",
-          "long_slug": "30422_galenai_galenai_httpswwwgalenaicom",
-          "name": "Galen AI"
-        },
-        {
-          "id": 30421,
-          "slug": "synthiolabs",
-          "long_slug": "30421_synthiolabs_synthiolabs_httpssynthiolabscom",
-          "name": "SynthioLabs"
-        },
-        {
-          "id": 30249,
-          "slug": "healthkey",
-          "long_slug": "30249_healthkey_healthkey_httpsgethealthkeycom",
-          "name": "HealthKey"
-        },
-        {
-          "id": 29418,
-          "slug": "sample",
-          "long_slug": "29418_sample_sample_httpssamplehccom",
-          "name": "Sample"
-        },
-        {
-          "id": 29339,
-          "slug": "clarion",
-          "long_slug": "29339_clarion_clarion_httpsclarionhealthcom",
-          "name": "Clarion"
-        },
-        {
-          "id": 29300,
-          "slug": "trellis",
-          "long_slug": "29300_trellis_trellis_httpsruntrelliscom",
-          "name": "Trellis"
-        },
-        {
-          "id": 29484,
-          "slug": "haplotype-labs",
-          "long_slug": "29484_haplotypelabs_haplotypelabs_httpswwwhaplotypelabscom",
-          "name": "Haplotype Labs"
-        },
-        {
-          "id": 29159,
-          "slug": "healthtech-1",
-          "long_slug": "29159_healthtech1_healthtech1_httpswwwhealthtech1uk",
-          "name": "Healthtech 1"
-        },
-        {
-          "id": 25985,
-          "slug": "rthm",
-          "long_slug": "25985_rthm_rthm_httpswwwrthmcom",
-          "name": "RTHM"
-        },
-        {
-          "id": 25285,
-          "slug": "scout-2",
-          "long_slug": "25285_scout_scout2_httpscouthealthcom",
-          "name": "Scout"
-        }
-      ]
-    },
-    "2": {
-      "domain": "retailtech",
-      "description": "These companies provide technology-driven platforms and software solutions to modernize, automate, and optimize operations for retailers, brands, and marketplaces across various sectors including grocery, restaurants, fashion, liquor, office space, and logistics.",
-      "agent_usecases": "AI co-pilot for B2B office search (Tandem)",
-      "value_prop": "Streamlining and automating retail and commerce operations to increase efficiency, reduce costs, and unlock new revenue opportunities for businesses.",
-      "cluster_id": 2,
-      "sample_count": 10,
-      "sample_companies": [
-        {
-          "id": 29844,
-          "slug": "oway",
-          "long_slug": "29844_oway_oway_httpswwwshipowaycom",
-          "name": "Oway"
-        },
-        {
-          "id": 29691,
-          "slug": "tandem-2",
-          "long_slug": "29691_tandem_tandem2_httpstandemspace",
-          "name": "Tandem"
-        },
-        {
-          "id": 28883,
-          "slug": "transformity",
-          "long_slug": "28883_transformity_transformity_httpstransformitytech",
-          "name": "Transformity"
-        },
-        {
-          "id": 12527,
-          "slug": "matagora",
-          "long_slug": "12527_matagora_matagora_httpswwwmatagoracom",
-          "name": "matagora"
-        },
-        {
-          "id": 28366,
-          "slug": "vendora",
-          "long_slug": "28366_vendora_vendora_httpswwwvendoraio",
-          "name": "Vendora"
-        },
-        {
-          "id": 27846,
-          "slug": "polo",
-          "long_slug": "27846_polo_polo_httpspolotabcom",
-          "name": "Polo"
-        },
-        {
-          "id": 1948,
-          "slug": "avo-2",
-          "long_slug": "1948_avo_avo2_httpswwwavonowcom",
-          "name": "Avo"
-        },
-        {
-          "id": 27164,
-          "slug": "autone",
-          "long_slug": "27164_autone_autone_httpsautoneio",
-          "name": "autone"
-        },
-        {
-          "id": 25592,
-          "slug": "ole",
-          "long_slug": "25592_ole_ole_httpswwwoleshopcom",
-          "name": "Ole"
-        },
-        {
-          "id": 26147,
-          "slug": "cofactr",
-          "long_slug": "26147_cofactr_cofactr_httpswwwcofactrcom",
-          "name": "Cofactr"
-        }
-      ]
-    },
-    "3": {
-      "domain": "workflow",
-      "description": "These companies provide platforms and tools to streamline, automate, and optimize business workflows, data integration, and internal application development for a variety of industries and use cases.",
-      "agent_usecases": "Vybe and CustomerOS explicitly mention built-in AI agents for automating repetitive tasks and customer workflows.",
-      "value_prop": "Enable businesses to rapidly build, automate, and manage complex workflows and internal tools without extensive engineering resources, improving efficiency, scalability, and data-driven decision making.",
-      "cluster_id": 3,
-      "sample_count": 10,
-      "sample_companies": [
-        {
-          "id": 30404,
-          "slug": "vybe",
-          "long_slug": "30404_vybe_vybe_httpswwwvybebuild",
-          "name": "Vybe"
-        },
-        {
-          "id": 30032,
-          "slug": "coblocks",
-          "long_slug": "30032_coblocks_coblocks_httpscoblocksai",
-          "name": "Coblocks"
-        },
-        {
-          "id": 30024,
-          "slug": "upshift",
-          "long_slug": "30024_upshift_upshift_httpsupshiftdev",
-          "name": "Upshift"
-        },
-        {
-          "id": 29686,
-          "slug": "snowpilot",
-          "long_slug": "29686_snowpilot_snowpilot_httpswwwsnowpilotcom",
-          "name": "Snowpilot"
-        },
-        {
-          "id": 29596,
-          "slug": "comfy-deploy",
-          "long_slug": "29596_comfydeploy_comfydeploy_httpscomfydeploycom",
-          "name": "Comfy Deploy"
-        },
-        {
-          "id": 29326,
-          "slug": "omniai",
-          "long_slug": "29326_omniai_omniai_httpsgetomniai",
-          "name": "OmniAI"
-        },
-        {
-          "id": 28921,
-          "slug": "surface-labs",
-          "long_slug": "28921_surfacelabs_surfacelabs_httpswithsurfacecom",
-          "name": "Surface Labs"
-        },
-        {
-          "id": 27824,
-          "slug": "coperniq",
-          "long_slug": "27824_coperniq_coperniq_httpscoperniqio",
-          "name": "Coperniq"
-        },
-        {
-          "id": 26723,
-          "slug": "customeros",
-          "long_slug": "26723_customeros_customeros_httpscustomerosai",
-          "name": "CustomerOS"
-        },
-        {
-          "id": 26717,
-          "slug": "blitz",
-          "long_slug": "26717_blitz_blitz_httpswwwblitznocodecom",
-          "name": "Blitz"
-        }
-      ]
-    },
-    "4": {
-      "domain": "productivity",
-      "description": "These companies provide digital tools and platforms to enhance productivity, collaboration, and workflow for individuals and teams. Their offerings include no-code app builders, virtual co-working spaces, embeddable browsers, investment analysis, job search automation, and interactive storytelling tools.",
-      "agent_usecases": "Srcbook and Mocha explicitly mention state-of-the-art coding agents that build web apps for users.",
-      "value_prop": "Enabling users to work more efficiently, collaborate seamlessly, and create or manage digital content and workflows with minimal friction or technical barriers.",
-      "cluster_id": 4,
-      "sample_count": 10,
-      "sample_companies": [
-        {
-          "id": 12583,
-          "slug": "muddy",
-          "long_slug": "12583_muddy_muddy_httpsfeelmuddycom",
-          "name": "Muddy"
-        },
-        {
-          "id": 29115,
-          "slug": "srcbook",
-          "long_slug": "29115_srcbook_srcbook_httpssrcbookcom",
-          "name": "Srcbook"
-        },
-        {
-          "id": 29115,
-          "slug": "mocha",
-          "long_slug": "29115_mocha_mocha_httpsgetmochacom",
-          "name": "Mocha"
-        },
-        {
-          "id": 25614,
-          "slug": "t3-chat-prev-ping-gg",
-          "long_slug": "25614_t3chatprevpinggg_t3chatprevpinggg_httpst3chat",
-          "name": "T3 Chat (prev. Ping.gg)"
-        },
-        {
-          "id": 25509,
-          "slug": "hyperbeam",
-          "long_slug": "25509_hyperbeam_hyperbeam_httpshyperbeamcomchyc",
-          "name": "Hyperbeam"
-        },
-        {
-          "id": 25560,
-          "slug": "stock-unlock",
-          "long_slug": "25560_stockunlock_stockunlock_httpsstockunlockcom",
-          "name": "Stock Unlock"
-        },
-        {
-          "id": 25287,
-          "slug": "lifeat",
-          "long_slug": "25287_lifeat_lifeat_httpslifeatcom",
-          "name": "LifeAt"
-        },
-        {
-          "id": 23972,
-          "slug": "flow-club",
-          "long_slug": "23972_flowclub_flowclub_httpswwwflowclub",
-          "name": "Flow Club"
-        },
-        {
-          "id": 25047,
-          "slug": "careerist",
-          "long_slug": "25047_careerist_careerist_httpcareeristcom",
-          "name": "Careerist"
-        },
-        {
-          "id": 23638,
-          "slug": "journey",
-          "long_slug": "23638_journey_journey_httpjourneyio",
-          "name": "Journey"
-        }
-      ]
-    },
-    "5": {
-      "domain": "automation",
-      "description": "These companies develop AI-powered platforms and agents to automate complex business workflows, enhance productivity, and reduce manual effort across industries such as engineering, customer experience, financial services, e-commerce, and operations.",
-      "agent_usecases": "AI agents for workflow automation (e.g., sales order processing, product data enrichment, customer support, financial analysis, project tracking, and pre-sales documentation); autonomous AI coworkers for web-based tools; in-product copilots; evaluation and deployment of vertical AI agents.",
-      "value_prop": "Accelerate and automate business processes, reduce operational costs, and enable teams to scale efficiently by leveraging AI agents to perform tasks traditionally handled by humans.",
-      "cluster_id": 5,
-      "sample_count": 10,
-      "sample_companies": [
-        {
-          "id": 30512,
-          "slug": "morphoai",
-          "long_slug": "30512_morphoai_morphoai_httpsmorphoai",
-          "name": "MorphoAI"
-        },
-        {
-          "id": 30425,
-          "slug": "auctor",
-          "long_slug": "30425_auctor_auctor_httpsgetauctorcom",
-          "name": "Auctor"
+          "id": 30440,
+          "slug": "simstudio",
+          "long_slug": "30440_simstudio_simstudio_httpswwwsimstudioai",
+          "name": "Sim Studio",
+          "desc": "The UI to build AI agents Sim Studio is the fastest way to build AI agents for production. \r\nOur Figma-like canvas lets teams quickly connect LLMs to their favorite tools (Slack, Supabase, Pinecone, Gmail).\r\nWe're open-source with over 3k stars on GitHub in the last month. We have 4,000+ builders on our hosted platform. ",
+          "website": "https://www.simstudio.ai"
         },
         {
           "id": 30254,
           "slug": "hud",
           "long_slug": "30254_hud_hud_httpshudso",
-          "name": "HUD"
+          "name": "HUD",
+          "desc": "Hud is building evals for the drop-in worker Sam Altman and Dario Amodei have both said that we\u2019ll have virtual coworkers by the end of the year.\r\n\r\nThe issue is, current agents aren\u2019t reliable enough to perform at a human-level at these tasks. We solve this by making it easy to build evals and run them at scale for top agent developers like OAI, Browser Use and Silverstream.\r\n\r\nOur platform works by making it easy for domain-specific experts to create evals for their area of expertise. We're working with experts from every occupation from PMs to Accountants to Financial Analysts to make evals that the labs can then be used to evaluate and eventually train computer agents using RL.\r\n\r\nDuring the batch, we grew from 0 to $240k ARR.\r\n\r\nToday our customers are foundation labs and startups building computer use and browser agents, but we want to expand to any company building or adopting a vertical AI agent that replaces an occupation. \r\n\r\nWe want to be the Palantir of domain-specific agents. Soon, we will go into any organization, create evals for a specific job function, and then deploy an AI agent on our tooling that can automate a job function. Ultimately, we will become the platform that creates drop-in workers that can automate any white collar task. We want to free people from bullshit laptop jobs. ",
+          "website": "https://hud.so"
         },
         {
           "id": 30242,
           "slug": "oki",
           "long_slug": "30242_oki_oki_httpswwwokiapplicationscom",
-          "name": "Oki"
+          "name": "Oki",
+          "desc": "AI to automate Engineering project tracking Oki uses AI to automate project tracking for engineering leaders. \r\n\r\nIt's like having a dedicated senior engineer who reads every single line of code, all of your team's slack messages, docs, issues, and tells you the truth about how your projects are tracking. \r\n\r\nIf you're a CTO, VP, or Director, you can walk into meetings knowing which efforts are behind and why, rather than asking for updates.\r\n\r\nWe're offering founder mode as a service. \r\n",
+          "website": "https://www.okiapplications.com/"
         },
         {
-          "id": 30343,
-          "slug": "cedar",
-          "long_slug": "30343_cedar_cedar_httpswwwcedarlawhome",
-          "name": "Cedar"
+          "id": 30160,
+          "slug": "quantstruct",
+          "long_slug": "30160_quantstruct_quantstruct_httpsquantstructcom",
+          "name": "Quantstruct",
+          "desc": "AI documentation engineer \u2013\u00a0test & autoimprove stale product docs Quantstruct automatically creates and improves product documentation, implementation guides, and changelogs for API & SDK products, web-based enterprise software, and internal applications.\r\n\r\nQuantstruct identifies gaps in your knowledge base based on each product release or unfulfilled customer query. It uses multiple AI agents to search existing knowledge sources, test existing docs for validity and style guidelines, and clicks, scrolls, and uses enterprise software through a web browser to generate docs with embedded screenshots and video recordings. Quanstruct is available as a cloud service to start, targeting technical writers, content writing, professional services, and product teams.\r\n\r\nTraditional generative AI tools risk hallucinating critical API & SDK fields, even with RAG based approaches. Purely agent-based approaches risk providing unpredictable output that can diverge from desired documentation processes. Finally, no company\u2019s review and publishing workflow is the same. Quantstruct is the easiest way to onboard and customize AI agents to continuously improve your documentation based on your customer needs and product evolution. https://quantstruct.com",
+          "website": "https://quantstruct.com"
         },
         {
           "id": 30222,
           "slug": "general-agency",
           "long_slug": "30222_generalagency_generalagency_httpsheytessaai",
-          "name": "General Agency"
+          "name": "General Agency",
+          "desc": "AI coworkers that can learn and act just like a human We are building Tessa, an AI coworker that can autonomously learn and master the usage of web-based tools, just like a human does. \r\n\r\nTo accomplish this, we are building a novel neural architecture that enables autonomous self-improvement in AI agents. So far, we've achieved a state-of-the-art success rate of 93% on the WebVoyager benchmark.\r\n\r\nWe are working to automate workflows in several verticals, including property management & real estate, financial services, and consulting.",
+          "website": "https://heytessa.ai"
+        },
+        {
+          "id": 30105,
+          "slug": "archilabs",
+          "long_slug": "30105_archilabs_archilabs_httpsarchilabsai",
+          "name": "ArchiLabs",
+          "desc": "AI Copilot for Architects ArchiLabs is building an AI co-pilot for architecture. Instead of spending hours on tedious tasks, architects can 10x their design speed with simple AI prompts.\r\n\r\nBrian and William met at Carnegie Mellon as engineers and separately had their own frustrating new construction experiences. Brian ran a tech-enabled homebuilding factory and found the design iteration process to be a massive bottleneck, while William built ground up homes in Texas and had a similar frustration. However, at the time, there wasn't an easy solution to the many pain points in the design process.\r\n\r\nAs AI reasoning models improve, Brian and William realized that there was a massive opportunity to fix the long-tail of frustrations and build a new construction design experience by fine tuning existing models, becoming bigger than Autodesk, the $60B company in the space.",
+          "website": "https://archilabs.ai"
+        },
+        {
+          "id": 30040,
+          "slug": "supercontrast",
+          "long_slug": "30040_supercontrast_supercontrast_httpssupercontrastcom",
+          "name": "supercontrast",
+          "desc": "AI Co-Pilot for Design At Hive we worked on a product called Gencraft, an ai art generator we ramped from 0 to $1M ARR in 6 months. This inspired us to build supercontrast, an AI Copilot which empowers anyone to create and refine high quality designs and assets. ",
+          "website": "https://supercontrast.com/"
+        },
+        {
+          "id": 29673,
+          "slug": "storia-ai",
+          "long_slug": "29673_storiaai_storiaai_httpsstoriaai",
+          "name": "Storia AI",
+          "desc": "Open source AI copilot that knows your company's code and its context With AI increasingly automating away code generation, software engineers will spend more time reading, judging, and architecting code rather than writing it. Storia is building an open-source copilot that knows a company's codebase and its context.\r\n\r\nWe are starting with Sage, a Perplexity-like agent for helping developers understand, judge, and generate software. Given an existing codebase, developers can ask Sage questions such as:\r\n1) Given my project\u2019s SLA and latency constraints, what is the appropriate underlying vector database to use? How would I incorporate it into my existing codebase?\r\n2) Why should I pick Redis over Milvus as my underlying vector store?\r\n3) Does this codebase in our organization still work and what steps are required for a complex integration with another library?\r\n\r\nSage\u2019s answers are directly supported by documentation and external references like GitHub, Stack Overflow, technical design documents, and project management software, preventing hallucinations. Today, Sage has up-to-date knowledge about open-source repositories (indexed daily). Tomorrow it will have a deep understanding of every line of code on the Internet. For teams, Sage will know about your private codebase too.\r\n\r\nNo group has yet solved how to build an AI system that comprehends a codebase and its context and can empower every developer to architect better code, faster. This requires new research advances because vanilla RAG and out-of-the-box LLMs aren\u2019t going to cut it. \r\n\r\nWe have 20+ years of software engineering and AI research experience. Julia worked on precursors of Gemini using contextual neural techniques before they were called \u201cRAG\u201d (and applied it to products like Google Keyboard and Pixel phones). Mihail built the earliest LLMs at Amazon Alexa and launched the first contextual deep learning conversational AI system in production at Alexa.\r\n",
+          "website": "https://storia.ai"
+        },
+        {
+          "id": 29786,
+          "slug": "palmier",
+          "long_slug": "29786_palmier_palmier_httpswwwpalmierio",
+          "name": "Palmier",
+          "desc": "AI Native Github Alternative Code repositories are built for humans to understand and collaborate on code. But soon, they\u2019ll be used primarily by AIs working on our behalf. As this shift happens, the structure and processes around code must evolve.\r\n\r\nAt Palmier, we\u2019re building a new kind of code repository designed for AIs. Every line of code has a history behind it, and we\u2019re making that history accessible for AIs to create more efficient and reliable code, aligned with human intention.\r\n\r\nOur first product is a platform that helps developers work seamlessly with AI, improving efficiency. We aim to provide an API for any AI to interact with code, giving it the information needed to produce better quality code.\r\n\r\nReach out at founders@palmier.io",
+          "website": "https://www.palmier.io"
+        },
+        {
+          "id": 29951,
+          "slug": "rowboat-labs",
+          "long_slug": "29951_rowboatlabs_rowboatlabs_httpswwwrowboatlabscom",
+          "name": "RowBoat Labs",
+          "desc": "Open-source AI-assisted agent builder A Cursor-like AI-assisted, no-code IDE for building production-ready multi-agents.\r\n\r\n\u2728 Start from a simple prompt to create fully functional agents with the Copilot\r\n\ud83e\uddea Test them in AI-simulated scenarios\r\n\ud83c\udf10 Connect MCP servers and tools\r\n\ud83d\udcde Interact through the Python SDK, a web widget, or a Twilio phone number\r\n\u267b\ufe0f Continuously refine your agents by providing feedback to the Copilot\r\n\r\nBuilt on OpenAI's Agents SDK, Rowboat is the fastest way to build multi-agents!",
+          "website": "https://www.rowboatlabs.com"
+        }
+      ]
+    },
+    "1": {
+      "domain": "business",
+      "description": "This cluster addresses operational inefficiencies and bottlenecks across business functions such as sales, customer support, compliance, finance, and administration. The companies provide solutions that automate complex workflows, streamline repetitive tasks, and enhance decision-making for teams ranging from solopreneurs to large enterprises.",
+      "agent_usecases": "Automating administrative work, qualifying leads, booking revenue, capturing requirements, generating sales artifacts, moving data across enterprise systems, providing in-app user support, automating deal creation and pricing, training and QA for sales/support reps, streamlining marketing compliance, handling order processing and payments, evaluating customer conversations, and accelerating financial analysis.",
+      "value_prop": "Increased efficiency, reduced manual workload, faster execution, improved accuracy, cost savings, enhanced compliance, better customer experience, and enabling teams to focus on higher-value strategic work.",
+      "cluster_id": 1,
+      "sample_count": 10,
+      "sample_companies": [
+        {
+          "id": 30543,
+          "slug": "oncactus",
+          "long_slug": "30543_cactus_oncactus_httpsoncactuscom",
+          "name": "Cactus",
+          "desc": "AI copilot for solopreneurs We're building an AI copilot for solopreneurs to automate their admin work. Our AI answers the phone, qualifies customers, and books in revenue. Think Jarvis for Ironman. Cactus is the AI business assistant that empowers solopreneurs to succeed.",
+          "website": "https://oncactus.com"
+        },
+        {
+          "id": 30425,
+          "slug": "auctor",
+          "long_slug": "30425_auctor_auctor_httpsgetauctorcom",
+          "name": "Auctor",
+          "desc": "AI for best-in-class pre-sales and delivery teams. Auctor is used by leading solution engineers, system integrators, and professional services teams. Our AI agents capture requirements, generate aligned artifacts, and streamline discovery to deployment\u2014turning weeks into hours.",
+          "website": "https://getauctor.com"
+        },
+        {
+          "id": 30278,
+          "slug": "agentin-ai",
+          "long_slug": "30278_agentinai_agentinai_httpswwwagentinai",
+          "name": "Agentin AI",
+          "desc": "AI Agents that automate enterprise software processes At Agentin AI, we build Agents that move data and take actions across enterprise systems, like Salesforce, NetSuite and SAP. These agents are difficult to build because each enterprise heavily customizes their systems but we solved that by training our Agents to learn and adapt from failures, applying reinforcement learning techniques we developed.",
+          "website": "https://www.agentin.ai"
+        },
+        {
+          "id": 30343,
+          "slug": "cedar",
+          "long_slug": "30343_cedar_cedar_httpswwwcedarlawhome",
+          "name": "Cedar",
+          "desc": "In-product AI copilot for any app Cedar is an AI copilot for any app. Imagine the founders themselves being behind every user\u2019s screen: actively converting them, answering product questions, and upselling. \r\n\r\nJesse worked at Intuit, writing software for TurboTax designed for customers of all tech literacy levels. Isabelle worked at Figma and Notion, learning about the struggles of getting users to effectively use powerful yet complex products as well as GTM strategies to reach them.\r\n\r\nAt every step of the conversion funnel, users and companies struggle with knowledge gaps. Users not knowing how a product helps them reduces conversion, activation and retention. Companies not knowing what users want misleads messaging, product, and re-engaging churned leads. \r\n\r\nAI can do more than just replace a single job or industry. With Cedar at the center, we reimagine growth and customer support entirely, provide qualitative analytics of the user\u2019s story and using them to improve user\u2019s experiences live. As we enter the age of AI agents, they too will need an understanding of what software does and how to execute it. We plan to be the front door for all of them.",
+          "website": "https://www.cedar.law/home"
+        },
+        {
+          "id": 30291,
+          "slug": "outlit",
+          "long_slug": "30291_outlit_outlit_httpsoutlitai",
+          "name": "Outlit",
+          "desc": "AI Agents for Enterprise Deal Creation Outlit is building AI for enterprise deal creation.\r\n\r\nWe help revenue teams increase margins and deal velocity by automating tasks like creating, pricing, and reviewing\u2014ensuring every deal is executed faster.\r\n\r\nWe\u2019ve created the largest Deal Desk community on Slack, with decision-makers from companies like Stripe, Uber, LinkedIn, Rev.com, and more.\r\n\r\nWe believe community-led growth is the future of GTM for enterprise SaaS sales\u2014and Outlit is already a step ahead.",
+          "website": "https://outlit.ai/"
+        },
+        {
+          "id": 30275,
+          "slug": "solidroad",
+          "long_slug": "30275_solidroad_solidroad_httpssolidroadcom",
+          "name": "Solidroad",
+          "desc": "AI agents for sales and support teams, starting with training and QA. Solidroad builds AI agents for sales and support teams, starting with training and QA. Solidroad agents train human reps in a simulated environment, and evaluate their performance in live customer channels.\r\n\r\nBy starting with training and QA, our agents learn how humans learn, and their performance can be compared directly with human reps. This enables us to prove the value of the rest of the agents on our roadmap.\r\n\r\nSince launching last summer, we\u2019ve\u00a0reduced onboarding times by 50%\u00a0at several of the world\u2019s largest outsourced contact centres/BPOs like PartnerHero and Tech Mahindra, and\u00a0improved go-live CSAT at Crypto.com by 3%\u00a0(now above 90% CSAT).",
+          "website": "https://solidroad.com"
+        },
+        {
+          "id": 30057,
+          "slug": "luthor",
+          "long_slug": "30057_luthor_luthor_httpsluthorai",
+          "name": "Luthor",
+          "desc": "AI Agents for Marketing Compliance Luthor builds AI-powered marketing compliance agents for fintechs, banks, investment advisors, and broker-dealers. Our AI streamlines approvals, helping teams publish content faster\u2014without compliance bottlenecks.",
+          "website": "https://luthor.ai"
         },
         {
           "id": 29748,
           "slug": "seals-ai",
           "long_slug": "29748_sealsai_sealsai_httpswwwhiresealsai",
-          "name": "Seals AI"
+          "name": "Seals AI",
+          "desc": "AI Employees for Wholesalers & Distributors Seals is a suite of AI Employees for Wholesalers & Distributors. Instead of relying on humans to quote, take orders, collect payments, place purchase orders and enter data into ERPs. We build AI Employees that do these manual repetitive tasks for the 700k wholesalers in the US.\r\n\r\nWe\u2019re a team of three Computer Science majors, and Fernando launched and grew AT&T in Mexico to $120M ARR. Previously, we all worked together at our last YC-backed startup, building it to over $6M in revenue. It was there that we placed thousands of purchase orders with wholesalers.\r\n\r\nWe realized that almost every physical product comes from B2B sales in the supply chain. However, it turns out that most of these operations are still done manually through phone and email, involving tasks like quoting, taking orders, collecting payments, entering data into ERPs, and providing support. By automating these tasks with AI agents in a human-like manner, we are creating a massive opportunity to convert $100B of payroll expenses into software spending.\r\n",
+          "website": "https://www.hireseals.ai/"
         },
         {
           "id": 29983,
           "slug": "pathpilot",
           "long_slug": "29983_pathpilot_pathpilot_httpswwwgetpathpilotcom",
-          "name": "PathPilot"
+          "name": "PathPilot",
+          "desc": "AI platform helping Customer Experience teams scale efficiently We empower CX teams to deploy AI agents, evaluate 100% of conversations for quality, and accelerate automation \u2014 all without needing engineering resources. Whether companies are just starting with AI or already using automation, PathPilot improves agent performance, reduces costs, and ensures the quality and compliance required for high-stakes industries like fintech and gaming.",
+          "website": "https://www.getpathpilot.com/"
         },
         {
           "id": 29655,
           "slug": "decisional-ai",
           "long_slug": "29655_decisionalai_decisionalai_httpswwwdecisionalcom",
-          "name": "Decisional AI"
+          "name": "Decisional AI",
+          "desc": "AI Agent for private markets that accelerates deep financial work Decisional is building an AI Financial Analyst for Private Market Investors that pulls information from public and private data sources. Financial Services firms like LTV Capital use our AI Agent to gain superhuman abilities like gleaning insights from thousands of data rooms or documents & magically modelling spreadsheets in seconds",
+          "website": "https://www.decisional.com/"
+        }
+      ]
+    },
+    "2": {
+      "domain": "healthcare",
+      "description": "This cluster addresses operational inefficiencies, administrative burdens, and patient engagement challenges in healthcare delivery. Solutions focus on automating repetitive tasks, streamlining insurance and billing processes, improving patient intake and triage, and enabling digital clinics to extend care capacity.",
+      "agent_usecases": "Automating administrative workflows (insurance verification, billing, compliance, documentation), conducting patient intake and triage, managing patient communications, supporting digital clinic operations, and enhancing post-enrollment engagement for healthcare providers.",
+      "value_prop": "Significant time and cost savings, reduction in manual errors, improved compliance and reimbursement rates, increased patient retention and engagement, and expanded care capacity without additional staffing.",
+      "cluster_id": 2,
+      "sample_count": 10,
+      "sample_companies": [
+        {
+          "id": 30406,
+          "slug": "bitboard",
+          "long_slug": "30406_bitboard_bitboard_httpsbitboardwork",
+          "name": "BitBoard",
+          "desc": "The AI workforce for healthcare operations. BitBoard lets healthcare providers hire AI agents for repetitive administrative work within their existing tools and systems.\r\n\r\nBitBoard agents are already recovering thousands of hours previously spent on tedious tasks like reviewing intake forms and updating patient charts.\r\n\r\nThe founders were early employees at Forward, where they delivered primary care across the US with support from thousands of remote contractors handling manual administrative tasks. AI agents are finally capable enough to help.",
+          "website": "https://bitboard.work/"
         },
         {
-          "id": 29957,
-          "slug": "anglera",
-          "long_slug": "29957_anglera_anglera_httpswwwangleracom",
-          "name": "Anglera"
+          "id": 30529,
+          "slug": "workdone",
+          "long_slug": "30529_workdone_workdone_httpswwwwrkdncom",
+          "name": "WorkDone",
+          "desc": "AI compliance copilot for hospitals to maximize insurance payouts WorkDone is an AI compliance copilot for hospitals. We prevent documentation errors that cause 250 million insurance claim denials every year\u2014before they happen.",
+          "website": "https://www.wrkdn.com"
+        },
+        {
+          "id": 30232,
+          "slug": "carecycle",
+          "long_slug": "30232_carecycle_carecycle_httpswwwcarecycleai",
+          "name": "careCycle",
+          "desc": "Voice AI teams for medicare agencies. careCycle is an AI workforce for medicare agencies and FMOs - helping leading agencies achieve 5x higher conversions, 37% better retention, and saving thousands of agent hours.\r\n\r\nWe're transforming how Medicare agencies handle member relationships with teams of voice AI agents. We're solving the industry's biggest challenge: 50% annual member churn caused by poor post-enrollment engagement.\r\n\r\nOur multi-agent AI teams work together to handle the entire customer journey - from initial contact through enrollment and ongoing care. When a lead comes in after hours, one AI agent answers and schedules a callback, another calls at the perfect time, a third captures qualifying information, and a fourth handles the warm transfer to a licensed agent. This approach helped a leading FMO write over $2M in renewals during AEP 2024 while reducing agent talk time by 20% per sale.\r\n\r\nWe've pioneered a purpose-built solution for Medicare's unique compliance requirements. Unlike generic AI platforms, our system features built-in HIPAA/CMS compliance, real-time data structuring, and seamless CRM integration. This enables agencies of all sizes to deliver enterprise-grade member care without massive infrastructure investments.\r\n\r\nEarly metrics show the power of our approach:\r\n\r\n- 5x increase in after-hours conversion rates\r\n- 37% improvement in 90-day retention\r\n- 3,000+ agent hours saved in a single AEP\r\n- $2M+ in additional renewals during AEP 2024\r\n\r\nThe Medicare Advantage market represents a massive opportunity, with over $360B in annual premiums and growing 10% year over year. By solving the member retention challenge, we're positioning ourselves to capture significant value by transforming the member care experience for beneficiaries.",
+          "website": "https://www.careCycle.ai"
+        },
+        {
+          "id": 30337,
+          "slug": "paratus-health",
+          "long_slug": "30337_paratushealth_paratushealth_httpsparatushealthcom",
+          "name": "Paratus Health",
+          "desc": "AI-powered intake nurse Paratus Health is an AI voice intake nurse that automates pre-appointment patient interviews, saving doctors time and improving accuracy. By conducting dynamic symptom assessments before the visit, it delivers a structured summary, helping doctors walk in prepared, reducing missed diagnoses, and increasing clinic efficiency. Designed to replace inefficient forms and costly intake nurses, Paratus Health turns wasted waiting time into better care and higher ROI for providers.",
+          "website": "https://paratushealth.com/"
+        },
+        {
+          "id": 30020,
+          "slug": "rada",
+          "long_slug": "30020_rada_rada_httpstryradacom",
+          "name": "Rada",
+          "desc": "Insurance calls automation for healthcare clinics. Rada automates insurance calls for healthcare providers. Our AI voice agents navigate IVR menus and conversationally speaks to insurers about patient eligibility, pre-auths, and billing statuses.",
+          "website": "https://tryrada.com"
+        },
+        {
+          "id": 30238,
+          "slug": "amby-health",
+          "long_slug": "30238_ambyhealth_ambyhealth_httpstryambycom",
+          "name": "Amby Health",
+          "desc": "AI Copilot for Ambulance Agencies (EMS) Amby Health automates billing and quality reviews for ambulance agencies (EMS), replacing large back-office teams with AI. We analyze patient reports in seconds\u2014not months\u2014accurately coding claims and identifying liability and care risks while eliminating costly, error-prone manual processes.\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+          "website": "https://tryamby.com"
+        },
+        {
+          "id": 30218,
+          "slug": "toothy-ai",
+          "long_slug": "30218_toothyai_toothyai_httpswwwtoothyai",
+          "name": "Toothy AI",
+          "desc": "AI for insurance verification & billing at dental clinics We\u2019re Toothy.ai.  We\u2019re building AI agents for dental practices that handle everything related to patient insurance. The average dental clinic spends over 160 hours a month on insurance tasks like verifying patient policies, billing, and claims processing. Our AI agents automate this entire workflow\u2014including making insurance calls with voice AI\u2014saving clinics time, reducing costs, and ensuring faster reimbursements.",
+          "website": "https://www.toothy.ai/"
+        },
+        {
+          "id": 30109,
+          "slug": "futureclinic",
+          "long_slug": "30109_futureclinic_futureclinic_httpswwwopencliniccom",
+          "name": "FutureClinic",
+          "desc": "Digital healthcare that is 99% AI, 1% doctor. OpenClinic is a platform that makes it easy for any doctor or hospital to open their own digital clinic. Our AI assistant takes a comprehensive medical history using an empathic voice-based interface, uses sophisticated medical reasoning to narrow down likely diagnoses, and produces evidence-based treatment suggestions for each patient. Licensed doctors then review the text-based summaries of the cases our AI provides, and choose how to manage the patients. In this fashion, we're able to deliver end-to-end healthcare where AI manages 99%, and doctors do the final high value 1%. ",
+          "website": "https://www.openclinic.com"
+        },
+        {
+          "id": 30109,
+          "slug": "futureclinic",
+          "long_slug": "30109_futureclinic_futureclinic_httpswwwfuturecliniccom",
+          "name": "FutureClinic",
+          "desc": "Digital healthcare that is 99% AI, 1% doctor. FutureClinic is a platform that makes it easy for any doctor or hospital to open their own digital clinic. Our AI assistant takes a comprehensive medical history using an empathic voice-based interface, uses sophisticated medical reasoning to narrow down likely diagnoses, and produces evidence-based treatment suggestions for each patient. Licensed doctors then review the text-based summaries of the cases our AI provides, and choose how to manage the patients. In this fashion, we're able to deliver end-to-end healthcare where AI manages 99%, and doctors do the final high value 1%. ",
+          "website": "https://www.futureclinic.com"
+        },
+        {
+          "id": 30131,
+          "slug": "asha-health",
+          "long_slug": "30131_ashahealth_ashahealth_httpsashahealth",
+          "name": "Asha Health",
+          "desc": "We help medical practices launch their own AI clinic Asha Health enables medical practices to launch their own AI clinic, designed to fill crucial care gaps that their brick & mortar clinics are too overburdened to address \u2014 all while generating additional revenue on autopilot.",
+          "website": "https://asha.health"
         }
       ]
     }

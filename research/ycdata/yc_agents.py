@@ -17,7 +17,16 @@ class AgentAnalysis(BaseModel):
 
 # 2. Load DataFrame
 def load_df(data_path='yc_data.json'):
-    df = pd.read_json(data_path)
+    """
+    Loads a DataFrame from a JSON file. If the file contains a dict with an 'agents' key (as in yc_agents.json),
+    loads only the agents list as a DataFrame. Otherwise, loads the file as a standard DataFrame.
+    """
+    with open(data_path, 'r') as f:
+        data = json.load(f)
+    if isinstance(data, dict) and 'agents' in data:
+        df = pd.DataFrame(data['agents'])
+    else:
+        df = pd.DataFrame(data)
     return df
 
 # 3. Filter for AI-related companies
@@ -25,13 +34,15 @@ def filter_mentions_ai(df):
     return df[df['mentions_ai'] == True].copy()
 
 # 4. Load already processed results
-def load_existing_results(json_path='yc_ai_agents_analysis.json'):
+def load_existing_results(json_path='yc_agents.json'):
     if os.path.exists(json_path):
         try:
             with open(json_path, 'r') as f:
-                results = json.load(f)
-            done_ids = set(row.get('long_slug') for row in results if row.get('long_slug'))
-            return results, done_ids
+                data = json.load(f)
+            # Expecting a dict with an "agents" key
+            agents = data.get("agents", [])
+            done_ids = set(row.get('long_slug') for row in agents if row.get('long_slug'))
+            return agents, done_ids
         except Exception:
             return [], set()
     return [], set()
@@ -121,11 +132,14 @@ def ensure_json_serializable(obj):
 # 6. Main pipeline with batching and checkpointing
 def main(batch_size=10, output_path='yc_agents.json', max_workers=3):
     df = load_df()
-    ai_df = filter_mentions_ai(df)
     results, done_ids = load_existing_results(output_path)
     print(f"Loaded {len(done_ids)} already processed companies.")
+    # Split into AI and non-AI companies
+    ai_df = df[df['mentions_ai'] == True]
+    non_ai_df = df[df['mentions_ai'] != True]
+    # Process AI companies (LLM analysis)
     to_process = ai_df[~ai_df['long_slug'].isin(done_ids)]
-    print(f"Need to process {len(to_process)} companies.")
+    print(f"Need to process {len(to_process)} AI companies.")
     rows = [row for _, row in to_process.iterrows()]
     batches = [rows[i:i+batch_size] for i in range(0, len(rows), batch_size)]
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -135,7 +149,6 @@ def main(batch_size=10, output_path='yc_agents.json', max_workers=3):
             results.extend(batch_results)
             # Ensure all results are JSON serializable before dumping
             serializable_results = ensure_json_serializable(results)
-            # Write as a dict with last_updated and agents keys
             output_dict = {
                 "last_updated": datetime.datetime.now().isoformat(),
                 "agents": serializable_results
@@ -143,7 +156,17 @@ def main(batch_size=10, output_path='yc_agents.json', max_workers=3):
             with open(output_path, 'w') as f:
                 json.dump(output_dict, f, indent=2)
             print(f"Checkpoint: saved {len(results)} results.")
-    print("Done! Results saved to yc_agents.json")
+    # Add non-AI companies (no LLM analysis, just original fields)
+    non_ai_rows = [dict(row) for _, row in non_ai_df.iterrows() if row.get('long_slug') not in done_ids]
+    results.extend(non_ai_rows)
+    serializable_results = ensure_json_serializable(results)
+    output_dict = {
+        "last_updated": datetime.datetime.now().isoformat(),
+        "agents": serializable_results
+    }
+    with open(output_path, 'w') as f:
+        json.dump(output_dict, f, indent=2)
+    print(f"Done! Results saved to {output_path}")
 
 if __name__ == "__main__":
     main()
