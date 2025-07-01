@@ -9,8 +9,13 @@
     "rag_agent": {
       "title": "RAG Agents",
       "description": "Retrieval Augmented Generation (RAG) explores the use of external knowledge sources to improve the quality of generated text from a model. External knowlege may come from providing an agent with access to tools that it can intelligently call based on the task, or explicitly retrieving relevant context from a datastore (e.g., a vector database) .",
-      "domains": ["media"],
-      "tags": ["rag", "tools"],
+      "domains": [
+        "media"
+      ],
+      "tags": [
+        "rag",
+        "tools"
+      ],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -25,8 +30,13 @@
               "title": "RAG Agents",
               "description": "Retrieval Augmented Generation (RAG) explores the use of external knowledge sources to improve the quality of generated text from a model. External knowlege may come from providing an agent with access to tools that it can intelligently call based on the task, or explicitly retrieving relevant context from a datastore (e.g., a vector database) .",
               "blog": "https://newsletter.victordibia.com/p/how-to-build-your-own-openai-operator",
-              "domains": ["media"],
-              "tags": ["rag", "tools"]
+              "domains": [
+                "media"
+              ],
+              "tags": [
+                "rag",
+                "tools"
+              ]
             }
           },
           "results": {
@@ -38,8 +48,14 @@
     "hello_world": {
       "title": "Hello World Agent",
       "description": "A agent implementation that demonstrates the basic concepts of defining an agent that used a generative AI model and tools to address tasks. Users can explore how different frameworks handle basic message passing and agent communication.",
-      "domains": ["basics", "education"],
-      "tags": ["beginner", "tools"],
+      "domains": [
+        "basics",
+        "education"
+      ],
+      "tags": [
+        "beginner",
+        "tools"
+      ],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -53,8 +69,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the AutoGen AgentChat API",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"],
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
               "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
             }
           },
@@ -74,8 +96,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the AutoGen Core API",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"],
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
               "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
             }
           },
@@ -95,8 +123,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the Google Agent Development Kit (ADK).",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"],
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
               "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
             }
           },
@@ -116,8 +150,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the LangGraph framework",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"]
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ]
             }
           },
           "results": {
@@ -136,8 +176,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the LlamaIndex framework",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"],
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
               "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
             }
           },
@@ -157,8 +203,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the OpenAI Agents SDK API",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"],
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
               "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
             }
           },
@@ -178,8 +230,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the Pydantic AI SDK",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"],
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
               "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
             }
           },
@@ -199,8 +257,14 @@
             "metadata": {
               "title": "Hello World Agent",
               "description": "Built using the Semantic Kernel framework",
-              "domains": ["basics", "education"],
-              "tags": ["beginner", "tools"],
+              "domains": [
+                "basics",
+                "education"
+              ],
+              "tags": [
+                "beginner",
+                "tools"
+              ],
               "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
             }
           },
@@ -210,11 +274,61 @@
         }
       ]
     },
+    "mcp_server_101": {
+      "title": "MCP Server 101",
+      "description": "Learn to build your first MCP client and server using streamable HTTP transport. Includes a TechCrunch news server, simple client, and complete host application with OpenAI integration. Demonstrates configurable host/port settings and real-time streaming communication.",
+      "domains": [
+        "research",
+        "tools"
+      ],
+      "tags": [
+        "mcp",
+        "http-transport",
+        "openai",
+        "news-api"
+      ],
+      "implementations": [
+        {
+          "framework": "mcp",
+          "title": "Mcp Implementation",
+          "description": "Implementation using mcp",
+          "code": {
+            "path": "/samples/mcp_server_101/mcp/app.py",
+            "language": "python",
+            "loc": 121,
+            "githubUrl": "https://github.com/victordibia/multiagent-systems-with-autogen/blob/main/course/samples/mcp_server_101/mcp/app.py",
+            "metadata": {
+              "title": "MCP Server 101",
+              "description": "Learn to build your first MCP client and server using streamable HTTP transport. Includes a TechCrunch news server, simple client, and complete host application with OpenAI integration. Demonstrates configurable host/port settings and real-time streaming communication.",
+              "domains": [
+                "research",
+                "tools"
+              ],
+              "tags": [
+                "mcp",
+                "http-transport",
+                "openai",
+                "news-api"
+              ],
+              "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
+            }
+          },
+          "results": {
+            "path": "/samples/mcp_server_101/mcp/results.json"
+          }
+        }
+      ]
+    },
     "voice_agent": {
       "title": "Voice Agents",
       "description": "An implementation of a voice enabled multi-agent system where speech to text models are used to transcribe user queries and text to speech models are used to read out a summarized version of agent responses. .",
-      "domains": ["research"],
-      "tags": ["ui", "groupchat-pattern"],
+      "domains": [
+        "research"
+      ],
+      "tags": [
+        "ui",
+        "groupchat-pattern"
+      ],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -229,8 +343,13 @@
               "title": "Voice Agents",
               "description": "An implementation of a voice enabled multi-agent system where speech to text models are used to transcribe user queries and text to speech models are used to read out a summarized version of agent responses. .",
               "blog": "https://newsletter.victordibia.com/p/how-to-build-voice-agents-with-autogen",
-              "domains": ["research"],
-              "tags": ["ui", "groupchat-pattern"]
+              "domains": [
+                "research"
+              ],
+              "tags": [
+                "ui",
+                "groupchat-pattern"
+              ]
             }
           },
           "results": {
@@ -242,8 +361,13 @@
     "router_pattern": {
       "title": "Router Pattern",
       "description": "A mock implementation of a Sales Multi-Agent System using a Router Pattern. A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent.",
-      "domains": ["salese"],
-      "tags": ["router-pattern", "pattern"],
+      "domains": [
+        "salese"
+      ],
+      "tags": [
+        "router-pattern",
+        "pattern"
+      ],
       "implementations": [
         {
           "framework": "autogen_core",
@@ -257,8 +381,13 @@
             "metadata": {
               "title": "Router Pattern",
               "description": "A mock implementation of a Sales Multi-Agent System using a Router Pattern. A Router Agent receives user messages and routes them to specialized agents - LeadQualificationAgent, QuotationAgent, ProductInfoAgent, and SalesFollowupAgent.",
-              "domains": ["multiagent"],
-              "tags": ["router-pattern", "pattern"]
+              "domains": [
+                "multiagent"
+              ],
+              "tags": [
+                "router-pattern",
+                "pattern"
+              ]
             }
           },
           "results": {
@@ -270,8 +399,14 @@
     "interface_agent": {
       "title": "Browser Interface Agents",
       "description": "A multi-agent system that addresses tasks by controlling/driving a web browser, similar to the OpenAI Operator agent. The AutoGen implementation includes 3 agents - a WebSurfer agent that controls the browser, an AssistantAgent that verifies progress, and a UserAgent that will request human feedback when necessary.",
-      "domains": ["media"],
-      "tags": ["browser", "operator", "human-in-the-loop"],
+      "domains": [
+        "media"
+      ],
+      "tags": [
+        "browser",
+        "operator",
+        "human-in-the-loop"
+      ],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -286,8 +421,13 @@
               "title": "Browser Interface Agents",
               "description": "Built using the AutoGen AgentChat API, includes 3 agents - a WebSurfer agent that addresses tasks by controlling/driving a web browser, an AssistantAgent that verifies progress and a UserAgent that will request human feedback when necessary.",
               "blog": "https://newsletter.victordibia.com/p/how-to-build-your-own-openai-operator",
-              "domains": ["browser", "interfaceagent"],
-              "tags": ["tools"]
+              "domains": [
+                "browser",
+                "interfaceagent"
+              ],
+              "tags": [
+                "tools"
+              ]
             }
           },
           "results": {
@@ -299,8 +439,13 @@
     "deep_research": {
       "title": "Deep Research Agents",
       "description": "An implementation of a multi-agent system that explores multiple reasoning steps across multiple data sources to synthesize results to complex research tasks. Implemented using an AssistantAgent that performs web searches and analyzes information, a Verifier agent that ensures research quality and completeness, a Summary agent that provides detailed markdown summaries, and a SelectorGroupChat team that manages the order in which each agent acts based on conversation context.",
-      "domains": ["research"],
-      "tags": ["research", "tools"],
+      "domains": [
+        "research"
+      ],
+      "tags": [
+        "research",
+        "tools"
+      ],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -315,8 +460,13 @@
               "title": "Deep Research Agents",
               "description": "An implementation of a multi-agent system that explores multiple reasoning steps across multiple data sources to synthesize results to complex research tasks. Implemented using an AssistantAgent that performs web searches and analyzes information, a Verifier agent that ensures research quality and completeness, a Summary agent that provides detailed markdown summaries, and a SelectorGroupChat team that manages the order in which each agent acts based on conversation context.",
               "blog": "https://newsletter.victordibia.com/p/how-to-build-your-own-openai-operator",
-              "domains": ["research"],
-              "tags": ["research", "tools"]
+              "domains": [
+                "research"
+              ],
+              "tags": [
+                "research",
+                "tools"
+              ]
             }
           },
           "results": {
@@ -328,8 +478,15 @@
     "travel_planning": {
       "title": "Travel Planning Agents",
       "description": "An implementation of a multi-agent system that creates personalized travel itineraries through a coordinated planning process. Implemented using a Planner Agent that develops comprehensive travel routes based on traveler preferences, a Local Agent that recommends authentic experiences and hidden gems, a Language Agent that provides essential communication tips for the destination, and a Travel Summary Agent that integrates all recommendations into a cohesive final itinerary. The system uses a SelectorGroupChat team that manages the workflow between agents to progressively build comprehensive travel plans while minimizing unnecessary user involvement.",
-      "domains": ["travel", "tourism"],
-      "tags": ["tools", "groupchat-pattern", "web-search"],
+      "domains": [
+        "travel",
+        "tourism"
+      ],
+      "tags": [
+        "tools",
+        "groupchat-pattern",
+        "web-search"
+      ],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -343,8 +500,15 @@
             "metadata": {
               "title": "Travel Planning Agents",
               "description": "An implementation of a multi-agent system that creates personalized travel itineraries through a coordinated planning process. Implemented using a Planner Agent that develops comprehensive travel routes based on traveler preferences, a Local Agent that recommends authentic experiences and hidden gems, a Language Agent that provides essential communication tips for the destination, and a Travel Summary Agent that integrates all recommendations into a cohesive final itinerary. The system uses a SelectorGroupChat team that manages the workflow between agents to progressively build comprehensive travel plans while minimizing unnecessary user involvement.",
-              "domains": ["travel", "tourism"],
-              "tags": ["tools", "groupchat-pattern", "web-search"]
+              "domains": [
+                "travel",
+                "tourism"
+              ],
+              "tags": [
+                "tools",
+                "groupchat-pattern",
+                "web-search"
+              ]
             }
           },
           "results": {
@@ -356,8 +520,13 @@
     "mcp_tools": {
       "title": "MCP Tool Agent",
       "description": "An implementation demonstrating how to integrate Model Context Protocol (MCP) servers with AutoGen agents. This example shows how to connect an agent to an MCP server for fetching web resources, enabling content summarization and analysis. You can extend it to any MCP server.",
-      "domains": ["research"],
-      "tags": ["mcp", "tools"],
+      "domains": [
+        "research"
+      ],
+      "tags": [
+        "mcp",
+        "tools"
+      ],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -371,8 +540,13 @@
             "metadata": {
               "title": "MCP Tool Agent",
               "description": "An implementation demonstrating how to integrate Model Context Protocol (MCP) servers with AutoGen agents. This example shows how to connect an agent to an MCP server for fetching web resources, enabling content summarization and analysis. You can extend it to any MCP server.",
-              "domains": ["research"],
-              "tags": ["mcp", "tools"],
+              "domains": [
+                "research"
+              ],
+              "tags": [
+                "mcp",
+                "tools"
+              ],
               "blog": "https://newsletter.victordibia.com/p/you-have-ai-fatigue-thats-why-you"
             }
           },
@@ -385,8 +559,12 @@
     "book_generator": {
       "title": "Book Generator with Gemini 2.0",
       "description": "A multi-agent system that demonstrates collaborative story generation using Gemini 2.0. The system consists of two agents: a StoryGeneratorAgent that creates structured story content and a BookGeneratorAgent that handles image generation and PDF compilation. Features include structured JSON communication between agents, integration of non-openai models (Gemini 2.0), control flow routing using topics and messages and integration of tools (e.g. image generation, PDF generation).",
-      "domains": ["media"],
-      "tags": ["gemini"],
+      "domains": [
+        "media"
+      ],
+      "tags": [
+        "gemini"
+      ],
       "implementations": [
         {
           "framework": "autogen_core",
@@ -400,8 +578,12 @@
             "metadata": {
               "title": "Book Generator with Gemini 2.0",
               "description": "Built using the AutoGen Core API. ",
-              "domains": ["multiagent"],
-              "tags": ["tools"]
+              "domains": [
+                "multiagent"
+              ],
+              "tags": [
+                "tools"
+              ]
             }
           },
           "results": {
@@ -413,8 +595,13 @@
     "investment_agent": {
       "title": "Investment Advisory Agents",
       "description": "An implementation of a multi-agent system that creates personalized investment portfolios through a coordinated research and analysis process. Implemented using a Client Profiler Agent that analyzes client requirements, a Research Strategy Agent that crafts targeted search queries, a Research Agent that performs market research and data analysis, a Portfolio Constructor that builds recommendations, a Verifier agent that ensures compliance and suitability, and a Summary agent that generates a complete investment proposal. The system uses a SelectorGroupChat team that manages the workflow between agents to progressively build comprehensive investment recommendations.",
-      "domains": ["finance"],
-      "tags": ["tools", "groupchat-pattern"],
+      "domains": [
+        "finance"
+      ],
+      "tags": [
+        "tools",
+        "groupchat-pattern"
+      ],
       "implementations": [
         {
           "framework": "autogen_agentchat",
@@ -428,8 +615,13 @@
             "metadata": {
               "title": "Investment Advisory Agents",
               "description": "An implementation of a multi-agent system that creates personalized investment portfolios through a coordinated research and analysis process. Implemented using a Client Profiler Agent that analyzes client requirements, a Research Strategy Agent that crafts targeted search queries, a Research Agent that performs market research and data analysis, a Portfolio Constructor that builds recommendations, a Verifier agent that ensures compliance and suitability, and a Summary agent that generates a complete investment proposal. The system uses a SelectorGroupChat team that manages the workflow between agents to progressively build comprehensive investment recommendations.",
-              "domains": ["finance"],
-              "tags": ["tools", "groupchat-pattern"]
+              "domains": [
+                "finance"
+              ],
+              "tags": [
+                "tools",
+                "groupchat-pattern"
+              ]
             }
           },
           "results": {
@@ -447,6 +639,7 @@
       "media",
       "research",
       "salese",
+      "tools",
       "tourism",
       "travel"
     ],
@@ -456,6 +649,7 @@
       "google_adk",
       "langgraph",
       "llama_index",
+      "mcp",
       "openai_agents",
       "pydanticai",
       "semantic_kernel"

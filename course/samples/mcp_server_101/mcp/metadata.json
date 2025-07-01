@@ -1,0 +1,7 @@
+{
+  "title": "MCP Server 101",
+  "description": "Learn to build your first MCP client and server using streamable HTTP transport. Includes a TechCrunch news server, simple client, and complete host application with OpenAI integration. Demonstrates configurable host/port settings and real-time streaming communication.",
+  "domains": ["research", "tools"],
+  "tags": ["mcp", "http-transport", "openai", "news-api"],
+  "blog": "https://newsletter.victordibia.com/p/a-friendly-introduction-to-the-autogen"
+}

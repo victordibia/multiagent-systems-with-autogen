@@ -1,0 +1,13 @@
+# requirements.txt
+# MCP SDK and CLI tools
+mcp[cli]>=1.0.0
+
+# Web scraping for news fetching
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# OpenAI for LLM integration
+openai>=1.54.0
+
+# Additional dependencies for development
+pytest>=7.4.0
