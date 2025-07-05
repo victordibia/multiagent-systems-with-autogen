@@ -8,7 +8,7 @@ async def run_client():
     import os
     host = os.environ.get("MCP_SERVER_HOST", "localhost")
     port = os.environ.get("MCP_SERVER_PORT", "8011")
-    server_url = os.getenv("MCP_SERVER_URL", f"http://{host}:{port}/sse")
+    server_url = os.getenv("MCP_SERVER_URL", f"http://{host}:{port}/mcp")
 
     async with streamablehttp_client(server_url) as (read, write, _):
         async with ClientSession(read, write) as session:

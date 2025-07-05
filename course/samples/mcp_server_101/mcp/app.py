@@ -1,51 +1,19 @@
-# Combined MCP Server and Client Example
-# This file contains both server and client in one file for easy testing and demonstration.
-# 
-# NOTE: In production environments, you should separate the server and client:
-# - See server.py for a standalone MCP server implementation
-# - See client.py for a standalone MCP client implementation  
-# - See app.py for a production host application that connects to a remote server 
+# host app # to the client code, which uses the MCP server to fetch news from TechCrunch using OpenAI's function calling capabilities. 
+# see server.py and client.py for independent server and client implementations.
+# !! note: this requires the MCP server to be running and the OpenAI API key to be set in the environment. 
 
 import asyncio
 import json
 import os
 from openai import AsyncOpenAI
-from mcp.server.fastmcp import FastMCP
-from mcp.shared.memory import create_connected_server_and_client_session
-import requests
+from mcp import ClientSession
+from mcp.client.streamable_http import streamablehttp_client
 
-
-def create_techcrunch_server() -> FastMCP:
-    """Create a FastMCP server with TechCrunch news tools."""
-    mcp = FastMCP("TechCrunch News Server")
-
-    @mcp.tool(title="Fetch from TechCrunch")
-    def fetch_from_techcrunch(category: str = "latest") -> str:
-        """Fetch the latest news from TechCrunch for a given category."""
-        allowed = {"ai", "startup", "security", "venture", "latest"}
-        cat = category.lower()
-        if cat not in allowed:
-            cat = "latest"
-        url = f"https://techcrunch.com/tag/{cat}/" if cat != "latest" else "https://techcrunch.com/"
-        try:
-            response = requests.get(url)
-            if response.ok:
-                try:
-                    from bs4 import BeautifulSoup
-                    soup = BeautifulSoup(response.text, "html.parser") 
-                    text = soup.get_text(separator=' ', strip=True)
-                    return text[:1000] + ("..." if len(text) > 1000 else "")
-                except ImportError:
-                    # If bs4 is not installed, return raw HTML (truncated)
-                    return response.text[:1000] + ("..." if len(response.text) > 1000 else "")
-            return "Failed to fetch news."
-        except Exception as e:
-            print(f"Error fetching news: {str(e)}")
-            return f"Error fetching news: {str(e)}"
-
-    return mcp
-
-
+import os
+host = os.environ.get("MCP_SERVER_HOST", "localhost")
+port = os.environ.get("MCP_SERVER_PORT", "8011")
+server_url = os.getenv("MCP_SERVER_URL", f"http://{host}:{port}/mcp")
+ 
 def convert_mcp_tools_to_openai_format(tools):
     """Convert MCP tools to OpenAI function calling format"""
     openai_tools = []
@@ -124,7 +92,7 @@ async def handle_user_request(session, openai_client, tools, user_input: str):
         return f"Error processing request: {str(e)}"
 
 
-async def run_combined_app():
+async def run_app():
     """Main application with combined server and client"""
     if not os.getenv("OPENAI_API_KEY"):
         print("Set OPENAI_API_KEY environment variable")
@@ -132,15 +100,17 @@ async def run_combined_app():
 
     import sys
     user_input = " ".join(sys.argv[1:]).strip() if len(sys.argv) > 1 else "What is the latest news on AI?"
+    
     openai_client = AsyncOpenAI()
-    mcp_server = create_techcrunch_server()
-    async with create_connected_server_and_client_session(mcp_server._mcp_server) as session:
-        await session.initialize()
-        tools = (await session.list_tools()).tools
-        print(f"Task: {user_input}")
-        response = await handle_user_request(session, openai_client, tools, user_input)
-        print(response)
+    async with streamablehttp_client(server_url) as (read, write, _):
+        async with ClientSession(read, write) as session:
+            # Initialize the connection
+            await session.initialize()
+            tools = (await session.list_tools()).tools
+            print(f"Task: {user_input}")
+            response = await handle_user_request(session, openai_client, tools, user_input)
+            print(response)
 
 
 if __name__ == "__main__":
-    asyncio.run(run_combined_app())
+    asyncio.run(run_app())

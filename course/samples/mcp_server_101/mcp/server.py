@@ -20,8 +20,8 @@ def fetch_from_techcrunch(category: str = "latest") -> str:
             try:
                 from bs4 import BeautifulSoup
                 soup = BeautifulSoup(response.text, "html.parser")
-                text = soup.get_text(separator=' ', strip=True)
-                return text[:1000] + ("..." if len(text) > 1000 else "")
+                text = soup.get_text(separator=' ', strip=True) 
+                return text  + ("..." if len(text) > 1000 else "")
             except ImportError:
                 return response.text[:1000] + ("..." if len(response.text) > 1000 else "")
         return "Failed to fetch news."
@@ -29,11 +29,12 @@ def fetch_from_techcrunch(category: str = "latest") -> str:
         print(f"Error fetching news: {str(e)}")
         return f"Error fetching news: {str(e)}"
 
-if __name__ == "__main__":
-    # Use streamable HTTP transport for remote scenarios
-    host = os.environ.get("MCP_SERVER_HOST", "localhost")
-    port = int(os.environ.get("MCP_SERVER_PORT", 8011))
-    print(f"🚀 Starting MCP Server with streamable HTTP transport")
-    print(f"📡 Server configured for {host}:{port}")
-    print(f"🔗 Client connection URL: http://{host}:{port}/sse")
+
+@mcp.tool(title="dummy too")
+def dummy_tool() -> str:
+    """A dummy tool that does nothing."""
+    return "This is a dummy tool response."
+
+
+if __name__ == "__main__":  
     mcp.run(transport="streamable-http")
